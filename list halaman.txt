@@ -1,0 +1,141 @@
+*login & sign up:
+- login.html
+- daftar.html
+- verifikasi.html
+- after-verif.html
+- lupa-password.html
+- lupa-password2.html
+- buat-password.html
+
+*profile mitra:
+- profile-mitra.html
+
+*Syarat dan Ketentuan:
+- syarat-dan-ketentuan.html
+
+*homepage:
+- index.html
+- home-logged.html
+
+*FAQ:
+- faq.html
+#akun saya
+- lupa-sandi.html
+- jadi-member.html
+- ubah-sandi.html
+- verifikasi-hp.html
+- ubah-alamat.html
+- masuk-akun.html
+- ubah-data.html
+- ubah-rekening.html
+- penilaian-dihapus.html
+- keamanan-akun.html
+- ubah-hp.html
+#pembayaran
+- pembayaran.html
+- fitur-wishlist.html
+- pembatalan-pesanan.html
+- cod.html
+- faktur.html
+- kartu-kredit.html
+- status-verifikasi.html
+- metode-pembayaran.html
+- cicilan.html
+#pengiriman
+- pengiriman.html
+- pengiriman-tidak-didukung.html
+- lacak-pengiriman.html
+- paket-rusak.html
+- ongkir-pengembalian.html
+- ganti-rugi.html
+- hubungi-jasa-kirim.html
+#status pemesanan
+- status-pemesanan.html
+- cek-status-pemesanan.html
+- waktu-pengemasan.html
+#Pengembalian Produk & Dana
+- pengembalian-produk-dana.html
+- pengembalian-barang.html
+- pengembalian-kredivo.html
+- pengembalian-kredit.html
+#Cara Berbelanja
+- cara-berbelanja.html
+- cara-berbelanja-kartara.html
+#Menjadi Mitra UMKM
+- jadi-mitra.html
+- cara-jadi-mitra.html
+#Cara Berjualan
+- cara-berjualan.html
+- tambah-produk.html
+- aktifkan-produk.html
+- produk-draft.html
+- ubah-info-toko.html
+- ubah-logo-toko.html
+
+*Halaman Pencarian/ Explore All:
+- pencarian.html
+
+*Detail produk:
+- detail-produk.html
+
+*Profile dll:
+- profile.html
+- alamat.html
+- rekening.html
+- ubah-password.html
+- pesanan-saya.html
+- detail-pesanan.html
+
+#notifikasi
+- update-pesanan.html
+- promo.html
+
+- notifikasi.html
+- wishlist.html
+- wishlist-items.html
+- mitra-favorit.html
+- ulasan.html
+- tulis-ulasan.html
+- lihat-ulasan.html
+- komplain.html
+- detail-komplain.html
+- komplain-pesanan.html
+
+*hubungi kami:
+- hubungi-kami.html
+- cari-bantuan.html
+
+*keranjang:
+- keranjang.html
+
+*Halaman Kurir Bangsa:
+- lacak-kiriman.html
+- lacak-kiriman-barang.html
+- tarif-kiriman.html
+- tarif-kiriman-barang.html
+- cari-drop-point.html
+
+*checkout:
+- checkout.html
+
+*Metode Pembayaran:
+- pembayaran-bni.html
+- pembayaran-mandiri.html
+- pembayaran-bca.html
+- pembayaran-bri.html
+- pembayaran-gopay.html
+- pembayaran-ovo.html
+- pembayaran-card.html
+- pembayaran-alfamart.html
+- pembayaran-indomaret.html
+- waktu-pembayaran-habis.html
+
+*team/kelompok:
+- status-pembayaran-kelompok.html
+- detail-produk-team.html
+- keranjang-team.html
+- status-pembelian-kelompok.html
+- join-kelompok.html
+- pesanan-saya-team.html
+- detail-pesanan-team.html
+- checkout-team.html

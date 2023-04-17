@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top Header -->
+    <div class="container-fluid top-header">
+      <div class="row mx-3">
+        <div class="d-flex flex-row bd-highlight">
+          <div class="p-2 bd-highlight"><a href="#">Download App</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Cara Belanja</a></div>
+          <!-- <div class="p-2 bd-highlight"><a href="#">Tentang Kami</a></div>
+      <div class="p-2 bd-highlight"><a href="#">Blog</a></div>
+      <div class="p-2 bd-highlight"><a href="#">Karir</a></div> -->
+          <div class="p-2 bd-highlight"><a href="#">Menjadi Mitra UMKM</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid mx-3 text-md-start text-center">
+        <a class="navbar-brand" href="#"
+          ><img src="img/icon/logo-home.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-md-flex justify-content-around"
+          id="navbarSupportedContent"
+        >
+          <div class="dropdown dropdown-kategori">
+            <button
+              class="btn btn-kategori"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Kategori
+            </button>
+            <ul
+              class="dropdown-menu dd-menu-kategori"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><a class="dropdown-item" href="#">Perlengkapan Kantor</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Peralatan Rumah Tangga</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Olahan Kuliner</a></li>
+              <li><a class="dropdown-item" href="#">Produk Kreatif</a></li>
+              <li><a class="dropdown-item" href="#">Industri Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Jasa</a></li>
+              <li><a class="dropdown-item" href="#">Asli Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Kurir Bangsa</a></li>
+            </ul>
+          </div>
+          <form action="pencarian.html" class="d-flex search-produk">
+            <input
+              id="search-produk"
+              class="form-control me-2"
+              type="search"
+              placeholder="Cari produk umkm"
+              aria-label="Search"
+              autocomplete="off"
+              onfocus="showPopuler()"
+              oninput="hidePopuler()"
+              onblur="hidePopuler()"
+            />
+            <button class="btn my-auto" type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="-2.5 -2.5 24 24"
+                width="24"
+                height="24"
+                preserveAspectRatio="xMinYMin"
+                class="icon__icon"
+              >
+                <path
+                  d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="pencarian-populer container position-absolute bg-body mt-5"
+            >
+              <div class="fw-bold m-3">Pencarian Populer</div>
+              <div class="row px-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="dropdown">
+            <button
+              class="btn"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="img/icon/cart.png" alt="" />
+            </button>
+            <ul class="dropdown-menu cart" aria-labelledby="dropdownMenuButton">
+              <div class="text-center px-1 py-3">
+                <img src="img/icon/Cart2.png" alt="" />
+                <p class="my-2"><b>Keranjang belanjaanmu kosong ☹️ </b></p>
+                <p>Yuk isi dengan beberapa produk menarik dari Kartara.</p>
+              </div>
+            </ul>
+          </div>
+          <div>
+            <button
+              onclick="window.location.href='login.html';"
+              class="btn btn-masuk-home"
+            >
+              Masuk
+            </button>
+            <button
+              onclick="window.location.href='daftar.html';"
+              class="btn btn-daftar"
+            >
+              Daftar
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div class="container-fluid syarat-dan-ketentuan my-md-5 my-2 px-5">
+      <div class="d-flex flex-column flex-md-row align-items-start">
+        <div
+          class="nav flex-md-column flex-row me-md-1 my-2 p-0"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <a
+            class="nav-link active my-1"
+            id="v-pills-syaratketentuan-tab"
+            data-bs-toggle="pill"
+            href="#v-pills-syaratketentuan"
+            role="tab"
+            aria-controls="v-pills-syaratketentuan"
+            aria-selected="true"
+            >Syarat dan Ketentuan</a
+          >
+          <a
+            class="nav-link my-1"
+            id="v-pills-kp-tab"
+            data-bs-toggle="pill"
+            href="#v-pills-kp"
+            role="tab"
+            aria-controls="v-pills-kp"
+            aria-selected="false"
+            >Kebijakan Privasi</a
+          >
+        </div>
+        <div class="tab-content ps-5 border-start" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="v-pills-syaratketentuan"
+            role="tabpanel"
+            aria-labelledby="v-pills-syaratketentuan-tab"
+          >
+            <div class="container">
+              <div class="row border-bottom">
+                <div class="col"><h1>Syarat dan Ketentuan</h1></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="row my-3">
+                    <div class="col">
+                      <p>
+                        Penguna harus membaca, memahami, menerima dan menyetujui
+                        semua persyaratan dan ketentuan dalam Perjanjian ini
+                        sebelum menggunakan smartcomputerindo.com. Dengan
+                        menggunakan layanan smartcomputerindo.com, Pengguna
+                        dianggap telah memahami dan menyetujui seluruh isi dalam
+                        syarat dan ketentuan di bawah ini
+                      </p>
+                    </div>
+                  </div>
+                  <!-- a -->
+                  <div class="row my-2">
+                    <div class="col">
+                      <div class="row my-1">
+                        <div class="col">
+                          <b>A. Ketentuan Pengguna Situs</b>
+                        </div>
+                      </div>
+                      <div class="row mx-3">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>1.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Pengguna minimum berusia 18 Tahun atau Yang
+                                telah memiliki persyaratan yang diakui secara
+                                hukum termasuk dalam kategori Pengguna yang
+                                sudah dewasa dan terlepas dari Hukum
+                                Perlindungan Anak.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>2.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Pengguna tidak diperkenankan untuk mereproduksi,
+                                mendistribusikan, memajang, menjual, menyewakan,
+                                mengirimkan, membuat karya turunan dari,
+                                menerjemahkan, memodifikasi, merekayasa balik,
+                                membongkar, mengurai atau mengeksploitasi situs
+                                smartcomputerindo.com.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>3.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Pengguna tidak diperkenankan untuk memuat dan
+                                menerbitkan konten yang:
+                              </p>
+                              <div class="row">
+                                <div class="col-1 num">
+                                  1.
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Melanggar hak cipta, paten, merek dagang,
+                                    merek layanan, rahasia dagang, atau hak
+                                    kepemilikan lainnya.
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-1 num">
+                                  2.
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Mengancam, cabul, tidak senonoh, pornografi
+                                    atau bisa menimbulkan segala kewajiban Hukum
+                                    perdata atau pidana Indonesia atau hukum
+                                    internasional.
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-1 num">
+                                  3.
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Mengandung bug, virus, worm, pintu
+                                    perangkap, trojan horse atau kode dan
+                                    property berbahaya lainnya.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- b -->
+                  <div class="row my-2">
+                    <div class="col">
+                      <div class="row my-1">
+                        <div class="col">
+                          <b>B. Hak Milik Intelektual</b>
+                        </div>
+                      </div>
+                      <div class="row mx-3">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <p>
+                                PT. Solusi Media Ravel Teknologi adalah pemilik
+                                tunggal atau pemegang sah semua hak atas situs
+                                dan konten situs smartcomputerindo.com. Seluruh
+                                konten yang terdapat di dalam situs
+                                smartcomputerindo.com mencakup hak milik
+                                intelektual yang dilindungi oleh undang-undang
+                                hak cipta dan undang-undang yang melindungi
+                                kekayaan intelektual lainnya yang berlaku di
+                                seluruh dunia. Semua hak yang tidak dicantumkan
+                                di dalam Perjanjian ini atau oleh Kami dengan
+                                ini dilindungi undang-undang diantaranya yaitu:
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>1.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Seluruh Kepemilikan Perangkat Lunak.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>2.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Nama smartcomputerindo.com, ikon serta logo
+                                terkait merupakan merek dagang terdaftar di
+                                berbagai wilayah hukum dan dilindungi
+                                undang-undang tentang hak cipta, merek dagang
+                                atau hak milik kekayaan intelektual lainnya.
+                                Dilarang keras menggunakan, mengubah, atau
+                                memasang merek-merek tersebut di atas untuk
+                                kepentingan pribadi dan untuk mendeskriditkan
+                                smartcomputerindo.com.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- c -->
+                  <div class="row my-2">
+                    <div class="col">
+                      <div class="row my-1">
+                        <div class="col">
+                          <b>C. Transaksi</b>
+                        </div>
+                      </div>
+                      <div class="row mx-3">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>1.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Harga yang tertera di website
+                                smartcomputerindo.com belum termasuk Ongkos
+                                Kirim, Tarif Armada ataupun kurir ke luar kota
+                                (ekspedisi).
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>2.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Sebagian barang tidak ex-stock sehingga
+                                diperlukan pemesanan sebelumnya.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>3.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Setiap produk yang dibeli dari
+                                smartcomputerindo.com dilengkapi dengan masa
+                                garansi yang disesuaikan dengan garansi pabrik
+                                masing-masing produk. Silahkan klik
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>4.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Barang yang telah dibeli tidak dapat
+                                dikembalikan atau ditukar dengan barang lain,
+                                kecuali ada perjanjian terlebih dahulu.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>5.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Segala usaha maksimal telah dilakukan untuk
+                                menyakinkan ketepatan seluruh informasi yang
+                                dimuat. Smartcomputerindo.com tidak menjamin
+                                dengan segala hormat akan ketepatan data
+                                tersebut, termasuk spesifikasi produk maupun
+                                editorial.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>6.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Anda akan menerima email notifikasi mengenai
+                                Nomor Resi Pengiriman sesaat setelah produk
+                                pesanan Anda dikirim. Anda juga dapat memantau
+                                status pesanan Anda dengan menggunakan fitur
+                                Tracking yang ada pada halaman depan website
+                                smartcomputerindo.com.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>7.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Smartcomputerindo.com bekerjasama dengan payment
+                                gateway sebagai pihak ketiga dalam
+                                penyelenggaraan transaksi kartu kredit, dan
+                                metode pembayaran lainnya. Smartcomputerindo.com
+                                menjamin keamanan transaksi menggunakan metode
+                                pembayaran ini.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>8.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Smartcomputerindo.com berhak melakukan
+                                pembatalan transaksi apabila terdapat transaksi
+                                pembelian barang yang melanggar ketentuan hukum
+                                dan/atau syarat ketentuan Smartcomputerindo.com.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>9.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Pengguna dengan ini menyatakan akan melepaskan
+                                Smartcomputerindo.com (termasuk Induk
+                                Perusahaan, direktur, dan karyawan) dari
+                                tuntutan ganti rugi atas setiap klaim atau
+                                tuntutan akibat adanya tindak penyalahgunaan
+                                kartu kredit oleh pihak lain.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <p>
+                                Jika dalam keadaan tertentu, terdapat kesalahan
+                                harga ataupun informasi mengenai suatu produk ,
+                                smartcomputerindo.com berhak untuk menolak
+                                ataupun membatalkan pesanan yang menggunakan
+                                harga yang salah termasuk pesanan yang sudah
+                                dibayarkan. Jika pesanan tersebut sudah
+                                dibayarkan dengan Kartu Kredit, dan kartu kredit
+                                Anda telah dikenakan biaya untuk pembelian
+                                tersebut, maka kami akan melakukan pengembalian
+                                dana sesuai dengan jumlah yang telah dibayarkan.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- d -->
+                  <div class="row my-2">
+                    <div class="col">
+                      <div class="row my-1">
+                        <div class="col">
+                          <b>D. Deskripsi Produk</b>
+                        </div>
+                      </div>
+                      <div class="row mx-3">
+                        <div class="col">
+                          <p>
+                            Smartcomputerindo.com selalu berusaha untuk
+                            memberikan deskripsi produk seakurat mungkin. Tetapi
+                            kami tidak dapat 100% menjamin bahwa seluruh
+                            deskripsi atau konten yang terdapat di dalam website
+                            adalah akurat, lengkap, terbaru, atau bebas error.
+                            Jika produk yang telah anda beli di
+                            smartcomputerindo.com tidak sesuai dengan yang
+                            tertera dalam deskripsi produk, maka Anda dapat
+                            mengembalikannya dalam keadaan belum terpakai / buka
+                            segel.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- e -->
+                  <div class="row my-2">
+                    <div class="col">
+                      <div class="row my-1">
+                        <div class="col">
+                          <b>E. Ketersediaan</b>
+                        </div>
+                      </div>
+                      <div class="row mx-3">
+                        <div class="col">
+                          <p>
+                            Demi mempertahankan harga jual yang tetap
+                            kompetitif, sangat sukar bagi pihak kami untuk
+                            selalu menyediakan (ready stock) setiap produk yang
+                            kami tampilkan di smartcomputerindo.com. Staff kami
+                            akan dengan senang hati mengkonfirmasikan kembali
+                            jika ada beberapa produk yang perlu dipesan serta
+                            lamanya waktu pemesanan.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- f -->
+                  <div class="row my-2">
+                    <div class="col">
+                      <div class="row my-1">
+                        <div class="col">
+                          <b>F. Membership</b>
+                        </div>
+                      </div>
+                      <div class="row mx-3">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>1.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Untuk menjadi Membership smartcomputerindo.com
+                                tidak dipungut biaya / gratis.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>2.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Member smartcomputerindo.com bertanggung jawab
+                                untuk menjaga kerahasiaan dan keamanan atas nama
+                                akun dan password serta bertanggung jawab
+                                sepenuhnya atas segala kegiatan yang
+                                diatasnamakan nama akun Pengguna Terdaftar.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>3.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Kami berhak sepenuhnya untuk membatasi,
+                                memblokir atau mengakhiri pelayanan dari suatu
+                                akun, melarang akses ke situs
+                                smartcomputerindo.com dan konten, layanan, dan
+                                memperlambat atau menghapus hosted content, dan
+                                mengambil langkah-langkah hukum untuk menjaga
+                                Member smartcomputerindo.com atau pengguna lain
+                                jika Kami menganggap member
+                                smartcomputerindo.com atau pengguna lain
+                                melanggar hukum-hukum yang berlaku, melanggar
+                                hak milik intelektual dari pihak terkait, atau
+                                melakukan suatu pelanggaran yang melanggar
+                                hal-hal yang tertera pada Perjanjian ini.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>4.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Member smartcomputerindo.com dengan ini
+                                menyatakan akan melepaskan Smartcomputerindo.com
+                                (termasuk Induk Perusahaan, direktur, dan
+                                karyawan) dari tuntutan ganti rugi atas setiap
+                                klaim atau tuntutan, yang dilakukan oleh pihak
+                                ketiga akibat adanya pelanggaran syarat dan
+                                ketentuan serta penggunaan Layanan
+                                smartcomputerindo.com yang tidak semestinya.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>5.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Smartcomputerindo.com tidak pernah meminta
+                                password akun Pengguna untuk alasan apapun.
+                                Dengan ini smartcomputerindo.com menghimbau
+                                pengguna agar tidak memberikan password akun
+                                kepada pihak manapun, baik pihak ketiga atau
+                                pihak yang mengatasnamakan
+                                smartcomputerindo.com.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>6.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Smartcomputerindo.com berhak melakukan
+                                pemanggilan pengguna apabila ditemukan adanya
+                                kecurangan dan/atau pelanggaran syarat dan
+                                ketentuan yang menyebabkan kerugian bagi
+                                pengguna lain, pihak ketiga, ataupun
+                                smartcomputerindo.com
+                              </p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-1 num">
+                              <p>7.</p>
+                            </div>
+                            <div class="col">
+                              <p>
+                                Smartcomputerindo.com berhak melakukan
+                                penangguhan pengembalian dana pembatalan
+                                transaksi apabila ditemukan adanya kecurangan
+                                dan/atau pelanggaran syarat dan ketentuan
+                                smartcomputerindo.com selambat-lambatnya selama
+                                30 hari terhitung sejak tanggal pembatalan
+                                transaksi
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-kp"
+            role="tabpanel"
+            aria-labelledby="v-pills-kp-tab"
+          >
+            <div class="container">
+              <div class="row border-bottom">
+                <div class="col"><h1>Kebijakan Privasi</h1></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="row my-3">
+                    <div class="col">
+                      <p>
+                        Smartcomputerindo memiliki Kebijakan Privasi sebagai
+                        acuan yang mengatur dan melindungi penggunaan data dan
+                        informasi penting para Pengguna. Kami berkomitmen untuk
+                        memastikan keamanan Data dan informasi seperti alamat,
+                        nomor kontak, alamat e-mail dan lain-lain yang telah
+                        dikumpulkan pada saat mendaftar, mengakses, dan
+                        menggunakan layanan Smartcomputerindo .
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1 text-end">
+                      <p>1.</p>
+                    </div>
+                    <div class="col">
+                      <p>
+                        KARTARA tunduk terhadap kebijakan perlindungan data
+                        pribadi Pengguna sebagaimana yang diatur dalam Peraturan
+                        Menteri Komunikasi dan Informatika Nomor 20 Tahun 2016
+                        Tentang Perlindungan Data Pribadi Dalam Sistem
+                        Elektronik yang mengatur dan melindungi penggunaan data
+                        dan informasi penting para Pengguna.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1 text-end">
+                      <p>2.</p>
+                    </div>
+                    <div class="col">
+                      <p>
+                        KARTARA melindungi segala informasi yang diberikan
+                        Pengguna pada saat pendaftaran, mengakses, dan
+                        menggunakan seluruh layanan kami.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1 text-end">
+                      <p>3.</p>
+                    </div>
+                    <div class="col">
+                      <p>
+                        KARTARA berhak menggunakan data dan informasi para
+                        Pengguna demi meningkatkan mutu dan pelayanan KARTARA.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1 text-end">
+                      <p>4.</p>
+                    </div>
+                    <div class="col">
+                      <p>
+                        KARTARA tidak bertanggung jawab atas pertukaran data
+                        yang dilakukan sendiri di antara Pengguna.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1 text-end">
+                      <p>5.</p>
+                    </div>
+                    <div class="col">
+                      <p>
+                        KARTARA hanya dapat memberitahukan data dan informasi
+                        yang dimiliki oleh para Pengguna bila diwajibkan
+                        dan/atau diminta oleh institusi yang berwenang
+                        berdasarkan ketentuan hukum yang berlaku, perintah resmi
+                        dari Pengadilan, dan/atau perintah resmi dari instansi
+                        atau aparat yang bersangkutan.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1 text-end">
+                      <p>6.</p>
+                    </div>
+                    <div class="col">
+                      <p>
+                        Pengguna situs KARTARA dapat berhenti berlangganan
+                        newsletter yaitu beragam informasi promo terbaru dan
+                        penawaran eksklusif jika tidak ingin menerima informasi
+                        tersebut.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container-fluid">
+      <div class="row mx-md-5 my-md-4 py-md-5 text-center text-md-start">
+        <div class="col-md my-3 my-md-0">
+          <h3>Kartara</h3>
+          <p>
+            <a href="#">Tentang Kartara</a>
+          </p>
+          <p>
+            <a href="#">Aturan Penggunaan</a>
+          </p>
+          <p>
+            <a href="#">Kebijakan Privasi</a>
+          </p>
+          <p>
+            <a href="#">Karir</a>
+          </p>
+          <p>
+            <a href="#">Blog</a>
+          </p>
+          <p>
+            <a href="#">FAQ</a>
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Bantuan</h3>
+          <p><a href="#">Pembayaran</a></p>
+          <p><a href="#">Pengiriman</a></p>
+          <p><a href="#">Status Pemesanan</a></p>
+          <p><a href="#">Pengembalian Produk</a></p>
+          <p><a href="#">Cara Berbelanja</a></p>
+          <p><a href="#">Hubungi Kami</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Mitra</h3>
+          <p><a href="#">Menjadi Mitra UMKM</a></p>
+          <p><a href="#">Cara Berjualan</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Customer Care</h3>
+          <p>
+            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> (+62) 819 -
+            9191 - 9181
+          </p>
+          <p>
+            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            cs@karyanoesantara.id
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Download Aplikasi</h3>
+          <p>
+            <a href="#"><img src="img/footer/Apple.png" alt="" /></a>
+          </p>
+          <p>
+            <a href="#"><img src="img/footer/Googleplay.png" alt="" /></a>
+          </p>
+        </div>
+      </div>
+      <div class="row mx-4 pb-3 d-flex text-md-start text-center">
+        <hr />
+        <div class="col-md">© Karya Noesantara 2021. Hak Cipta Dilindungi</div>
+        <div class="col-md text-md-end">
+          <span class="mx-3">Ikuti Kami</span>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Instagram.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Facebook.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_LinkedIn.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Twitter.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Youtube.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

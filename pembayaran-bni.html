@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="pembayaran()" style="background-color: #f7f7f7;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid mx-3 text-md-start text-center">
+        <a class="navbar-brand m-3" href="#"
+          ><img src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div class="container pembayaran">
+      <h1 class="h1-kecil my-5">Order Detail</h1>
+      <div class="row">
+        <div class="col-md">
+          <!-- waktu batas pembayaran -->
+          <div
+            class="row justify-content-center waktu-batas-pembayaran p-2 rounded-3"
+          >
+            <div class="col-auto">
+              <img src="img/icon/pembayaran/clock.png" alt="" />
+            </div>
+            <div class="col-auto">
+              <p>
+                Menunggu Pembayaran
+              </p>
+            </div>
+            <div class="col-2">
+              <span id="timerPembayaran" class="fw-6"></span>
+            </div>
+          </div>
+          <!--  -->
+          <div class="row bg-body my-4 rounded-3 p-3">
+            <div class="col">
+              <div class="row my-3">
+                <div class="col">
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h3 class="fw-6">BNI Virtual Account</h3>
+                    </div>
+                  </div>
+                  <div class="row align-items-center mx-1 py-2 virtual-account">
+                    <div class="col-auto">
+                      <img src="img/pembayaran/bni.png" alt="" />
+                    </div>
+                    <div class="col-auto">
+                      <b class="fw-6" id="va">8578 000 2819 9211</b>
+                    </div>
+                  </div>
+                  <div class="row justify-content-end">
+                    <div class="col-auto">
+                      <button
+                        class="btn btn-salin"
+                        onclick="CopyToClipboard('va')"
+                      >
+                        SALIN
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-3">
+                <div class="col">
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h3 class="fw-6">Total Pembayaran</h3>
+                    </div>
+                  </div>
+                  <div
+                    class="row align-items-center mx-1 py-2 total-pembayaran"
+                  >
+                    <div class="col-auto">
+                      <b class="fw-6"
+                        >Rp <span id="totalBayar">140.000</span></b
+                      >
+                    </div>
+                  </div>
+                  <div class="row justify-content-end">
+                    <div class="col-auto">
+                      <button
+                        class="btn btn-salin"
+                        onclick="CopyToClipboard('totalBayar')"
+                      >
+                        SALIN
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="row bg-body rounded-3 p-3">
+            <div class="col">
+              <div class="row my-3">
+                <div class="col"><h3 class="fw-6">Cara Pembayaran</h3></div>
+              </div>
+              <div class="row">
+                <div class="col bg-light mx-1 rounded-3">
+                  <div
+                    class="accordion accordion-flush"
+                    id="accordionFlushExample"
+                  >
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseOne"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseOne"
+                        >
+                          Mobile Banking
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample"
+                      >
+                        <div class="accordion-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">1</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Buka aplikasi BNI Mobile Banking dan Masuk
+                                    dengan akun kamu
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">2</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih menu "Transfer".
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">3</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih menu "Virtual Account Billing"
+                                    kemudian pilih rekening debet.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">4</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Masukkan nomor Virtual Account Anda (contoh:
+                                    8079000648023207) pada menu "input baru".
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">5</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Tagihan yang harus dibayarkan akan muncul
+                                    pada layar konfirmasi.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">6</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Konfirmasi transaksi dan masukkan Password
+                                    Transaksi.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">7</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pembayaran Anda Telah Berhasil.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseTwo"
+                        >
+                          Transfer iBanking
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample"
+                      >
+                        <div class="accordion-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">1</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Masuk ke laman ibanking BNI
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">2</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih Transaksi > Info & Administrasi
+                                    Transfer > Atur Rekening Tujuan > Tambah
+                                    Rekening Tujuan dan klik OK
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">3</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih KODE Network & Bank : Transfer Antar
+                                    Rek. BNI.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">4</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Masukkan nomor rekening dengan nomor Virtual
+                                    Account Kamu (Contoh: 8578 0000 4716 5761)
+                                    dan klik Lanjut. Isi data lainnya dan klik
+                                    Lanjutkan
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">5</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Cek detail konfirmasi. Masukkan PIN BNI
+                                    e-Secure Kamu lalu klik Proses
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">6</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih Transaksi > Transfer > Transfer Antar
+                                    Rek BNI
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">7</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih Rekening Tujuan sebagai rekening yang
+                                    barusan disimpan. Masukkan jumlah pembayaran
+                                    sejumlah Rp 140.000. Lalu, klik Lanjutkan
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">8</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Periksa detail konfirmasi. Masukkan PIN BNI
+                                    e-Secure Anda dan klik Proses
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-atmBni"
+                          aria-expanded="false"
+                          aria-controls="flush-atmBni"
+                        >
+                          ATM BNI
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-atmBni"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree"
+                        data-bs-parent="#accordionFlushExample"
+                      >
+                        <div class="accordion-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">1</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Masukkan kartu ATM & Pin
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">2</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih Menu Lain > Transfer
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">3</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih rekening asal dan pilih rekening
+                                    tujuan ke rekening BNI
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">4</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Masukkan nomor rekening dengan nomor Virtual
+                                    Account Kamu (Contoh: 8578 0000 4716 5761)
+                                    dan pilih Menu Lain > Benar
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">5</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Masukkan jumlah pembayaran sejumlah tagihan
+                                    Kamu Rp 1,000,000.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">6</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Periksa detail konfirmasi lalu pilih PIN BNI
+                                    e-Secure Anda dan klik Ya.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-smsBanking"
+                          aria-expanded="false"
+                          aria-controls="flush-smsBanking"
+                        >
+                          SMS Banking
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-smsBanking"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree"
+                        data-bs-parent="#accordionFlushExample"
+                      >
+                        <div class="accordion-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">1</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Kirim SMS “TRF [SPASI] 8578000047165761
+                                    [SPASI] 1000000” tanpa tanda petik.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">2</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Kirim SMS ke 3346
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">3</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Balas SMS yang masuk mengikuti petunjuk.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-4 mx-3">
+          <!-- detail pesanan -->
+          <div class="row sticky-top detail-pembayaran p-3 rounded-3">
+            <div class="col">
+              <div class="row my-3">
+                <div class="col fw-6">
+                  <h3 class="fw-6">Detail Pembayaran</h3>
+                </div>
+              </div>
+              <div class="row total justify-content-between my-2">
+                <div class="col"><p>Total Harga (4 Barang)</p></div>
+                <div class="col-auto">Rp 100.000</div>
+              </div>
+              <div class="row total justify-content-between my-2">
+                <div class="col"><p>Total Ongkos Kirim</p></div>
+                <div class="col-auto">Rp 40.000</div>
+              </div>
+              <hr />
+              <div class="row justify-content-between my-2">
+                <div class="col"><h3 class="fw-6">Total</h3></div>
+                <div class="col-auto"><h3 class="fw-6">Rp 140.000</h3></div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-auto">
+                  <button class="btn p-0 btn-lihat-detail">
+                    <h4 class="fw-6">LIHAT DETAIL</h4>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal lihat detail -->
+      <div
+        class="modal fade"
+        id="lihatDetail"
+        tabindex="-1"
+        aria-labelledby="lihatDetailLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="lihatDetailLabel">
+                Detail Pembayaran
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <div class="row mb-2">
+                    <div class="col fw-6"><p>Detail Pesanan</p></div>
+                  </div>
+                  <div class="row total justify-content-between">
+                    <div class="col"><p>Total Harga Barang</p></div>
+                    <div class="col-auto">Rp 100.000</div>
+                  </div>
+                  <div class="row total justify-content-between">
+                    <div class="col"><p>Total Ongkos Kirim</p></div>
+                    <div class="col-auto">Rp 40.000</div>
+                  </div>
+                  <hr />
+                  <div class="row justify-content-between mb-2">
+                    <div class="col fw-6"><p>Total</p></div>
+                    <div class="col-auto price"><p>Rp 140.000</p></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row line-tebal"></div>
+              <!-- barang pesanan -->
+              <div class="row my-2">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="fw-6">Barang yang Anda pesan (4)</h4>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <div class="row my-2">
+                        <div class="col-auto pe-0">
+                          <img class="" src="img/icon/Shop.png" alt="" />
+                        </div>
+                        <div class="col p-0">
+                          <p class="fw-6">
+                            Sang Dewa
+                          </p>
+                          <p class="lokasi">Jakarta Barat</p>
+                        </div>
+                      </div>
+                      <div class="row my-3">
+                        <div class="col-auto pe-0">
+                          <img
+                            src="img/pembayaran/detail-pembayaran/Keripik-Pisang-original.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="col p-0">
+                          <div class="row">
+                            <div class="col"><p>Kripik Pisang Original</p></div>
+                          </div>
+                          <div class="row">
+                            <div class="col jumlahxharga">
+                              <p>1 x Rp 10.000</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row my-3">
+                        <div class="col-auto pe-0">
+                          <img
+                            src="img/pembayaran/detail-pembayaran/Keripik-Pisang-Melon.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="col p-0">
+                          <div class="row">
+                            <div class="col"><p>Kripik Pisang Melon</p></div>
+                          </div>
+                          <div class="row">
+                            <div class="col jumlahxharga">
+                              <p>1 x Rp 10.000</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row my-3">
+                        <div class="col-auto pe-0">
+                          <img
+                            src="img/pembayaran/detail-pembayaran/Keripik-Pisang-coklat.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="col p-0">
+                          <div class="row">
+                            <div class="col"><p>Kripik Pisang Coklat</p></div>
+                          </div>
+                          <div class="row">
+                            <div class="col jumlahxharga">
+                              <p>1 x Rp 10.000</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row my-3">
+                        <div class="col-auto pe-0">
+                          <img
+                            src="img/pembayaran/detail-pembayaran/Keripik-Pisang-juara.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="col p-0">
+                          <div class="row">
+                            <div class="col"><p>Kripik Pisang Juara</p></div>
+                          </div>
+                          <div class="row">
+                            <div class="col jumlahxharga">
+                              <p>1 x Rp 10.000</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row line"></div>
+              <!-- ongkir -->
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <div class="col"><h4 class="fw-6">Ongkos Kirim</h4></div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col"><b>JNE Reg</b></div>
+                      </div>
+                      <div class="row ongkir"><p>Rp 40.000</p></div>
+                      <div class="row">
+                        <small>Estomasi tiba 14 - 16 Jan 2020</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row line"></div>
+              <!-- alamat pengiriman -->
+              <div class="row alamat">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="fw-6">Alamat Pengiriman</h4>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col-auto"><b>Laksa Ersa</b></div>
+                        <div class="col-auto jenis-alamat"><b>Rumah</b></div>
+                      </div>
+                      <div class="row my-1">
+                        <div class="col">
+                          <small>(+62) 829 - 9201 - 2910</small>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <p>
+                            Gg. Narodo, Manggung, Condongcatur, Kec. Depok,
+                            Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

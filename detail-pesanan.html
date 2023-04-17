@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-light">
+    <!-- Top Header -->
+    <div class="container-fluid top-header">
+      <div class="d-flex flex-row bd-highlight">
+        <div class="p-2 bd-highlight"><a href="#">Download App</a></div>
+        <div class="p-2 bd-highlight d-none d-md-block">
+          <a href="#">Cara Belanja</a>
+        </div>
+        <div class="p-2 bd-highlight d-none d-md-block">
+          <a href="#">Menjadi Mitra UMKM</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3" href="#"
+          ><img class="img-fluid" src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-md-flex justify-content-around"
+          id="navbarSupportedContent"
+        >
+          <!-- Kategori dropdown -->
+          <div class="dropdown dropdown-kategori">
+            <button
+              class="btn btn-kategori"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Kategori
+            </button>
+            <ul
+              class="dropdown-menu dd-menu-kategori"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><a class="dropdown-item" href="#">Perlengkapan Kantor</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Peralatan Rumah Tangga</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Olahan Kuliner</a></li>
+              <li><a class="dropdown-item" href="#">Produk Kreatif</a></li>
+              <li><a class="dropdown-item" href="#">Industri Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Jasa</a></li>
+              <li><a class="dropdown-item" href="#">Asli Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Kurir Bangsa</a></li>
+            </ul>
+          </div>
+
+          <!-- search -->
+          <form action="pencarian.html" class="d-flex search-produk">
+            <div class="input-group mx-3">
+              <input
+                type="search"
+                id="search-produk"
+                class="form-control"
+                type="search"
+                placeholder="Cari produk umkm"
+                aria-label="Search"
+                autocomplete="off"
+                onfocus="showPopuler()"
+                oninput="hidePopuler()"
+                onblur="hidePopuler()"
+              />
+              <button class="btn bg-light border h-auto px-3 p-2" id="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div
+              class="pencarian-populer container position-absolute bg-body mt-5"
+            >
+              <div class="fw-6 m-md-3">Pencarian Populer</div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="d-flex">
+            <!-- cart dropdown -->
+            <div class="cart-and-notif d-flex">
+              <button
+                class="btn d-block d-md-none"
+                type="button"
+                onclick="window.location.href='keranjang.html';"
+              >
+                <img src="img/icon/navbar/cart.png" alt="" />
+              </button>
+              <div class="dropdown d-none d-md-block">
+                <button
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="img/icon/navbar/cart.png" alt="" />
+                </button>
+                <ul
+                  class="dropdown-menu cart-logged"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <div class="container px-2 overflow-auto cart-logged bg-body">
+                    <div class="sticky-top bg-body">
+                      <b class="">Keranjang</b>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div
+                      class="foot-cart row align-items-center justify-content-between w-100 mx-auto"
+                    >
+                      <div class="col-auto">Total (5) : Rp 100.000</div>
+                      <div class="col-auto">
+                        <a href="#">Lihat Keranjang</a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+
+            <!-- notifikasi -->
+            <div class="d-flex notifikasi-nav">
+              <button
+                class="btn d-block d-md-none"
+                type="button"
+                onclick="window.location.href='notifikasi.html';"
+              >
+                <img src="img/icon/navbar/Notif.png" alt="" />
+              </button>
+              <div class="dropdown d-none d-md-block">
+                <button
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="img/icon/navbar/Notif.png" alt="" />
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="container px-2 overflow-auto notifikasi bg-body">
+                    <div class="sticky-top bg-body">
+                      <b class="">Notifikasi</b>
+                    </div>
+                    <hr />
+                    <div class="row w-100 mx-auto">
+                      <div class="col-auto p-0">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <p class="fw-6">Selesaikan Pembayaran</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="content">
+                              Hai Laksa Ersa, pesanan kamu sebesar Rp 79.000
+                              belum dibayar. Segera Lakukan pembayaran sebelum
+                              19 Januari 2021...
+                            </small>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="time"
+                              >Senin, 18 Januari 2021 08:10</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- profile dropdown-->
+          <div class="profile-nav d-flex">
+            <button
+              class="btn p-0 d-block d-md-none"
+              type="button"
+              onclick="window.location.href='profile.html';"
+            >
+              <div class="btn-profile d-flex align-items-center">
+                <i
+                  class="fa fa-user-circle-o fa-2x mx-2"
+                  aria-hidden="true"
+                ></i>
+                <span>
+                  Laksa Ersa
+                </span>
+              </div>
+            </button>
+            <div class="dropdown d-none d-md-block">
+              <button
+                class="btn p-0"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="btn-profile d-flex align-items-center">
+                  <i
+                    class="fa fa-user-circle-o fa-2x mx-2"
+                    aria-hidden="true"
+                  ></i>
+                  <span>
+                    Laksa Ersa
+                  </span>
+                </div>
+              </button>
+              <ul
+                class="dropdown-menu profile-logged"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <div class="container profile-logged bg-body">
+                  <div
+                    class="d-flex align-items-center py-2 mb-2 border-bottom"
+                  >
+                    <div class="col-auto mx-2">
+                      <img src="img/icon/navbar/foto-profile.png" alt="" />
+                    </div>
+                    <div class="col fw-6">Laksa Ersa</div>
+                  </div>
+                  <a
+                    href="#"
+                    class="row d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Akun saya</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Pesanan saya</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Wishlist</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Ulasan</p>
+                    </div>
+                  </a>
+                  <a
+                    href="index.html"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Log out</p>
+                    </div>
+                  </a>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div class="container-fluid px-5 detail-pesanan">
+      <div class="row my-4">
+        <div class="col-md-3 left-navigation">
+          <div class="container bg-body p-3 rounded-3">
+            <div class="row">
+              <div class="col-3">
+                <img
+                  class="rounded-circle img-fluid"
+                  src="img/profile/Avatar.png"
+                  alt=""
+                />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><p class="fw-6">Laksa Ersa</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-auto">
+                    <small style="color: red;">Belum diverifikasi</small>
+                  </div>
+                  <div class="col-auto">
+                    <img src="img/icon/profile/Verified.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-3 fw-6">
+              <div class="col">
+                <div class="row">
+                  <div class="col-auto">
+                    <img src="img/icon/profile/Wallet.png" alt="" />
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col"><p>Points</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-auto"><span>20.000</span></div>
+            </div>
+            <hr />
+            <div class="row my-3">
+              <div class="col-auto">
+                <img src="img/icon/profile/Account.png" alt="" />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><a href="profile.html">Akun Saya</a></div>
+                </div>
+                <div class="row my-3">
+                  <div class="col">
+                    <a href="profile.html">Profile</a>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col"><a href="alamat.html">Alamat</a></div>
+                </div>
+                <div class="row my-3">
+                  <div class="col">
+                    <a href="rekening.html">Rekening Bank</a>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col">
+                    <a href="ubah-password.html">Ubah Password</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="pesanan-saya.html" class="row my-3 active">
+              <div class="col-auto">
+                <img src="img/icon/profile/List.png" alt="" />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><p>Pesanan saya</p></div>
+                </div>
+              </div>
+            </a>
+            <a href="update-pesanan.html" class="row my-3">
+              <div class="col-auto">
+                <img src="img/icon/profile/Notif.png" alt="" />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><p>Notifikasi</p></div>
+                </div>
+              </div>
+            </a>
+            <a href="wishlist.html" class="row my-3">
+              <div class="col-auto">
+                <img src="img/icon/profile/Favorit.png" alt="" />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><p>Wishlist</p></div>
+                </div>
+              </div>
+            </a>
+            <a href="mitra-favorit.html" class="row my-3">
+              <div class="col-auto">
+                <img src="img/icon/profile/Shop.png" alt="" />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><p>Mitra Favorit</p></div>
+                </div>
+              </div>
+            </a>
+            <a href="ulasan.html" class="row my-3">
+              <div class="col-auto">
+                <img src="img/icon/profile/Star.png" alt="" />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><p>Ulasan</p></div>
+                </div>
+              </div>
+            </a>
+            <a href="komplain.html" class="row my-3">
+              <div class="col-auto">
+                <img src="img/icon/profile/Error.png" alt="" />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><p>Komplain</p></div>
+                </div>
+              </div>
+            </a>
+            <hr />
+            <a href="index.html" class="row my-3">
+              <div class="col-auto">
+                <img src="img/icon/profile/Log-out.png" alt="" />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col"><p>Log out</p></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!--  -->
+        <div class="col">
+          <div class="row">
+            <div class="container bg-body p-3 rounded-3">
+              <div class="row p-2 justify-content-between border-bottom">
+                <div class="col">
+                  <h1 class="h1-kecil">Detail Pesanan</h1>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col">
+                  <a href="pesanan-saya.html"
+                    ><i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    <span class="mx-3 fw-6">Kembali</span></a
+                  >
+                </div>
+              </div>
+              <!-- progress -->
+              <div
+                class="d-flex status-bar m-5 justify-content-center align-items-baseline"
+              >
+                <div class="text-center status">
+                  <img
+                    class="icon checked p-3"
+                    src="img/icon/detail-pesanan/Dibuat.png"
+                    alt=""
+                  />
+                  <p>Pesanan Dibuat</p>
+                </div>
+                <div class="line checked"></div>
+                <div class="text-center status">
+                  <img
+                    class="icon checked p-3"
+                    src="img/icon/detail-pesanan/Dibayarkan.png"
+                    alt=""
+                  />
+                  <p>Pesanan Dibayarkan</p>
+                </div>
+                <div class="line checked"></div>
+                <div class="text-center status">
+                  <img
+                    class="icon checked p-3"
+                    src="img/icon/detail-pesanan/Diproses.png"
+                    alt=""
+                  />
+                  <p>Pesanan Diproses</p>
+                </div>
+                <div class="line checked"></div>
+                <div class="text-center status">
+                  <img
+                    class="icon checked p-3"
+                    src="img/icon/detail-pesanan/Dikirim.png"
+                    alt=""
+                  />
+                  <p>Pesanan Dikirim</p>
+                </div>
+                <div class="line checked"></div>
+                <div class="text-center status">
+                  <img
+                    class="icon checked p-3"
+                    src="img/icon/detail-pesanan/selesai.png"
+                    alt=""
+                  />
+                  <p>Pesanan Selesai</p>
+                </div>
+              </div>
+              <!--  -->
+              <div class="row border mx-1 p-3 justify-content-around">
+                <div class="col">
+                  <div class="row">
+                    <div class="col mb-2"><p>Nomor pesanan:</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col"><p class="fw-6">KRTR1231233</p></div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col mb-2"><p>Tanggal Pembelian</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col"><p class="fw-6">18 Januari 2021</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col"><p class="fw-6">01:32 WIB</p></div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col mb-2"><p>Status Pembayaran</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto status-pembayaran">
+                      <p>Menunggu Pembayaran</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto status-pembayaran diterima">
+                      <p>Pembayaran Diterima</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto">
+                      <p class="metode-pembayaran">BNI Virtual Account</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row">
+                    <div class="col mb-2"><p>Status Pesanan</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto status-pesanan">
+                      <p class="fw-6">Pesanan Dibuat</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div class="row mx-1 my-2 justify-content-end">
+                <div class="col-auto">
+                  <p>Batal Otomatis</p>
+                </div>
+                <div class="col-auto px-1 jam">
+                  <img src="img/icon/detail-pesanan/Clock.png" alt="" />
+                  <span>9</span> Jam
+                </div>
+              </div>
+              <div class="row justify-content-end my-2">
+                <div class="col-auto p-0">
+                  <button
+                    class="btn border white-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#batalkanPesanan"
+                  >
+                    Batalkan Pesanan
+                  </button>
+                </div>
+                <div class="col-auto">
+                  <button
+                    class="btn orange-btn"
+                    onclick="location.href='pembayaran-bni.html';"
+                  >
+                    Lanjutkan Pembayaran
+                  </button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn orange-btn">Chat Mitra</button>
+                </div>
+                <div class="col-auto">
+                  <button
+                    class="btn border"
+                    data-bs-toggle="modal"
+                    data-bs-target="#komplainPesanan"
+                  >
+                    Komplain
+                  </button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn orange-btn">Terima Barang</button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn border">Lihat Faktur</button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn border">Beri Ulasan</button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn orange-btn">Beli Lagi</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="row my-4">
+            <div class="container bg-body p-3 rounded-3">
+              <div class="row my-2 align-items-center">
+                <div class="col-auto">
+                  <img src="img/icon/sangdewa.png" alt="" />
+                </div>
+                <div class="col-auto p-0">
+                  <h3 class="fw-6">Sang Dewa</h3>
+                </div>
+              </div>
+              <div class="row my-3">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <h3 class="fw-6">Daftar Produk</h3>
+                    </div>
+                  </div>
+                  <div class="row justify-content-between my-2">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col-auto">
+                          <img
+                            class="foto-produk"
+                            src="img/sangdewa.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <h3 class="fw-6">Keripik Pisang Melon</h3>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col"><p>x2</p></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-auto"><p>Rp 25.000</p></div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <p>Catatan : Jangan yg remuk</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="row justify-content-end my-2">
+                        <div class="col-auto"><p>Sub Total</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><h4>Rp 50.000</h4></div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row justify-content-end">
+                    <div class="col-auto"><h4>Total Pesanan</h4></div>
+                    <div class="col-auto">
+                      <h3 class="fw-6">Rp 100.000</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-4">
+            <div class="container alamat bg-body p-3 rounded-3">
+              <div class="row mb-3">
+                <div class="col">
+                  <h4>
+                    <p class="fw-6">Alamat Pengiriman</p>
+                  </h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-auto">
+                  <div class="row">
+                    <div class="col"><p class="fw-6">Laksa Ersa</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col"><p>(+62) 829 - 9201 - 2910</p></div>
+                  </div>
+                </div>
+                <div class="col px-5">
+                  <div class="row">
+                    <div class="col-auto jenis-alamat">
+                      <p class="fw-6">Kantor</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p>
+                        Jl. P. Mangkubumi No.44, Gowongan, Kec. Jetis, Kota
+                        Yogyakarta, Daerah Istimewa Yogyakarta 55233
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- informasi pengiriman -->
+          <div class="row my-4">
+            <div class="container py-3 bg-body rounded-3">
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="fw-6">Informasi Pengiriman</h4>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col border-end">
+                      <div class="row">
+                        <div class="col mb-1">
+                          <small>Jasa Pengiriman</small>
+                        </div>
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <img src="img/detail-pesanan/jne.png" alt="" />
+                        </div>
+                        <div class="col"><p class="fw-6">JNE Reguler</p></div>
+                      </div>
+                    </div>
+                    <div class="col border-end">
+                      <div class="row">
+                        <div class="col mb-1"><small>No Resi</small></div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <p class="fw-6">No Resi Belum Terbit</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col mb-1"><small>Estimasi Tiba</small></div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <p class="fw-6">Rabu, 20 Januari 2021</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row my-2 mt-4">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="fw-6">Riwayat Pengiriman</h4>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <small>Belum ada riwayat pengiriman</small>
+                    </div>
+                  </div>
+                  <div class="row riwayat-pengiriman">
+                    <div class="col">
+                      <div class="row my-1 active">
+                        <div class="col-auto">
+                          <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-auto"><p>18 Jan 2021 18:00</p></div>
+                        <div class="col">
+                          <p>[SRAGEN]Paket telah diterima [Ersa][Pemilik]</p>
+                        </div>
+                      </div>
+                      <div class="row my-1">
+                        <div class="col-auto">
+                          <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-auto"><p>18 Jan 2021 18:00</p></div>
+                        <div class="col">
+                          <p>[SRAGEN]Paket akan dikirim ke alamat penerima</p>
+                        </div>
+                      </div>
+                      <div class="row my-1">
+                        <div class="col-auto">
+                          <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-auto"><p>18 Jan 2021 18:00</p></div>
+                        <div class="col">
+                          <p>[SRAGEN]Paket akan dikirim ke alamat penerima</p>
+                        </div>
+                      </div>
+                      <div class="row my-1">
+                        <div class="col-auto">
+                          <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-auto"><p>18 Jan 2021 18:00</p></div>
+                        <div class="col">
+                          <p>[SRAGEN]Paket akan dikirim ke alamat penerima</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal batalkan pesanan -->
+      <div
+        class="modal fade"
+        id="batalkanPesanan"
+        tabindex="-1"
+        aria-labelledby="batalkanPesananLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="batalkanPesananLabel">
+                Pembatalan Pesanan
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="row mb-2">
+                  <div class="col">
+                    <p>Mengapa ingin membatalkan pesanan?</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi1"
+                      />
+                      <label class="form-check-label" for="opsi1">
+                        Saya Ingin mengubah kurir/alamat pengiriman.
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi2"
+                      />
+                      <label class="form-check-label" for="opsi2">
+                        Mitra tidak merepson saya.
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi3"
+                      />
+                      <label class="form-check-label" for="opsi3">
+                        Saya Ingin memasukkan/ mengubah kode voucher.
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi4"
+                      />
+                      <label class="form-check-label" for="opsi4">
+                        Saya Ingin mengubah pesanan.
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi5"
+                      />
+                      <label class="form-check-label" for="opsi5">
+                        Stok atau varian yang saya inginkan tidak tersedia.
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi6"
+                      />
+                      <label class="form-check-label" for="opsi6">
+                        Sulit melanjutkan pembayaran
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi7"
+                      />
+                      <label class="form-check-label" for="opsi7">
+                        Menemukan harga yang lebih murah di mitra lain.
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi8"
+                      />
+                      <label class="form-check-label" for="opsi8">
+                        Tidak ingin membeli lagi.
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi9"
+                      />
+                      <label class="form-check-label" for="opsi9">
+                        Lainnya
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col">
+                    <button class="btn w-100 border orange-btn fw-6">
+                      Konfirmasi
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal komplain pesanan -->
+      <div
+        class="modal fade"
+        id="komplainPesanan"
+        tabindex="-1"
+        aria-labelledby="komplainPesananLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="komplainPesananLabel">
+                Komplain Pesanan
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form action="komplain-pesanan.html">
+                <div class="row mb-2">
+                  <div class="col">
+                    <p>Mengapa kamu ingin komplain pesanan?</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi1"
+                      />
+                      <label class="form-check-label" for="opsi1">
+                        Barang belum saya terima
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi2"
+                      />
+                      <label class="form-check-label" for="opsi2">
+                        Barang rusak/cacat/pecah
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi3"
+                      />
+                      <label class="form-check-label" for="opsi3">
+                        Jumlah barang tidak sesuai
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi4"
+                      />
+                      <label class="form-check-label" for="opsi4">
+                        Kondisi barang tidak lengkap
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi5"
+                      />
+                      <label class="form-check-label" for="opsi5">
+                        Barang berbeda dengan yang dipesanan
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="opsi6"
+                      />
+                      <label class="form-check-label" for="opsi6">
+                        Lainnya
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col">
+                    <button class="btn w-100 border orange-btn fw-6">
+                      Lanjut
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

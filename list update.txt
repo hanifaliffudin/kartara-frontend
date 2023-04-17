@@ -1,0 +1,256 @@
+8 maret 2021
+- profile-mitra.html: modal foto ulasan
+- after-verif.html
+- alamat.html
+- daftar.html
+- faq.html
+- hubungi-kami.html
+- keranjang.html
+- komplain-pesanan.html
+
+9 maret 2021
+- komplain.html
+- lacak-kiriman-barang.html
+- lacak-kiriman.html
+- login.html
+- mitra-favorit.html
+- notifikasi.html
+- pembayaran-alfamart.html
+- profile-mitra.html: share link icon
+- verifikasi.html: link kirim lagi, otp
+
+10 maret 2021
+- daftar.html: modal
+- waktu-pembayaran-habis.html
+
+11 maret 2021
+- pencarian.html: filter pencarian dropdown
+
+12 maret 2021
+- alamat.html
+- checkout.html
+
+14 maret 2021
+- daftar.html
+- detail-komplain.html
+- detail-pesanan.html
+- keranjang.html
+- komplain-pesanan.html
+- lihat-ulasan.html
+- login.html
+- mitra-favorit.html
+- notifikasi.html
+- pencarian.html
+
+15 maret 2021
+- lupa-password.html
+- buat-password.html
+- detail-produk-team.html
+- keranjang-team.html
+- pesanan-saya.html
+- profile-mitra.html
+- profile.html
+- rekening.html
+- syarat-dan-ketentuan.html
+- tarif-kiriman-barang.html
+- tarif-kiriman.html
+- tulis-ulasan.html
+- ubah-password.html
+- ulasan.html
+- verifikasi.html
+- waktu-pembayaran-habis.html
+
+16 maret 2021
+- keranjang-team.html
+- checkout-team.html
+- status-pembayaran-kelompok.html
+- wishlist-items.html
+- wishlist.html
+- hubungi-kami.html
+
+17 maret 2021
+- hubungi-kami.html
+- status-pembayaran-kelompok.html
+- faq.html (ongoing)
+- lupa-sandi.html
+- status-pembelian-kelompok.html
+- join-kelompok.html
+
+18 maret 2021
+- status-pembelian-kelompok.html
+- join-kelompok.html
+- buat-password.html
+- faq.html: navbar
+- lupa-sandi.html
+- jadi-member.html
+- ubah-sandi.html
+- pesanan-saya-team.html
+- detail-pesanan-team.html
+
+daftar-kelompok.html -> status-pembayaran-kelompok.html
+
+21 maret 2021
+- pesanan-saya-team.html
+- detail-pesanan-team.html
+- keranjang-team.html
+- checkout-team.html
+- pembayaran-team.html
+- faq.html
+- alamat.html
+- checkout.html
+- status-pembayaran-kelompok.html
+- verifikasi-hp.html
+- ubah-alamat.html
+- masuk-akun.html
+- ubah-data.html
+- penilaian-dihapus.html
+
+22 maret 2021
+- verifikasi-hp.html
+- ubah-alamat.html
+- masuk-akun.html
+- ubah-data.html
+- ubah-rekening.html
+- penilaian-dihapus.html
+- keamanan-akun.html
+- ubah-hp.html
+- pembayaran.html
+- fitur-wishlist.html
+- pembatalan-pesanan.html
+- cod.html
+- faktur.html
+- kartu-kredit.html
+- status-verifikasi.html
+- metode-pembayaran.html
+- cicilan.html
+
+- detail-produk-team.html
+- detail-produk.html
+- home-logged.html
+
+23 maret 2021
+#pengiriman
+- pengiriman.html
+- pengiriman-tidak-didukung.html
+- lacak-pengiriman.html
+- paket-rusak.html
+- ongkir-pengembalian.html
+- ganti-rugi.html
+- hubungi-jasa-kirim.html
+#status pemesanan
+- status-pemesanan.html
+- cek-status-pemesanan.html
+- waktu-pengemasan.html
+#Pengembalian Produk & Dana
+- pengembalian-produk-dana.html
+- pengembalian-barang.html
+- pengembalian-kredivo.html
+- pengembalian-kredit.html
+#Cara Berbelanja
+- cara-berbelanja.html
+- cara-berbelanja-kartara.html
+#Menjadi Mitra UMKM
+- jadi-mitra.html
+- cara-jadi-mitra.html
+#Cara Berjualan
+- cara-berjualan.html
+
+- keranjang.html
+- lacak-kiriman-barang.html
+- lupa-password.html
+- lupa-password2.html
+- checkout.html
+
+24 maret 2021
+- ulasan.html
+- verifikasi.html
+- update-pesanan.html
+- promo.html
+- keranjang-team.html
+- pencarian.html
+
+25 maret 2021
+- faq cara berjualan
+- keranjang-team.html
+- detail-produk.html
+- login.html
+- daftar.html
+- verifikasi.html
+- lupa-password.html
+- lupa-password2.html
+- buat-password.html
+- profile-mitra.html
+
+26 maret 2021
+- cari-bantuan.html
+
+30 maret 2021
+- cari-drop-point.html
+- alamat.html
+- checkout.html
+- checkout-team.html
+- detail-komplain.html
+- faktur.html
+- fitur-wishlist.html
+- hubungi-jasa-kirim.html
+- lacak-kiriman.html
+- lupa-password.html
+- lupa-password2.html
+
+31 maret 2021
+- checkout.html
+- cicilan.html
+- detail-pesanan.html
+- detail-produk-team.html
+- ganti-rugi.html
+- detail-produk.html
+- join-kelompok.html
+- komplain-pesanan.html
+- komplain.html
+- lacak-kiriman-barang.html
+- lihat-ulasan.html
+- mitra-favorit.html
+
+#notifikasi
+- update-pesanan.html
+- promo.html
+
+- pengembalian-produk.html (yang di faq, dihapus)
+- pengembalian-barang.html
+
+1 April 2021
+- pengembalian-kredit.html
+- pengembalian-kredivo.html
+
+4 April 2021
+- pengembalian-kredit.html
+- pengembalian-kredivo.html
+- Daftar Kelompok (udah dihapus)
+- join-kelompok.html
+- keranjang-team.html
+- pencarian.html (Penawaran sampai jenis mitra sudah 600 fwnya)
+- pesanan-saya-team.html
+- pesanan-saya.html
+- profile-mitra.html
+- rekening.html
+- status-pembayaran-kelompok.html
+- status-pembelian-kelompok.html
+- tarif-kiriman-barang.html
+- tarif-kiriman.html
+- tulis-ulasan.html
+- ubah-password.html
+- ulasan.html
+- verifikasi.html
+- waktu-pembayaran-habis.html
+- wishlist-items.html
+- wishlist.html
+
+5 April 2021
+- pembayaran-bca.html
+- pembayaran-bni.html
+- pembayaran-bri.html
+- pembayaran-card.html
+- pembayaran-gopay.html
+- pembayaran-indomaret.html
+- pembayaran-mandiri.html
+- pembayaran-ovo.html

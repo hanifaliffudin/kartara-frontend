@@ -1,0 +1,44 @@
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 54px;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    height: 100%;
+  }
+
+  .navbar-collapse.collapsing {
+    height: 100%;
+    left: -75%;
+    transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+    height: 100%;
+    left: 0;
+    transition: left 400ms ease-in-out;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+    transition: left 400ms ease-in;
+  }
+}
+
+span {
+  left: 0;
+  text-align: center;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  bottom: 0;
+}
+.img-thumbnail {
+  display: inline-block;
+}
+.img-thumbnail > div {
+  display: inline-block;
+  overflow: hidden;
+  height: 140px;
+  border-radius: 50%;
+}

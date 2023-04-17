@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top Header -->
+    <div class="container-fluid top-header">
+      <div class="row mx-3">
+        <div class="d-flex flex-row bd-highlight">
+          <div class="p-2 bd-highlight"><a href="#">Download App</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Cara Belanja</a></div>
+          <!-- <div class="p-2 bd-highlight"><a href="#">Tentang Kami</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Blog</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Karir</a></div> -->
+          <div class="p-2 bd-highlight"><a href="#">Menjadi Mitra UMKM</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3" href="#"
+          ><img class="img-fluid" src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-md-flex justify-content-around"
+          id="navbarSupportedContent"
+        >
+          <!-- Kategori dropdown -->
+          <div class="dropdown dropdown-kategori">
+            <button
+              class="btn btn-kategori"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Kategori
+            </button>
+            <ul
+              class="dropdown-menu dd-menu-kategori"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><a class="dropdown-item" href="#">Perlengkapan Kantor</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Peralatan Rumah Tangga</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Olahan Kuliner</a></li>
+              <li><a class="dropdown-item" href="#">Produk Kreatif</a></li>
+              <li><a class="dropdown-item" href="#">Industri Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Jasa</a></li>
+              <li><a class="dropdown-item" href="#">Asli Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Kurir Bangsa</a></li>
+            </ul>
+          </div>
+
+          <!-- search -->
+          <form action="pencarian.html" class="d-flex search-produk">
+            <div class="input-group mx-3">
+              <input
+                type="search"
+                id="search-produk"
+                class="form-control"
+                type="search"
+                placeholder="Cari produk umkm"
+                aria-label="Search"
+                autocomplete="off"
+                onfocus="showPopuler()"
+                oninput="hidePopuler()"
+                onblur="hidePopuler()"
+              />
+              <button class="btn bg-light border h-auto px-3 p-2" id="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div
+              class="pencarian-populer container position-absolute bg-body mt-5"
+            >
+              <div class="fw-6 m-md-3">Pencarian Populer</div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="d-flex">
+            <!-- cart dropdown -->
+            <div class="cart-and-notif d-flex">
+              <button
+                class="btn d-block d-md-none"
+                type="button"
+                onclick="window.location.href='keranjang.html';"
+              >
+                <img src="img/icon/navbar/cart.png" alt="" />
+              </button>
+              <div class="dropdown d-none d-md-block">
+                <button
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="img/icon/navbar/cart.png" alt="" />
+                </button>
+                <ul
+                  class="dropdown-menu cart-logged"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <div class="container px-2 overflow-auto cart-logged bg-body">
+                    <div class="sticky-top bg-body">
+                      <b class="fw-6">Keranjang</b>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div
+                      class="foot-cart row align-items-center justify-content-between w-100 mx-auto"
+                    >
+                      <div class="col-auto">Total (5) : Rp 100.000</div>
+                      <div class="col-auto">
+                        <a href="#">Lihat Keranjang</a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+
+            <!-- notifikasi -->
+            <div class="d-flex notifikasi-nav">
+              <button
+                class="btn d-block d-md-none"
+                type="button"
+                onclick="window.location.href='notifikasi.html';"
+              >
+                <img src="img/icon/navbar/Notif.png" alt="" />
+              </button>
+              <div class="dropdown d-none d-md-block">
+                <button
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="img/icon/navbar/Notif.png" alt="" />
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="container px-2 overflow-auto notifikasi bg-body">
+                    <div class="sticky-top bg-body">
+                      <b class="fw-6">Notifikasi</b>
+                    </div>
+                    <hr />
+                    <div class="row w-100 mx-auto">
+                      <div class="col-auto p-0">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <b class="fw-6">Selesaikan Pembayaran</b>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="content">
+                              Hai Laksa Ersa, pesanan kamu sebesar Rp 79.000
+                              belum dibayar. Segera Lakukan pembayaran sebelum
+                              19 Januari 2021...
+                            </small>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="time"
+                              >Senin, 18 Januari 2021 08:10</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- profile dropdown-->
+          <div class="profile-nav d-flex">
+            <button
+              class="btn p-0 d-block d-md-none"
+              type="button"
+              onclick="window.location.href='profile.html';"
+            >
+              <div class="btn-profile d-flex align-items-center">
+                <i
+                  class="fa fa-user-circle-o fa-2x mx-2"
+                  aria-hidden="true"
+                ></i>
+                <span>
+                  Laksa Ersa
+                </span>
+              </div>
+            </button>
+            <div class="dropdown d-none d-md-block">
+              <button
+                class="btn p-0"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="btn-profile d-flex align-items-center">
+                  <i
+                    class="fa fa-user-circle-o fa-2x mx-2"
+                    aria-hidden="true"
+                  ></i>
+                  <span>
+                    Laksa Ersa
+                  </span>
+                </div>
+              </button>
+              <ul
+                class="dropdown-menu profile-logged"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <div class="container profile-logged bg-body">
+                  <div
+                    class="d-flex align-items-center py-2 mb-2 border-bottom"
+                  >
+                    <div class="col-auto mx-2">
+                      <img src="img/icon/navbar/foto-profile.png" alt="" />
+                    </div>
+                    <div class="col fw-6">Laksa Ersa</div>
+                  </div>
+                  <a
+                    href="#"
+                    class="row d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Akun saya</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Pesanan saya</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Wishlist</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Ulasan</p>
+                    </div>
+                  </a>
+                  <a
+                    href="index.html"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Log out</p>
+                    </div>
+                  </a>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div class="container-fluid profile-mitra">
+      <!-- head -->
+      <div class="head container-fluid p-0">
+        <div class="row">
+          <div class="col banner-profile-mitra">
+            <img
+              class="img-fluid w-100"
+              src="img/profile-mitra/profile-mitra-banner.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          class="row justify-content-md-between align-items-center my-3 mx-3"
+        >
+          <div class="col-md">
+            <div class="row">
+              <div class="col-auto foto-profil">
+                <img
+                  class="rounded-circle img-fluid w-100"
+                  src="img/profile-mitra/foto-profile.png"
+                  alt=""
+                />
+              </div>
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <h2 class="fw-6 nama-toko">Sang Dewa</h2>
+                  </div>
+                  <!-- mitra penjual -->
+                  <div class="col-auto">
+                    <div class="row status-mitra penjual">
+                      <div class="col-auto pe-0">
+                        <img
+                          src="img/icon/profile-mitra/Mitra-penjual.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="col">Mitra Penjual</div>
+                    </div>
+                  </div>
+                  <!-- mitra pemerintah -->
+                  <div class="col-auto">
+                    <div class="row status-mitra pemerintah">
+                      <div class="col-auto pe-0">
+                        <img
+                          src="img/icon/profile-mitra/mitra-Pemerintah.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="col">Mitra Pemerintah</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-auto">
+                    <p class="gray">
+                      <img src="img/icon/Location.png" alt="" /> Jakarta Barat
+                    </p>
+                  </div>
+                  <div class="col">
+                    <p class="gray">
+                      <img src="img/icon/Follower.png" alt="" /> 100 pengikut
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div
+              class="row justify-content-md-end justify-content-center my-2 my-md-0"
+            >
+              <div class="col-auto">
+                <button
+                  class="btn p-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#bagikan"
+                >
+                  <img src="img/icon/Share.png" alt="" />
+                </button>
+              </div>
+              <div class="col-auto">
+                <button class="btn p-2">
+                  <img src="img/icon/chat-mini.png" alt="" /> Chat Mitra
+                </button>
+              </div>
+              <div class="col-auto">
+                <button class="btn p-2 px-4 btn-ikuti">
+                  <img src="img/icon/Follower-black.png" alt="" /> Ikuti
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-between rounded-3 border m-3">
+          <div class="col-md">
+            <div class="row my-3">
+              <div class="col">
+                <div class="row">
+                  <div class="col-md-7 col">
+                    <p class="gray">
+                      <img src="img/icon/Box.png" alt="" /> Produk
+                    </p>
+                  </div>
+                  <div class="col"><b class="fw-6">100</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col">
+                <div class="row">
+                  <div class="col-md-7 col">
+                    <p class="gray">
+                      <img src="img/icon/Check-Circle.png" alt="" /> Produk
+                      Terjual
+                    </p>
+                  </div>
+                  <div class="col"><b class="fw-6">300</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="row my-3">
+              <div class="col">
+                <div class="row">
+                  <div class="col-md-5 col">
+                    <p class="gray">
+                      <img src="img/icon/Clock.png" alt="" /> Terakhir Online
+                    </p>
+                  </div>
+                  <div class="col"><b class="fw-6">9 menit lalu</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col">
+                <div class="row">
+                  <div class="col-md-5 col">
+                    <p class="gray">
+                      <img
+                        src="img/icon/chat-mini.png"
+                        style="opacity: 0.6;"
+                        alt=""
+                      />
+                      Performa Chat
+                    </p>
+                  </div>
+                  <div class="col">
+                    <b class="fw-6">100% (Hitungan Cepat)</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row my-3">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <p class="gray">
+                      <img src="img/icon/Star.png" alt="" /> Ulasan
+                    </p>
+                  </div>
+                  <div class="col"><b class="fw-6">4.9 (280 ulasan)</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <p class="gray">
+                      <img src="img/icon/Bergabung.png" alt="" /> Bergabung
+                    </p>
+                  </div>
+                  <div class="col"><b class="fw-6">10 Januari 2020</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="nav border-top" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link p-3 active"
+              id="pills-beranda-tab"
+              data-bs-toggle="pill"
+              href="#pills-beranda"
+              role="tab"
+              aria-controls="pills-beranda"
+              aria-selected="true"
+              >Beranda</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link p-3"
+              id="pills-produk-tab"
+              data-bs-toggle="pill"
+              href="#pills-produk"
+              role="tab"
+              aria-controls="pills-produk"
+              aria-selected="false"
+              >Produk</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link p-3"
+              id="pills-ulasan-tab"
+              data-bs-toggle="pill"
+              href="#pills-ulasan"
+              role="tab"
+              aria-controls="pills-ulasan"
+              aria-selected="false"
+              >Ulasan</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- Modal bagikan -->
+      <div
+        class="modal fade"
+        id="bagikan"
+        tabindex="-1"
+        aria-labelledby="bagikanLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="bagikanLabel">
+                Bagikan
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row border rounded-3 py-2">
+                <div class="col">
+                  <p id="linkMitra">www.kartara.com/Sang-Dewa</p>
+                </div>
+                <div class="col-auto">
+                  <button
+                    class="btn p-0"
+                    onclick="CopyToClipboard('linkMitra')"
+                  >
+                    <img src="img/icon/profile-mitra/Salin.png" alt="" />
+                  </button>
+                </div>
+              </div>
+              <div class="row justify-content-center mt-3">
+                <div class="col-auto">
+                  <a href="#">
+                    <img
+                      src="img/icon/profile-mitra/Logo_Facebook.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-auto">
+                  <a href="#">
+                    <img src="img/icon/profile-mitra/Logo_Twitter.png" alt="" />
+                  </a>
+                </div>
+                <div class="col-auto">
+                  <a href="#">
+                    <img
+                      src="img/icon/profile-mitra/Logo_Whastapp.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-auto">
+                  <a href="#">
+                    <img src="img/icon/profile-mitra/Logo_Line.png" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row p-0">
+        <div class="col"></div>
+      </div>
+      <!-- body -->
+      <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="pills-beranda"
+          role="tabpanel"
+          aria-labelledby="pills-beranda-tab"
+        >
+          <!-- beranda -->
+          <div class="deskripsi container-fluid my-3 p-3">
+            <div class="row mb-2">
+              <div class="col"><h3 class="fw-6">Deskripsi Mitra</h3></div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>
+                  Kepuasan pelanggan adalah tujuan kami. <br />
+                  Kami selalu berusaha menjawab dan merespon pertanyaan secepat
+                  dan setahu kami.<br />
+                  Kami slalu mengusahakan mengirim barang di hari yang sma waktu
+                  pmesanan, termasuk hari minggu apaila tidak da halangan, dan
+                  apabila tidak bisa akan kami kirim hari berikutnya.<br />
+                  Barang yang ada di toko kami semuanya ready dan terjamin
+                  penyimpanannya.<br />
+                  Jgn sungkan untuk bertanya karena dengan bertanya kalian akan
+                  menemukan jawabanya.<br />
+                  Membeli berarti sudah setuju.<br />
+                  terima kasih😎<br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- produk terbaru -->
+          <div class="container-fluid table-produk my-5">
+            <div
+              class="head-produk d-flex justify-content-between align-items-end mb-3"
+            >
+              <h2 class="fw-6">Produk terbaru</h2>
+              <a href="#">Lihat Semua</a>
+            </div>
+            <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- semua produk -->
+          <div class="container-fluid table-produk my-5">
+            <div
+              class="head-produk d-flex justify-content-between align-items-end mb-3"
+            >
+              <h2 class="fw-6">Semua Produk</h2>
+            </div>
+            <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pills-produk"
+          role="tabpanel"
+          aria-labelledby="pills-produk-tab"
+        >
+          <!-- Produk -->
+          <div class="produk my-4">
+            <div class="d-flex flex-column flex-md-row align-items-start">
+              <div
+                class="etalase nav border rounded-3 flex-column me-md-3 me-0 my-2 my-md-0"
+                id="v-pills-tab"
+                role="tablist"
+                aria-orientation="vertical"
+              >
+                <b class="nav-link fw-6 border-bottom">Etalase</b>
+                <a
+                  class="nav-link active"
+                  id="v-pills-semua-produk-tab"
+                  data-bs-toggle="pill"
+                  href="#v-pills-semua-produk"
+                  role="tab"
+                  aria-controls="v-pills-semua-produk"
+                  aria-selected="true"
+                  >Semua Produk</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-keripik-pisang-tab"
+                  data-bs-toggle="pill"
+                  href="#v-pills-keripik-pisang"
+                  role="tab"
+                  aria-controls="v-pills-keripik-pisang"
+                  aria-selected="false"
+                  >Keripik Pisang</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-keripik-ubi-tab"
+                  data-bs-toggle="pill"
+                  href="#v-pills-keripik-ubi"
+                  role="tab"
+                  aria-controls="v-pills-keripik-ubi"
+                  aria-selected="false"
+                  >Keripik Ubi</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-keripik-kentang-tab"
+                  data-bs-toggle="pill"
+                  href="#v-pills-keripik-kentang"
+                  role="tab"
+                  aria-controls="v-pills-keripik-kentang"
+                  aria-selected="false"
+                  >Keripik Kentang</a
+                >
+              </div>
+              <div class="tab-content" id="v-pills-tabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="v-pills-semua-produk"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-semua-produk-tab"
+                >
+                  <!-- Semua produk -->
+                  <div class="container">
+                    <div
+                      class="head-hasil row justify-content-between text-center text-md-start"
+                    >
+                      <div class="col-md-5">
+                        <div class="row">
+                          <div class="col">
+                            <div class="input-group">
+                              <input
+                                type="search"
+                                placeholder="Cari"
+                                class="form-control"
+                                aria-label=""
+                              />
+                              <span class="input-group-text"
+                                ><button class="btn p-0">
+                                  <i
+                                    class="fa fa-search"
+                                    aria-hidden="true"
+                                  ></i></button
+                              ></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-auto">
+                        <div
+                          class="row align-items-center justify-content-between"
+                        >
+                          <div class="col-auto">
+                            <p>
+                              Urutkan
+                            </p>
+                          </div>
+                          <div class="col-auto">
+                            <select
+                              class="form-select select-sort-by"
+                              aria-label="Default select example"
+                            >
+                              <option selected value="1">Terbaru</option>
+                              <option value="2">Harga Tertinggi</option>
+                              <option value="3">Harga Terendah</option>
+                              <option value="4">Paling Banyak Terjual</option>
+                              <option value="5">Ulasan Paling Banyak</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row my-4">
+                      <div class="col">
+                        <p>Memperlihatkan 1 - 30 dari 100 produk</p>
+                      </div>
+                    </div>
+                    <!-- result galeri -->
+                    <div class="table-produk">
+                      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                        <div class="col item">
+                          <a href="#" class="card">
+                            <img
+                              src="img/pencarian/foto-produk.png"
+                              class="card-img-top"
+                            />
+                            <div class="card-body">
+                              <p class="card-title">Keripik Pisang</p>
+                              <p class="price">Rp 49.500</p>
+                              <div class="card-text">
+                                <p>
+                                  <i
+                                    class="fa fa-star checked"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span>4.6</span> | Terjual <span>100</span>
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                  <p class="loc">Jakarta Barat</p>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <button class="btn p-0 m-0" id="btn-wish">
+                            <i
+                              class="fa fa-heart-o wishlist-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </button>
+                        </div>
+                        <div class="col item">
+                          <a href="#" class="card">
+                            <img
+                              src="img/pencarian/foto-produk.png"
+                              class="card-img-top"
+                            />
+                            <div class="card-body">
+                              <p class="card-title">Keripik Pisang</p>
+                              <p class="price">Rp 49.500</p>
+                              <div class="card-text">
+                                <p>
+                                  <i
+                                    class="fa fa-star checked"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span>4.6</span> | Terjual <span>100</span>
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                  <p class="loc">Jakarta Barat</p>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <button class="btn p-0 m-0" id="btn-wish">
+                            <i
+                              class="fa fa-heart-o wishlist-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </button>
+                        </div>
+                        <div class="col item">
+                          <a href="#" class="card">
+                            <img
+                              src="img/pencarian/foto-produk.png"
+                              class="card-img-top"
+                            />
+                            <div class="card-body">
+                              <p class="card-title">Keripik Pisang</p>
+                              <p class="price">Rp 49.500</p>
+                              <div class="card-text">
+                                <p>
+                                  <i
+                                    class="fa fa-star checked"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span>4.6</span> | Terjual <span>100</span>
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                  <p class="loc">Jakarta Barat</p>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <button class="btn p-0 m-0" id="btn-wish">
+                            <i
+                              class="fa fa-heart-o wishlist-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </button>
+                        </div>
+                        <div class="col item">
+                          <a href="#" class="card">
+                            <img
+                              src="img/pencarian/foto-produk.png"
+                              class="card-img-top"
+                            />
+                            <div class="card-body">
+                              <p class="card-title">Keripik Pisang</p>
+                              <p class="price">Rp 49.500</p>
+                              <div class="card-text">
+                                <p>
+                                  <i
+                                    class="fa fa-star checked"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span>4.6</span> | Terjual <span>100</span>
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                  <p class="loc">Jakarta Barat</p>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <button class="btn p-0 m-0" id="btn-wish">
+                            <i
+                              class="fa fa-heart-o wishlist-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </button>
+                        </div>
+                        <div class="col item">
+                          <a href="#" class="card">
+                            <img
+                              src="img/pencarian/foto-produk.png"
+                              class="card-img-top"
+                            />
+                            <div class="card-body">
+                              <p class="card-title">Keripik Pisang</p>
+                              <p class="price">Rp 49.500</p>
+                              <div class="card-text">
+                                <p>
+                                  <i
+                                    class="fa fa-star checked"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span>4.6</span> | Terjual <span>100</span>
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                  <p class="loc">Jakarta Barat</p>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <button class="btn p-0 m-0" id="btn-wish">
+                            <i
+                              class="fa fa-heart-o wishlist-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
+                      <!-- Page nav -->
+                      <ul class="pagination justify-content-center my-5">
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#"
+                            ><i
+                              class="fa fa-chevron-left"
+                              aria-hidden="true"
+                            ></i
+                          ></a>
+                        </li>
+                        <li class="page-item active">
+                          <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">5</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">6</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">..</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">60</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#"
+                            ><i
+                              class="fa fa-chevron-right"
+                              aria-hidden="true"
+                            ></i
+                          ></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="v-pills-keripik-pisang"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-keripik-pisang-tab"
+                >
+                  ...
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="v-pills-keripik-ubi"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-keripik-ubi-tab"
+                >
+                  ...
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="v-pills-keripik-kentang"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-keripik-kentang-tab"
+                >
+                  ...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pills-ulasan"
+          role="tabpanel"
+          aria-labelledby="pills-ulasan-tab"
+        >
+          <!-- ulasan -->
+          <div class="ulasan-produk container-fluid my-3">
+            <div class="row border rounded-3">
+              <div class="col-md border-end">
+                <div class="row">
+                  <div class="col">
+                    <h3 class="fw-6 p-3">Kualitas Produk</h3>
+                  </div>
+                </div>
+                <!-- review summary -->
+                <div class="row">
+                  <div class="col-md-4">
+                    <!-- review summary info -->
+                    <div class="row text-center">
+                      <div class="col">
+                        <p><span class="num-rate fw-6">4.6</span>/5</p>
+                      </div>
+                    </div>
+                    <div class="row text-center">
+                      <div class="col">
+                        <i
+                          class="fa fa-star fa-lg checked"
+                          aria-hidden="true"
+                        ></i>
+                        <i
+                          class="fa fa-star fa-lg checked"
+                          aria-hidden="true"
+                        ></i>
+                        <i
+                          class="fa fa-star fa-lg checked"
+                          aria-hidden="true"
+                        ></i>
+                        <i
+                          class="fa fa-star fa-lg checked"
+                          aria-hidden="true"
+                        ></i>
+                        <i
+                          class="fa fa-star fa-lg checked"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </div>
+                    <div class="row text-center my-2">
+                      <div class="col">
+                        <p><span>300</span> ulasan</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- review summary detail -->
+                  <div class="col-md my-auto">
+                    <div class="row text-center">
+                      <div class="col-md">
+                        <div
+                          class="row my-2 align-items-center justify-content-around justify-content-md-start"
+                        >
+                          <div class="col-auto px-md-0">
+                            <p>
+                              <span>5 </span
+                              ><i
+                                class="fa fa-star checked"
+                                aria-hidden="true"
+                              ></i>
+                            </p>
+                          </div>
+                          <div class="col-7">
+                            <div class="progress" style="height: 4px;">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 80%; background-color: #ffbf4d;"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                          <div class="col-auto"><span>200</span></div>
+                        </div>
+                        <div
+                          class="row my-2 align-items-center justify-content-around justify-content-md-start"
+                        >
+                          <div class="col-auto px-md-0">
+                            <p>
+                              <span>4 </span
+                              ><i
+                                class="fa fa-star checked"
+                                aria-hidden="true"
+                              ></i>
+                            </p>
+                          </div>
+                          <div class="col-7">
+                            <div class="progress" style="height: 4px;">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 25%; background-color: #ffbf4d;"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                          <div class="col-auto"><span>40</span></div>
+                        </div>
+                        <div
+                          class="row my-2 align-items-center justify-content-around justify-content-md-start"
+                        >
+                          <div class="col-auto px-md-0">
+                            <p>
+                              <span>3 </span
+                              ><i
+                                class="fa fa-star checked"
+                                aria-hidden="true"
+                              ></i>
+                            </p>
+                          </div>
+                          <div class="col-7">
+                            <div class="progress" style="height: 4px;">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 15%; background-color: #ffbf4d;"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                          <div class="col-auto"><span>30</span></div>
+                        </div>
+                        <div
+                          class="row my-2 align-items-center justify-content-around justify-content-md-start"
+                        >
+                          <div class="col-auto px-md-0">
+                            <p>
+                              <span>2 </span
+                              ><i
+                                class="fa fa-star checked"
+                                aria-hidden="true"
+                              ></i>
+                            </p>
+                          </div>
+                          <div class="col-7">
+                            <div class="progress" style="height: 4px;">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 10%; background-color: #ffbf4d;"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                          <div class="col-auto"><span>20</span></div>
+                        </div>
+                        <div
+                          class="row my-2 align-items-center justify-content-around justify-content-md-start"
+                        >
+                          <div class="col-auto px-md-0">
+                            <p>
+                              <span>1 </span
+                              ><i
+                                class="fa fa-star checked ps-1"
+                                aria-hidden="true"
+                              ></i>
+                            </p>
+                          </div>
+                          <div class="col-7">
+                            <div class="progress" style="height: 4px;">
+                              <div
+                                class="progress-bar"
+                                role="progressbar"
+                                style="width: 5%; background-color: #ffbf4d;"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                          <div class="col-auto"><span>10</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col my-2 my-md-0">
+                <div class="row">
+                  <div class="col">
+                    <h3 class="fw-6 p-3">Galeri Foto Pembeli</h3>
+                  </div>
+                </div>
+                <div
+                  class="galeri-foto-pembeli row row-cols-2 row-cols-lg-6 g-2 g-lg-3 mb-2"
+                >
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#/" class="position-relative">
+                      <img
+                        class="img-fluid"
+                        src="img/profile-mitra/foto-pembeli.png"
+                        alt=""
+                      />
+                      <p class="text-center">
+                        Lihat Semua
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ulasan -->
+            <div class="filter-ulasan container-fluid my-4">
+              <div class="row border-bottom">
+                <div class="col">
+                  <ul class="nav" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link active"
+                        id="home-tab"
+                        data-bs-toggle="tab"
+                        href="#bintang5"
+                        role="tab"
+                        aria-controls="home"
+                        aria-selected="true"
+                        >5 <i class="fa fa-star checked" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="profile-tab"
+                        data-bs-toggle="tab"
+                        href="#bintang4"
+                        role="tab"
+                        aria-controls="profile"
+                        aria-selected="false"
+                        >4 <i class="fa fa-star checked" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="contact-tab"
+                        data-bs-toggle="tab"
+                        href="#bintang3"
+                        role="tab"
+                        aria-controls="contact"
+                        aria-selected="false"
+                        >3 <i class="fa fa-star checked" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="contact-tab"
+                        data-bs-toggle="tab"
+                        href="#bintang2"
+                        role="tab"
+                        aria-controls="contact"
+                        aria-selected="false"
+                        >2 <i class="fa fa-star checked" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="contact-tab"
+                        data-bs-toggle="tab"
+                        href="#bintang1"
+                        role="tab"
+                        aria-controls="contact"
+                        aria-selected="false"
+                        >1 <i class="fa fa-star checked" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                    <li class="nav-item align-self-center" role="presentation">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="denganMedia"
+                        />
+                        <label class="form-check-label" for="denganMedia">
+                          Dengan Media
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-auto m-md-auto my-2">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <p>Sort by:</p>
+                    </div>
+                    <div class="col-auto">
+                      <select
+                        class="form-select select-sort-by"
+                        aria-label="Default select example"
+                      >
+                        <option selected value="1">Ulasan Terbaik</option>
+                        <option value="2">Ulasan Terburuk</option>
+                        <option value="3">Terbaru</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- tabs ulasan -->
+              <div class="tab-content" id="tabsUlasan">
+                <div
+                  class="tab-pane fade show active"
+                  id="bintang5"
+                  role="tabpanel"
+                  aria-labelledby="all-tab"
+                >
+                  <div class="container-fluid">
+                    <div class="row my-4">
+                      <div class="col-md-auto my-2 px-0">
+                        <a href="#">
+                          <div class="row">
+                            <div class="col-10">
+                              <img
+                                class="rounded-3 img-fluid p-0"
+                                src="img/profile-mitra/keripik-ulasan.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="row my-2">
+                            <div class="col-10">
+                              <h4 class="fw-6">Keripik Pisang Sang Dewa</h4>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="col">
+                        <div class="row align-items-center">
+                          <div class="col-auto">
+                            <img
+                              class="img-fluid"
+                              src="img/profile-mitra/foto-user.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="col">
+                            <div class="row">
+                              <div class="col">
+                                <h4 class="fw-6">John Doe</h4>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <p class="date">2021-01-11 10:54</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row my-1">
+                          <div class="col">
+                            <i
+                              class="fa fa-star checked"
+                              aria-hidden="true"
+                            ></i>
+                            <i
+                              class="fa fa-star checked"
+                              aria-hidden="true"
+                            ></i>
+                            <i
+                              class="fa fa-star checked"
+                              aria-hidden="true"
+                            ></i>
+                            <i
+                              class="fa fa-star checked"
+                              aria-hidden="true"
+                            ></i>
+                            <i
+                              class="fa fa-star checked"
+                              aria-hidden="true"
+                            ></i>
+                          </div>
+                        </div>
+                        <div class="row my-1">
+                          <div class="col">
+                            <p>
+                              Paketnya udah dateng, isinya lumayan, bumbunya
+                              banyak adek aku suka banget jadi langsung
+                              dimakan:v
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <img
+                              class="img-fluid foto-ulasan"
+                              data-bs-toggle="modal"
+                              data-bs-target="#fotoProdukModal"
+                              src="img/profile-mitra/foto-produk.png"
+                              alt=""
+                            />
+                            <img
+                              class="img-fluid foto-ulasan"
+                              src="img/profile-mitra/foto-produk.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="row my-3">
+                          <div class="col">
+                            <button class="btn p-0">
+                              <i
+                                class="fa fa-thumbs-up like"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                            10
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col balasan-penjual px-3">
+                            <div class="row my-3">
+                              <div class="col">
+                                <b class="rounded-2 fw-6 penjual">Penjual</b>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <p class="">
+                                  Thankyouu atas penilaiannya chingu .. Semoga
+                                  kalian sehat terus ya.jangan sampai
+                                  ketinggalan setiap promo-promo KOREAN JJANG
+                                  setiap harinya, jangan sampai kelewatan yaa..
+                                  kita tunggu next ordernya
+                                </p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <small>2021-01-11 10:54</small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="bintang4"
+                  role="tabpanel"
+                  aria-labelledby="gambar-tab"
+                >
+                  bintang 4
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="bintang3"
+                  role="tabpanel"
+                  aria-labelledby="video-tab"
+                >
+                  bintang 3
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="bintang2"
+                  role="tabpanel"
+                  aria-labelledby="semua-bintang-tab"
+                >
+                  bintang 2
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="bintang1"
+                  role="tabpanel"
+                  aria-labelledby="contact-tab"
+                >
+                  bintang 1
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal foto produk -->
+    <div
+      class="modal fade"
+      id="fotoProdukModal"
+      tabindex="-1"
+      aria-labelledby="modalFotoProduk"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title fw-6" id="modalFotoProduk">
+              Kripik Pisang Sang Dewa
+            </h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="foto-produk-slider owl-carousel owl-theme">
+              <div class="item" data-hash="fp1">
+                <img
+                  class="img-fluid rounded-3"
+                  src="img/detail-produk/sangdewa.png"
+                  alt=""
+                />
+              </div>
+              <div class="item" data-hash="fp2">
+                <img
+                  class="img-fluid rounded-3"
+                  src="img/detail-produk/sangdewa.png"
+                  alt=""
+                />
+              </div>
+              <div class="item" data-hash="fp3">
+                <img
+                  class="img-fluid rounded-3"
+                  src="img/detail-produk/sangdewa.png"
+                  alt=""
+                />
+              </div>
+              <div class="item" data-hash="fp4">
+                <img
+                  class="img-fluid rounded-3"
+                  src="img/detail-produk/sangdewa.png"
+                  alt=""
+                />
+              </div>
+              <div class="item" data-hash="fp5">
+                <img
+                  class="img-fluid rounded-3"
+                  src="img/detail-produk/sangdewa.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <a href="#fp1">
+                  <img
+                    class="img-fluid rounded-3"
+                    src="img/detail-produk/sangdewa.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="#fp2">
+                  <img
+                    class="img-fluid rounded-3"
+                    src="img/detail-produk/sangdewa.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="#fp3">
+                  <img
+                    class="img-fluid rounded-3"
+                    src="img/detail-produk/sangdewa.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="#fp4">
+                  <img
+                    class="img-fluid rounded-3"
+                    src="img/detail-produk/sangdewa.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="#fp5">
+                  <img
+                    class="img-fluid rounded-3"
+                    src="img/detail-produk/sangdewa.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="row my-2 align-items-center">
+              <div class="col-auto">
+                <img
+                  class="img-fluid"
+                  src="img/profile-mitra/foto-user.png"
+                  alt=""
+                />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <h4 class="fw-6">John Doe</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p class="date">2021-01-11 10:54</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-1">
+              <div class="col">
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="row my-1">
+              <div class="col">
+                <p>
+                  Paketnya udah dateng, isinya lumayan, bumbunya banyak adek aku
+                  suka banget jadi langsung dimakan:v
+                </p>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col">
+                <button class="btn p-0">
+                  <i class="fa fa-thumbs-up like" aria-hidden="true"></i>
+                </button>
+                10
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container-fluid">
+      <div class="row mx-md-5 my-md-4 py-md-5 text-center text-md-start">
+        <div class="col-md my-3 my-md-0">
+          <h3>Kartara</h3>
+          <p>
+            <a href="#">Tentang Kartara</a>
+          </p>
+          <p>
+            <a href="#">Aturan Penggunaan</a>
+          </p>
+          <p>
+            <a href="#">Kebijakan Privasi</a>
+          </p>
+          <p>
+            <a href="#">Karir</a>
+          </p>
+          <p>
+            <a href="#">Blog</a>
+          </p>
+          <p>
+            <a href="#">FAQ</a>
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Bantuan</h3>
+          <p><a href="#">Pembayaran</a></p>
+          <p><a href="#">Pengiriman</a></p>
+          <p><a href="#">Status Pemesanan</a></p>
+          <p><a href="#">Pengembalian Produk</a></p>
+          <p><a href="#">Cara Berbelanja</a></p>
+          <p><a href="#">Hubungi Kami</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Mitra</h3>
+          <p><a href="#">Menjadi Mitra UMKM</a></p>
+          <p><a href="#">Cara Berjualan</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Customer Care</h3>
+          <p>
+            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> (+62) 819 -
+            9191 - 9181
+          </p>
+          <p>
+            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            cs@karyanoesantara.id
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Download Aplikasi</h3>
+          <p>
+            <a href="#"><img src="img/footer/Apple.png" alt="" /></a>
+          </p>
+          <p>
+            <a href="#"><img src="img/footer/Googleplay.png" alt="" /></a>
+          </p>
+        </div>
+      </div>
+      <div class="row mx-4 pb-3 d-flex text-md-start text-center">
+        <hr />
+        <div class="col-md">© Karya Noesantara 2021. Hak Cipta Dilindungi</div>
+        <div class="col-md text-md-end">
+          <span class="mx-3">Ikuti Kami</span>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Instagram.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Facebook.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_LinkedIn.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Twitter.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Youtube.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

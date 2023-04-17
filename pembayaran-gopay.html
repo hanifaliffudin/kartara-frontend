@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="pembayaran()" style="background-color: #f7f7f7;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid mx-3 text-md-start text-center">
+        <a class="navbar-brand m-3" href="#"
+          ><img src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div class="container pembayaran">
+      <h1 class="h1-kecil my-5">Order Detail</h1>
+      <div class="row">
+        <div class="col-md">
+          <!-- waktu batas pembayaran -->
+          <div
+            class="row justify-content-center waktu-batas-pembayaran p-2 rounded-3"
+          >
+            <div class="col-auto">
+              <img src="img/icon/pembayaran/clock.png" alt="" />
+            </div>
+            <div class="col-auto">
+              <p>
+                Menunggu Pembayaran
+              </p>
+            </div>
+            <div class="col-2">
+              <span id="timerPembayaran" class="fw-6">--:--:--</span>
+            </div>
+          </div>
+          <!--  -->
+          <div class="row bg-body my-4 rounded-3 p-3">
+            <div class="col">
+              <div class="row my-3">
+                <div class="col">
+                  <div class="row mb-2">
+                    <div class="col"><h3 class="fw-6">GoPay</h3></div>
+                  </div>
+                  <div class="row align-items-center mx-1 py-2 virtual-account">
+                    <div class="col-auto">
+                      <div class="row justify-content-center">
+                        <div class="col-auto">
+                          <img src="img/pembayaran/QR Code.png" alt="" />
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-auto">
+                          <img src="img/pembayaran/gopay.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col">
+                  <div class="row mb-2">
+                    <div class="col">
+                      <h3 class="fw-6">Total Pembayaran</h3>
+                    </div>
+                  </div>
+                  <div
+                    class="row align-items-center mx-1 py-2 total-pembayaran"
+                  >
+                    <div class="col-auto">
+                      <b class="fw-6"
+                        >Rp <span id="totalBayar">140.000</span></b
+                      >
+                    </div>
+                  </div>
+                  <div class="row justify-content-end">
+                    <div class="col-auto">
+                      <button
+                        class="btn btn-salin"
+                        onclick="CopyToClipboard('totalBayar')"
+                      >
+                        SALIN
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="row bg-body rounded-3 p-3">
+            <div class="col">
+              <div class="row my-3">
+                <div class="col"><h3 class="fw-6">Cara Pembayaran</h3></div>
+              </div>
+              <div class="row">
+                <div class="col bg-light mx-1 rounded-3">
+                  <div
+                    class="accordion accordion-flush"
+                    id="accordionFlushExample"
+                  >
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseOne"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseOne"
+                        >
+                          Petunjuk GoPay
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample"
+                      >
+                        <div class="accordion-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">1</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Buka App Gojek di ponsel.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">2</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Pilih “Pay” dan scan QR code di atas.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">3</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Tinjau pembayaran lalu ketuk “Konfirmasi &
+                                    Bayar”
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">4</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Masukkan kode PIN.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item p-3">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <p class="nomor">5</p>
+                                </div>
+                                <div class="col">
+                                  <p>
+                                    Transaksi selesai.
+                                  </p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-4 mx-3">
+          <!-- detail pesanan -->
+          <div class="row sticky-top detail-pembayaran p-3 rounded-3">
+            <div class="col">
+              <div class="row my-3">
+                <div class="col fw-6">
+                  <h3 class="fw-6">Detail Pembayaran</h3>
+                </div>
+              </div>
+              <div class="row total justify-content-between my-2">
+                <div class="col"><p>Total Harga (4 Barang)</p></div>
+                <div class="col-auto">Rp 100.000</div>
+              </div>
+              <div class="row total justify-content-between my-2">
+                <div class="col"><p>Total Ongkos Kirim</p></div>
+                <div class="col-auto">Rp 40.000</div>
+              </div>
+              <hr />
+              <div class="row justify-content-between my-2">
+                <div class="col"><h3 class="fw-6">Total</h3></div>
+                <div class="col-auto"><h3 class="fw-6">Rp 140.000</h3></div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-auto">
+                  <button class="btn p-0 btn-lihat-detail">
+                    <h4 class="fw-6">LIHAT DETAIL</h4>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="checkbox()">
+    <!-- Top Header -->
+    <div class="container-fluid top-header">
+      <div class="row mx-3">
+        <div class="d-flex flex-row bd-highlight">
+          <div class="p-2 bd-highlight"><a href="#">Download App</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Cara Belanja</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Menjadi Mitra UMKM</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid mx-3">
+        <a class="navbar-brand" href="#"
+          ><img class="img-fluid" src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-md-flex justify-content-around"
+          id="navbarSupportedContent"
+        >
+          <div class="dropdown dropdown-kategori">
+            <button
+              class="btn btn-kategori"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Kategori
+            </button>
+            <ul
+              class="dropdown-menu dd-menu-kategori"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><a class="dropdown-item" href="#">Perlengkapan Kantor</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Peralatan Rumah Tangga</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Olahan Kuliner</a></li>
+              <li><a class="dropdown-item" href="#">Produk Kreatif</a></li>
+              <li><a class="dropdown-item" href="#">Industri Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Jasa</a></li>
+              <li><a class="dropdown-item" href="#">Asli Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Kurir Bangsa</a></li>
+            </ul>
+          </div>
+          <form class="d-flex search-produk">
+            <input
+              id="search-produk"
+              class="form-control me-2"
+              type="search"
+              placeholder="Cari produk umkm"
+              aria-label="Search"
+              autocomplete="off"
+              onfocus="showPopuler()"
+              oninput="hidePopuler()"
+              onblur="hidePopuler()"
+            />
+            <button
+              class="btn my-auto"
+              type="submit"
+              style="margin-left: -40px; padding: 0; height: 30px;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="-2.5 -2.5 24 24"
+                width="24"
+                height="24"
+                preserveAspectRatio="xMinYMin"
+                class="icon__icon"
+              >
+                <path
+                  d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="pencarian-populer container position-absolute bg-body mt-5"
+            >
+              <div class="fw-bold m-3">Pencarian Populer</div>
+              <div class="row px-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="dropdown">
+            <button
+              class="btn"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="img/icon/navbar/cart.png" alt="" />
+            </button>
+            <ul class="dropdown-menu cart" aria-labelledby="dropdownMenuButton">
+              <div class="text-center px-1 py-3">
+                <img src="img/icon/navbar/Cart2.png" alt="" />
+                <p class="my-2"><b>Keranjang belanjaanmu kosong ☹️ </b></p>
+                <p>Yuk isi dengan beberapa produk menarik dari Kartara.</p>
+              </div>
+            </ul>
+          </div>
+          <div>
+            <button
+              onclick="window.location.href='login.html';"
+              class="btn btn-masuk-home"
+            >
+              Masuk
+            </button>
+            <button
+              onclick="window.location.href='daftar.html';"
+              class="btn btn-daftar"
+            >
+              Daftar
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- BBI -->
+    <div class="container-fluid bbi my-2 my-md-5">
+      <div class="row px-5">
+        <img class="img-fluid" src="img/pencarian/bbi.png" alt="" />
+      </div>
+    </div>
+
+    <!-- main search result -->
+    <div class="container-fluid px-5">
+      <div class="row">
+        <!-- Filter -->
+        <div class="col-3 filter d-none d-md-block">
+          <div class="row mb-2 justify-content-between align-items-center">
+            <div class="col">
+              <h1><b class="fw-6">Filter</b></h1>
+            </div>
+            <div class="col-auto">
+              <a class="filter-reset" href="#">Reset</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="accordion accordion-flush" id="penawaran">
+                <div class="accordion-item">
+                  <h4 class="accordion-header sub-filter" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-penawaran"
+                      aria-expanded="false"
+                      aria-controls="flush-penawaran"
+                    >
+                      Penawaran
+                    </button>
+                  </h4>
+                  <div
+                    id="flush-penawaran"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#penawaran"
+                  >
+                    <div class="accordion-body">
+                      <div class="form-check my-2">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="penawaran1"
+                        />
+                        <label for="penawaran1">
+                          Gratis Ongkir
+                        </label>
+                      </div>
+                      <div class="form-check my-2">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="penawaran2"
+                        />
+                        <label for="penawaran2">
+                          Pembelian Kelompok
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!--  -->
+          <div class="accordion accordion-flush" id="kategori">
+            <div class="accordion-item">
+              <h4 class="accordion-header sub-filter" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-kategori"
+                  aria-expanded="false"
+                  aria-controls="flush-kategori"
+                >
+                  Kategori
+                </button>
+              </h4>
+              <div
+                id="flush-kategori"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#kategori"
+              >
+                <div class="accordion-body pe-3">
+                  <div class="accordion accordion-flush" id="kategori1Flush">
+                    <div class="accordion-item expandable-checkbox">
+                      <div class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-kategori1"
+                          aria-expanded="false"
+                          aria-controls="flush-kategori1"
+                        >
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-main-option"
+                              type="checkbox"
+                              id="kategori1"
+                            />
+                            <label for="kategori1">
+                              Perlengkapan Kantor
+                            </label>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        id="flush-kategori1"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#kategori1Flush"
+                      >
+                        <div class="accordion-body ps-4">
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori1.1"
+                            />
+                            <label for="kategori1.1">
+                              Produk Kertas
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori1.2"
+                            />
+                            <label for="kategori1.2">
+                              Pita & Label
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori1.3"
+                            />
+                            <label for="kategori1.3">
+                              Tinta
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion-flush" id="kategori2Flush">
+                    <div class="accordion-item expandable-checkbox">
+                      <div class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-kategori2"
+                          aria-expanded="false"
+                          aria-controls="flush-kategori2"
+                        >
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-main-option"
+                              type="checkbox"
+                              id="kategori2"
+                            />
+                            <label class="text-start" for="kategori2 ">
+                              Peralatan Rumah Tangga
+                            </label>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        id="flush-kategori2"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#kategori2Flush"
+                      >
+                        <div class="accordion-body ps-4">
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori2.1"
+                            />
+                            <label for="kategori2.1">
+                              Alat Kebersihan
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori2.2"
+                            />
+                            <label for="kategori2.2">
+                              Alat Penerangan
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori2.3"
+                            />
+                            <label for="kategori2.3">
+                              Peralatan Dapur
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori2.4"
+                            />
+                            <label for="kategori2.4">
+                              Perlengkapan Lainnya
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion-flush" id="kategori3Flush">
+                    <div class="accordion-item expandable-checkbox">
+                      <div class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-kategori3"
+                          aria-expanded="false"
+                          aria-controls="flush-kategori3"
+                        >
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-main-option"
+                              type="checkbox"
+                              id="kategori3"
+                            />
+                            <label for="kategori3">
+                              Olahan Kuliner
+                            </label>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        id="flush-kategori3"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#kategori3Flush"
+                      >
+                        <div class="accordion-body ps-4">
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori3.1"
+                            />
+                            <label for="kategori3.1">
+                              Bumbu
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori3.2"
+                            />
+                            <label for="kategori3.2">
+                              Makanan
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori3.3"
+                            />
+                            <label for="kategori3.3">
+                              Camilan & Oleh - Oleh
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori3.4"
+                            />
+                            <label for="kategori3.4">
+                              Bahan Mentah
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori3.5"
+                            />
+                            <label for="kategori3.5">
+                              Minuman
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion-flush" id="kategori4Flush">
+                    <div class="accordion-item expandable-checkbox">
+                      <div class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-kategori4"
+                          aria-expanded="false"
+                          aria-controls="flush-kategori4"
+                        >
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-main-option"
+                              type="checkbox"
+                              id="kategori4"
+                            />
+                            <label class="text-start" for="kategori4 ">
+                              Produk Kreatif
+                            </label>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        id="flush-kategori4"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#kategori4Flush"
+                      >
+                        <div class="accordion-body ps-4">
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori4.1"
+                            />
+                            <label for="kategori4.1">
+                              Batik
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori4.2"
+                            />
+                            <label for="kategori4.2">
+                              Aksesoris Kreatif
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori4.3"
+                            />
+                            <label for="kategori4.3">
+                              Dekorasi & Hiasan
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion-flush" id="kategori5Flush">
+                    <div class="accordion-item expandable-checkbox">
+                      <div class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-kategori5"
+                          aria-expanded="false"
+                          aria-controls="flush-kategori5"
+                        >
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-main-option"
+                              type="checkbox"
+                              id="kategori5"
+                            />
+                            <label class="text-start" for="kategori5 ">
+                              Industri Fashion
+                            </label>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        id="flush-kategori5"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#kategori5Flush"
+                      >
+                        <div class="accordion-body ps-4">
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori5.1"
+                            />
+                            <label for="kategori5.1">
+                              Tekstil
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori5.2"
+                            />
+                            <label for="kategori5.2">
+                              Alas Kaki
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori5.3"
+                            />
+                            <label for="kategori5.3">
+                              Kosmetik
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori5.4"
+                            />
+                            <label for="kategori5.4">
+                              Tas
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori5.5"
+                            />
+                            <label for="kategori5.5">
+                              Topi
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion-flush" id="kategori6Flush">
+                    <div class="accordion-item expandable-checkbox">
+                      <div class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-kategori6"
+                          aria-expanded="false"
+                          aria-controls="flush-kategori6"
+                        >
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-main-option"
+                              type="checkbox"
+                              id="kategori6"
+                            />
+                            <label class="text-start" for="kategori6 ">
+                              Jasa
+                            </label>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        id="flush-kategori6"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#kategori6Flush"
+                      >
+                        <div class="accordion-body ps-4">
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori6.1"
+                            />
+                            <label for="kategori6.1">
+                              Jasa Pelatihan
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion-flush" id="kategori7Flush">
+                    <div class="accordion-item expandable-checkbox">
+                      <div class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-kategori7"
+                          aria-expanded="false"
+                          aria-controls="flush-kategori7"
+                        >
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-main-option"
+                              type="checkbox"
+                              id="kategori7"
+                            />
+                            <label class="text-start" for="kategori7 ">
+                              Furnitur
+                            </label>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        id="flush-kategori7"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#kategori7Flush"
+                      >
+                        <div class="accordion-body ps-4">
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.1"
+                            />
+                            <label for="kategori7.1">
+                              Meja Sekolah
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.2"
+                            />
+                            <label for="kategori7.2">
+                              Meja Kerja
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.3"
+                            />
+                            <label for="kategori7.3">
+                              Kursi Sekolah
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.4"
+                            />
+                            <label for="kategori7.4">
+                              Kursi Kerja
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.5"
+                            />
+                            <label for="kategori7.5">
+                              Counter
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.6"
+                            />
+                            <label for="kategori7.6">
+                              Sofa
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.7"
+                            />
+                            <label for="kategori7.7">
+                              Workstation
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.8"
+                            />
+                            <label for="kategori7.8">
+                              CPU Tray
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.9"
+                            />
+                            <label for="kategori7.9">
+                              Rak & Lemari
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.10"
+                            />
+                            <label for="kategori7.10">
+                              Loker
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.11"
+                            />
+                            <label for="kategori7.11">
+                              Papan
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.12"
+                            />
+                            <label for="kategori7.12">
+                              Tempat Tidur
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori7.13"
+                            />
+                            <label for="kategori7.13">
+                              Laci Drawer
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion-flush" id="kategori8Flush">
+                    <div class="accordion-item expandable-checkbox">
+                      <div class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-kategori8"
+                          aria-expanded="false"
+                          aria-controls="flush-kategori8"
+                        >
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-main-option"
+                              type="checkbox"
+                              id="kategori8"
+                            />
+                            <label for="kategori8">
+                              Asli Indonesia
+                            </label>
+                          </div>
+                        </button>
+                      </div>
+                      <div
+                        id="flush-kategori8"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#kategori8Flush"
+                      >
+                        <div class="accordion-body ps-4">
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori8.1"
+                            />
+                            <label for="kategori8.1">
+                              Elektronik
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori8.2"
+                            />
+                            <label for="kategori8.2">
+                              Produk IT
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori8.3"
+                            />
+                            <label for="kategori8.3">
+                              Smartphone
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori8.4"
+                            />
+                            <label for="kategori8.4">
+                              Mini Notebook
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori8.5"
+                            />
+                            <label for="kategori8.5">
+                              Laptop
+                            </label>
+                          </div>
+                          <div class="form-check my-2">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              id="kategori8.6"
+                            />
+                            <label for="kategori8.6">
+                              Printer
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion accordion-flush position-relative" id="brand">
+            <div class="accordion-item">
+              <h4 class="accordion-header sub-filter" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-brand"
+                  aria-expanded="false"
+                  aria-controls="flush-brand"
+                >
+                  Brand
+                </button>
+              </h4>
+              <div
+                id="flush-brand"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#brand"
+              >
+                <div class="accordion-body">
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="brand1"
+                    />
+                    <label for="brand1">
+                      SABA (5)
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="brand2"
+                    />
+                    <label for="brand2">
+                      bonis (5)
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="brand3"
+                    />
+                    <label for="brand3">
+                      Golden Aroma food indonesia (5)
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="brand4"
+                    />
+                    <label for="brand4">
+                      no brand (5)
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="brand5"
+                    />
+                    <label for="brand5">
+                      Raden Snack (5)
+                    </label>
+                  </div>
+                  <button class="btn lihat-semua-btn">Lihat Semua</button>
+                  <div class="container lihat-semua-popup brand">
+                    <div
+                      class="row py-2 justify-content-between align-items-center border-bottom"
+                    >
+                      <div class="col-auto fw-bold">Brand</div>
+                      <div class="col">
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control p-2 bg-light"
+                            placeholder="Cari brand"
+                            style="border: none;"
+                          />
+                          <button
+                            class="input-group-text"
+                            style="border: none;"
+                            id=""
+                          >
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-auto p-0">
+                        <button
+                          type="button"
+                          class="btn-close"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                    </div>
+                    <div class="row list">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">Riwayat</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="sangDewa"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="sangDewa"
+                                  >Sang Dewa (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="anekaKripik"
+                                  value="option2"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="anekaKripik"
+                                  >Aneka Kripik (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="bananachips"
+                                  value="option"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="bananachips"
+                                  >Banana Chips (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="snackIdola"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="snackIdola"
+                                  >Snack Idola (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">A</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="abahUtung"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="abahUtung"
+                                  >Abah Utung (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Afachery"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Afachery"
+                                  >Afachery (2)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Ainun"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Ainun"
+                                  >Ainun (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Alfamart"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Alfamart"
+                                  >Alfamart (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">B</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Baring"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="Baring"
+                                  >Baring Chips (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Banana"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Banana"
+                                  >Banana (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">C</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Cakra"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="Cakra"
+                                  >Cakra (20)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">D</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Dumdum"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="Dumdum"
+                                  >Dum Dum (1)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">A</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="abahUtung"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="abahUtung"
+                                  >Abah Utung (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Afachery"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Afachery"
+                                  >Afachery (2)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Ainun"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Ainun"
+                                  >Ainun (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Alfamart"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Alfamart"
+                                  >Alfamart (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">A</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="abahUtung"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="abahUtung"
+                                  >Abah Utung (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Afachery"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Afachery"
+                                  >Afachery (2)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Ainun"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Ainun"
+                                  >Ainun (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Alfamart"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Alfamart"
+                                  >Alfamart (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">A</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="abahUtung"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="abahUtung"
+                                  >Abah Utung (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Afachery"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Afachery"
+                                  >Afachery (2)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Ainun"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Ainun"
+                                  >Ainun (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Alfamart"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Alfamart"
+                                  >Alfamart (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="accordion accordion-flush position-relative"
+            id="lokasiToko"
+          >
+            <div class="accordion-item">
+              <h4 class="accordion-header sub-filter" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-lokasiToko"
+                  aria-expanded="false"
+                  aria-controls="flush-lokasiToko"
+                >
+                  Lokasi Toko
+                </button>
+              </h4>
+              <div
+                id="flush-lokasiToko"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#lokasiToko"
+              >
+                <div class="accordion-body">
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="lokasiToko1"
+                    />
+                    <label for="lokasiToko1">
+                      Jabodetabek
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="lokasiToko2"
+                    />
+                    <label for="lokasiToko2">
+                      Jakarta
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="lokasiToko3"
+                    />
+                    <label for="lokasiToko3">
+                      Medan
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="lokasiToko4"
+                    />
+                    <label for="lokasiToko4">
+                      Surabaya
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="lokasiToko5"
+                    />
+                    <label for="brand5">
+                      Bandung
+                    </label>
+                  </div>
+                  <button class="btn lihat-semua-btn">Lihat Semua</button>
+                  <div class="container lihat-semua-popup lokasi-toko">
+                    <div
+                      class="row py-2 justify-content-between align-items-center border-bottom"
+                    >
+                      <div class="col-auto fw-bold">Lokasi</div>
+                      <div class="col">
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control p-2 bg-light"
+                            placeholder="Cari brand"
+                            style="border: none;"
+                          />
+                          <button
+                            class="input-group-text"
+                            style="border: none;"
+                            id=""
+                          >
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-auto p-0">
+                        <button
+                          type="button"
+                          class="btn-close"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                    </div>
+                    <div class="row list">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">Riwayat</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="sangDewa"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="sangDewa"
+                                  >Sang Dewa (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="anekaKripik"
+                                  value="option2"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="anekaKripik"
+                                  >Aneka Kripik (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="bananachips"
+                                  value="option"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="bananachips"
+                                  >Banana Chips (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="snackIdola"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="snackIdola"
+                                  >Snack Idola (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">A</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="abahUtung"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="abahUtung"
+                                  >Abah Utung (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Afachery"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Afachery"
+                                  >Afachery (2)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Ainun"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Ainun"
+                                  >Ainun (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Alfamart"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Alfamart"
+                                  >Alfamart (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">B</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Baring"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="Baring"
+                                  >Baring Chips (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Banana"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Banana"
+                                  >Banana (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">C</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Cakra"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="Cakra"
+                                  >Cakra (20)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">D</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Dumdum"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="Dumdum"
+                                  >Dum Dum (1)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">A</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="abahUtung"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="abahUtung"
+                                  >Abah Utung (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Afachery"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Afachery"
+                                  >Afachery (2)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Ainun"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Ainun"
+                                  >Ainun (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Alfamart"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Alfamart"
+                                  >Alfamart (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">A</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="abahUtung"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="abahUtung"
+                                  >Abah Utung (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Afachery"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Afachery"
+                                  >Afachery (2)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Ainun"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Ainun"
+                                  >Ainun (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Alfamart"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Alfamart"
+                                  >Alfamart (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="row my-2">
+                              <div class="col huruf-depan">A</div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="abahUtung"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="abahUtung"
+                                  >Abah Utung (1)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Afachery"
+                                  value="option2"
+                                />
+                                <label class="form-check-label" for="Afachery"
+                                  >Afachery (2)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Ainun"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Ainun"
+                                  >Ainun (5)</label
+                                >
+                              </div>
+                              <div class="form-check col">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Alfamart"
+                                  value="option"
+                                />
+                                <label class="form-check-label" for="Alfamart"
+                                  >Alfamart (2)</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion accordion-flush" id="harga">
+            <div class="accordion-item">
+              <h4 class="accordion-header sub-filter" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-harga"
+                  aria-expanded="false"
+                  aria-controls="flush-harga"
+                >
+                  Harga
+                </button>
+              </h4>
+              <div
+                id="flush-harga"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#harga"
+              >
+                <div class="accordion-body">
+                  <div class="input-group my-3">
+                    <span class="input-group-text">Rp</span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Harga Minimum"
+                    />
+                  </div>
+                  <div class="input-group my-3">
+                    <span class="input-group-text">Rp</span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Harga Maksimum"
+                    />
+                  </div>
+                  <button class="btn w-100 orange-btn">
+                    Terapkan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion accordion-flush" id="penilaian">
+            <div class="accordion-item">
+              <h4 class="accordion-header sub-filter" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-penilaian"
+                  aria-expanded="false"
+                  aria-controls="flush-penilaian"
+                >
+                  Penilaian
+                </button>
+              </h4>
+              <div
+                id="flush-penilaian"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#penilaian"
+              >
+                <div class="accordion-body">
+                  <div class="penilaian">
+                    <div class="my-2">
+                      <a href="#">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                      </a>
+                    </div>
+                    <div class="my-2">
+                      <a href="#">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span>ke atas</span>
+                      </a>
+                    </div>
+                    <div class="my-2">
+                      <a href="#">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span>ke atas</span>
+                      </a>
+                    </div>
+                    <div class="my-2">
+                      <a href="#">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span>ke atas</span>
+                      </a>
+                    </div>
+                    <div class="my-2">
+                      <a href="#">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span class="fa fa-star-o yellow"></span>
+                        <span>ke atas</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion accordion-flush" id="pengiriman">
+            <div class="accordion-item">
+              <h4 class="accordion-header sub-filter" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-pengiriman"
+                  aria-expanded="false"
+                  aria-controls="flush-pengiriman"
+                >
+                  Pengiriman
+                </button>
+              </h4>
+              <div
+                id="flush-pengiriman"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#pengiriman"
+              >
+                <div class="accordion-body">
+                  <div class="pengiriman">
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="pengiriman1"
+                      />
+                      <label for="pengiriman1">
+                        JNE
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="pengiriman2"
+                      />
+                      <label for="pengiriman2">
+                        Pos Indonesia
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="pengiriman3"
+                      />
+                      <label for="pengiriman3">
+                        J&T
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="pengiriman4"
+                      />
+                      <label for="pengiriman4">
+                        SiCepat
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="pengiriman5"
+                      />
+                      <label for="pengiriman5">
+                        TIKI
+                      </label>
+                    </div>
+                    <button class="btn lihat-semua-btn">Lihat Semua</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion accordion-flush" id="jenisToko">
+            <div class="accordion-item">
+              <h4 class="accordion-header sub-filter" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-jenisToko"
+                  aria-expanded="false"
+                  aria-controls="flush-jenisToko"
+                >
+                  Jenis Toko
+                </button>
+              </h4>
+              <div
+                id="flush-jenisToko"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#jenisToko"
+              >
+                <div class="accordion-body">
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="jenisToko1"
+                    />
+                    <label for="jenisToko1">
+                      Power Merchant
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="jenisToko2"
+                    />
+                    <label for="jenisToko2">
+                      Power Merchant
+                    </label>
+                  </div>
+                  <div class="form-check my-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="jenisToko3"
+                    />
+                    <label for="jenisToko3">
+                      Power Merchant
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+        <!-- hasil pencarian -->
+        <div class="col-md-9">
+          <div
+            class="head-hasil row align-items-center justify-content-between text-center text-md-start"
+          >
+            <div class="col-md">
+              <p>
+                Hasil pencarian untuk “<span class="searched"
+                  >keripik pisang</span
+                >”
+              </p>
+            </div>
+            <div class="col-auto p-0">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <p>
+                    Urutkan
+                  </p>
+                </div>
+                <div class="col-auto">
+                  <select
+                    class="form-select select-sort-by"
+                    aria-label="Default select example"
+                  >
+                    <option selected value="1">Terbaru</option>
+                    <option value="2">Harga Tertinggi</option>
+                    <option value="3">Harga Terendah</option>
+                    <option value="4">Paling Banyak Terjual</option>
+                    <option value="5">Ulasan Paling Banyak</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- result galeri -->
+          <div class="table-produk">
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 my-2">
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col item">
+                <a href="#" class="card">
+                  <img
+                    src="img/pencarian/foto-produk.png"
+                    class="card-img-top"
+                  />
+                  <div class="card-body">
+                    <p class="card-title">Keripik Pisang</p>
+                    <p class="price">Rp 49.500</p>
+                    <div class="card-text">
+                      <p>
+                        <i class="fa fa-star checked" aria-hidden="true"></i>
+                        <span>4.6</span> | Terjual <span>100</span>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <p class="loc">Jakarta Barat</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <button class="btn p-0 m-0" id="btn-wish">
+                  <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Page nav -->
+            <ul class="pagination justify-content-center my-5">
+              <li class="page-item disabled">
+                <a class="page-link" href="#"
+                  ><i class="fa fa-chevron-left" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
+              <li class="page-item"><a class="page-link" href="#">..</a></li>
+              <li class="page-item"><a class="page-link" href="#">60</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#"
+                  ><i class="fa fa-chevron-right" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container-fluid">
+      <div class="row mx-md-4 my-md-4 py-md-5 text-center text-md-start">
+        <div class="col-md my-3 my-md-0">
+          <h3>Kartara</h3>
+          <p>
+            <a href="#">Tentang Kartara</a>
+          </p>
+          <p>
+            <a href="#">Aturan Penggunaan</a>
+          </p>
+          <p>
+            <a href="#">Kebijakan Privasi</a>
+          </p>
+          <p>
+            <a href="#">Karir</a>
+          </p>
+          <p>
+            <a href="#">Blog</a>
+          </p>
+          <p>
+            <a href="#">FAQ</a>
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Bantuan</h3>
+          <p><a href="#">Pembayaran</a></p>
+          <p><a href="#">Pengiriman</a></p>
+          <p><a href="#">Status Pemesanan</a></p>
+          <p><a href="#">Pengembalian Produk</a></p>
+          <p><a href="#">Cara Berbelanja</a></p>
+          <p><a href="#">Hubungi Kami</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Mitra</h3>
+          <p><a href="#">Menjadi Mitra UMKM</a></p>
+          <p><a href="#">Cara Berjualan</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Customer Care</h3>
+          <p>
+            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> (+62) 819 -
+            9191 - 9181
+          </p>
+          <p>
+            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            cs@karyanoesantara.id
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Download Aplikasi</h3>
+          <p>
+            <a href="#"><img src="img/footer/Apple.png" alt="" /></a>
+          </p>
+          <p>
+            <a href="#"><img src="img/footer/Googleplay.png" alt="" /></a>
+          </p>
+        </div>
+      </div>
+      <div class="row mx-4 pb-3 d-flex text-md-start text-center">
+        <hr />
+        <div class="col-md">© Karya Noesantara 2021. Hak Cipta Dilindungi</div>
+        <div class="col-md text-md-end">
+          <span class="mx-3">Ikuti Kami</span>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Instagram.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Facebook.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_LinkedIn.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Twitter.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Youtube.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

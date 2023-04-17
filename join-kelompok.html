@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-light">
+    <!-- Top Header -->
+    <div class="container-fluid top-header">
+      <div class="d-flex flex-row bd-highlight">
+        <div class="p-2 bd-highlight"><a href="#">Download App</a></div>
+        <div class="p-2 bd-highlight d-none d-md-block">
+          <a href="#">Cara Belanja</a>
+        </div>
+        <div class="p-2 bd-highlight d-none d-md-block">
+          <a href="#">Menjadi Mitra UMKM</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <!-- Bottom Navbar -->
+    <nav class="navbar navbar-mobile navbar-expand d-md-none fixed-bottom">
+      <ul class="navbar-nav nav-justified w-100">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <div class="row">
+              <div class="col">
+                <img src="img/icon/navbar/Home.png" alt="" />
+              </div>
+            </div>
+            <div class="row"><div class="col">Beranda</div></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="keranjang.html" class="nav-link">
+            <div class="row">
+              <div class="col">
+                <img src="img/icon/navbar/Cart-black.png" alt="" />
+              </div>
+            </div>
+            <div class="row"><div class="col">Keranjang</div></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <div class="row">
+              <div class="col">
+                <img src="img/icon/navbar/Chat.png" alt="" />
+              </div>
+            </div>
+            <div class="row"><div class="col">Chat</div></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="profile.html" class="nav-link">
+            <div class="row">
+              <div class="col">
+                <img src="img/icon/navbar/Account.png" alt="" />
+              </div>
+            </div>
+            <div class="row"><div class="col">Profile</div></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="navbar sticky-top navbar-expand-lg d-none d-md-block">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3" href="#"
+          ><img class="img-fluid" src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-md-flex justify-content-around"
+          id="navbarSupportedContent"
+        >
+          <div class="dropdown dropdown-kategori d-none d-md-block">
+            <button
+              class="btn btn-kategori"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Kategori
+            </button>
+            <ul
+              class="dropdown-menu dd-menu-kategori"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><a class="dropdown-item" href="#">Perlengkapan Kantor</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Peralatan Rumah Tangga</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Olahan Kuliner</a></li>
+              <li><a class="dropdown-item" href="#">Produk Kreatif</a></li>
+              <li><a class="dropdown-item" href="#">Industri Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Jasa</a></li>
+              <li><a class="dropdown-item" href="#">Asli Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Kurir Bangsa</a></li>
+            </ul>
+          </div>
+          <form
+            action="pencarian.html"
+            class="d-flex search-produk p-2 py-md-0"
+          >
+            <input
+              id="search-produk"
+              class="form-control me-2"
+              type="search"
+              placeholder="Cari produk umkm"
+              aria-label="Search"
+              autocomplete="off"
+              onfocus="showPopuler()"
+              oninput="hidePopuler()"
+              onblur="hidePopuler()"
+            />
+            <button class="btn my-auto" type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="-2.5 -2.5 24 24"
+                width="24"
+                height="24"
+                preserveAspectRatio="xMinYMin"
+                class="icon__icon"
+              >
+                <path
+                  d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="pencarian-populer container position-absolute bg-body mt-5"
+            >
+              <div class="fw-bold m-md-3">Pencarian Populer</div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="dropdown d-none d-md-block p-2 py-md-0">
+            <button
+              class="btn"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="img/icon/navbar/cart.png" alt="" />
+            </button>
+            <ul class="dropdown-menu cart" aria-labelledby="dropdownMenuButton">
+              <div class="text-center px-1 py-3">
+                <img src="img/icon/navbar/Cart2.png" alt="" />
+                <p class="my-2"><b>Keranjang belanjaanmu kosong ☹️ </b></p>
+                <p>Yuk isi dengan beberapa produk menarik dari Kartara.</p>
+              </div>
+            </ul>
+          </div>
+          <div class="p-2 py-md-0">
+            <button
+              onclick="window.location.href='login.html';"
+              class="btn btn-masuk-home mb-2 mb-md-0"
+            >
+              Masuk
+            </button>
+            <button
+              onclick="window.location.href='daftar.html';"
+              class="btn btn-daftar"
+            >
+              Daftar
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div class="container-fluid join-kelompok">
+      <div class="row my-5 mx-3">
+        <div class="col-3 mx-3 daftar-anggota">
+          <div class="row bg-body rounded-3">
+            <div class="col p-3">
+              <div class="row my-3">
+                <div class="col">
+                  <h1 class="h1-kecil text-center">
+                    Daftar Anggota
+                  </h1>
+                </div>
+              </div>
+              <div class="row my-3">
+                <div class="col">
+                  <div class="d-flex">
+                    <img
+                      class="foto-profil"
+                      src="img/status-pembelian-kelompok/foto-profile.png"
+                      alt=""
+                    />
+                    <img
+                      class="foto-profil"
+                      src="img/status-pembelian-kelompok/foto-profile.png"
+                      alt=""
+                    />
+                    <img
+                      class="foto-profil"
+                      src="img/status-pembelian-kelompok/foto-profile.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row border rounded-3 p-1 m-0 my-3">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      Gaes, yuk ikutan beli Keripik ini biar dapat harga murah
+                      nihhh
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                      <span class="gray">15 Februari pukul 11:55</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="row my-2">
+                    <div class="col-7 gray">Sisa Waktu</div>
+                    <div class="col">18 : 20 :01</div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col-7 gray">Target</div>
+                    <div class="col">20</div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col-7 gray">Tercapai</div>
+                    <div class="col">1</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-3 d-md-flex d-none">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <button class="btn p-0">
+                        <img
+                          src="img/icon/detail-produk/Logo_Facebook.png"
+                          alt=""
+                        />
+                      </button>
+                      <button class="btn p-0">
+                        <img
+                          src="img/icon/detail-produk/Logo_Twitter.png"
+                          alt=""
+                        />
+                      </button>
+                      <button class="btn p-0">
+                        <img
+                          src="img/icon/detail-produk/Logo_Whastapp.png"
+                          alt=""
+                        />
+                      </button>
+                      <button class="btn p-0">
+                        <img
+                          src="img/icon/detail-produk/Logo_Line.png"
+                          alt=""
+                        />
+                      </button>
+                      <button onclick="openShareLink()" class="btn p-0">
+                        <img src="img/icon/detail-produk/Link.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row bagikan-link p-2">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col-auto p-0">
+                          <input
+                            class="form-control w-auto"
+                            type="text"
+                            value="https://karyanoesantara.id/kartara"
+                            id="linkProduk"
+                            disabled
+                          />
+                        </div>
+                        <div class="col-auto">
+                          <button
+                            class="btn border"
+                            onclick="CopyToClipboard('linkProduk')"
+                          >
+                            Salin
+                          </button>
+                        </div>
+                        <div class="container modal-simpan modal-salin">
+                          <div class="row align-items-center py-2">
+                            <div class="col-auto">
+                              <i
+                                class="fa fa-exclamation-circle fa-lg"
+                                aria-hidden="true"
+                              ></i>
+                              Berhasil menyalin tautan produk berhasil disimpan
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col daftar-produk mx-3">
+          <div class="row bg-body rounded-3">
+            <div class="col p-3">
+              <div class="row my-3">
+                <div class="col">
+                  <h1 class="h1-kecil text-center">Daftar Produk</h1>
+                </div>
+              </div>
+              <div class="row my-3">
+                <div class="col">
+                  <table class="table table-borderless text-center">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-start">Produk</th>
+                        <th scope="col">Target</th>
+                        <th scope="col">Tercapai</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="row my-2">
+                            <div class="col-auto">
+                              <img
+                                class="foto-produk"
+                                src="img/sangdewa.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="col-auto text-start">
+                              <div class="row">
+                                <div class="col">
+                                  <h4>Kripik Pisang Original</h4>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <div class="row">
+                                    <div class="col">
+                                      <small class="jenis-harga"
+                                        >Harga Pembelian Mandiri</small
+                                      >
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col price">Rp 30.000</div>
+                                  </div>
+                                </div>
+                                <div class="col-auto">
+                                  <div class="row">
+                                    <div class="col">
+                                      <small class="jenis-harga"
+                                        >Harga <b>Pembelian Kelompok</b></small
+                                      >
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col price team">Rp 10.000</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>4</td>
+                        <td>
+                          <button
+                            class="btn orange-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#tambahKeranjang"
+                          >
+                            Beli Sekarang
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal login -->
+      <div
+        class="modal fade"
+        id="modalLogin"
+        tabindex="-1"
+        aria-labelledby="modalLoginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body login-form">
+              <article class="card-body">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h1 class="card-title h1-kecil">Masuk</h1>
+                  </div>
+                  <div class="col-auto">
+                    <a
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></a>
+                  </div>
+                </div>
+
+                <form action="home-logged.html">
+                  <div class="form-group my-3">
+                    <label>Nomor Telepon atau Email</label>
+                    <input name="" class="form-control mt-1" type="text" />
+                  </div>
+                  <!-- form-group// -->
+                  <div class="form-group my-3">
+                    <label>Password</label>
+                    <input class="form-control mt-1" type="password" />
+                  </div>
+                  <!-- form-group// -->
+                  <div class="form-group my-3">
+                    <div class="row justify-content-between">
+                      <div class="col">
+                        <label><input type="checkbox" /> Ingat Saya</label>
+                      </div>
+                      <div class="col">
+                        <a href="lupa-password.html">Lupa Password?</a>
+                      </div>
+                    </div>
+                    <!-- checkbox .// -->
+                  </div>
+                  <!-- form-group// -->
+                  <div class="form-group my-3">
+                    <button type="submit" class="orange-btn btn">
+                      Masuk
+                    </button>
+                  </div>
+                  <!-- form-group// -->
+                </form>
+                <div class="row my-3">
+                  <div
+                    class="col d-flex align-items-center justify-content-center"
+                  >
+                    <hr />
+                    <small class="mx-2 gray">ATAU</small>
+                    <hr />
+                  </div>
+                </div>
+                <button class="btn mb-2">
+                  <img src="img/icon/fb.png" /> Facebook
+                </button>
+                <button class="btn mb-3">
+                  <img src="img/icon/google.png" alt="" /> Google
+                </button>
+                <div class="row justify-content-center">
+                  <div class="col-auto">
+                    <p>
+                      Belum punya akun?
+                      <a class="fw-bold" href="daftar.html">Daftar Sekarang</a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal +keranjang -->
+      <div
+        class="modal fade"
+        id="tambahKeranjang"
+        tabindex="-1"
+        aria-labelledby="tambahKeranjangLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-bold" id="tambahKeranjangLabel">
+                + Keranjang
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row text-center">
+                <div class="col">
+                  <b>16 barang</b> lagi, berakhir setelah <b>18:20:01</b>
+                </div>
+              </div>
+              <div class="row my-3 daftar-anggota">
+                <div class="col">
+                  <div class="d-flex justify-content-center">
+                    <img
+                      class="foto-profil"
+                      src="img/status-pembelian-kelompok/foto-profile.png"
+                      alt=""
+                    />
+                    <img
+                      class="foto-profil"
+                      src="img/status-pembelian-kelompok/foto-profile.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col">
+                  Pilih harga <b>Pembelian Mandiri</b> jika anda ingin tetap
+                  membeli meskipun target pembelian kelompok tidak tercapai
+                </div>
+              </div>
+              <div class="row my-3">
+                <div class="col border me-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input
+                      class="form-check-input me-3"
+                      type="radio"
+                      name="exampleRadios"
+                      id="hargaKelompok"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="hargaKelompok">
+                      <div class="row">
+                        <div class="col">
+                          <small>Harga Pembelian Kelompok</small>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col price team">Rp 10.000</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="col border">
+                  <div class="form-check d-flex align-items-center">
+                    <input
+                      class="form-check-input me-3"
+                      type="radio"
+                      name="exampleRadios"
+                      id="hargaMandiri"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="hargaMandiri">
+                      <div class="row">
+                        <div class="col">
+                          <small>Harga Pembelian Mandiri</small>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col price">Rp 30.000</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-3 info py-2">
+                <div class="col-auto pe-0">
+                  <img src="img/icon/pembelian-kelompok/Info.png" alt="" />
+                </div>
+                <div class="col-10">
+                  Potensi Point Didapat ketika Pembelian Kelompok Tercapai :
+                  20.000. Pesanan akan <b>tetap</b> diproses meskipun pembelian
+                  tidak mencapai taget dengan harga <b>Pembelian Mandiri</b>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button class="btn orange-btn w-100 fw-bold">Gabung</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

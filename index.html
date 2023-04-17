@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top Header -->
+    <div class="container-fluid top-header">
+      <div class="d-flex flex-row bd-highlight">
+        <div class="p-2 bd-highlight"><a href="#">Download App</a></div>
+        <div class="p-2 bd-highlight d-none d-md-block">
+          <a href="#">Cara Belanja</a>
+        </div>
+        <div class="p-2 bd-highlight d-none d-md-block">
+          <a href="#">Menjadi Mitra UMKM</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <!-- Bottom Navbar -->
+    <nav class="navbar navbar-mobile navbar-expand d-md-none fixed-bottom">
+      <ul class="navbar-nav nav-justified w-100">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <div class="row">
+              <div class="col">
+                <img src="img/icon/navbar/Home.png" alt="" />
+              </div>
+            </div>
+            <div class="row"><div class="col">Beranda</div></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="keranjang.html" class="nav-link">
+            <div class="row">
+              <div class="col">
+                <img src="img/icon/navbar/Cart-black.png" alt="" />
+              </div>
+            </div>
+            <div class="row"><div class="col">Keranjang</div></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <div class="row">
+              <div class="col">
+                <img src="img/icon/navbar/Chat.png" alt="" />
+              </div>
+            </div>
+            <div class="row"><div class="col">Chat</div></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="profile.html" class="nav-link">
+            <div class="row">
+              <div class="col">
+                <img src="img/icon/navbar/Account.png" alt="" />
+              </div>
+            </div>
+            <div class="row"><div class="col">Profile</div></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="navbar sticky-top navbar-expand-lg d-none d-md-block">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3" href="#"
+          ><img class="img-fluid" src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-md-flex justify-content-around"
+          id="navbarSupportedContent"
+        >
+          <div class="dropdown dropdown-kategori d-none d-md-block">
+            <button
+              class="btn btn-kategori"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Kategori
+            </button>
+            <ul
+              class="dropdown-menu dd-menu-kategori"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><a class="dropdown-item" href="#">Perlengkapan Kantor</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Peralatan Rumah Tangga</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Olahan Kuliner</a></li>
+              <li><a class="dropdown-item" href="#">Produk Kreatif</a></li>
+              <li><a class="dropdown-item" href="#">Industri Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Jasa</a></li>
+              <li><a class="dropdown-item" href="#">Asli Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Kurir Bangsa</a></li>
+            </ul>
+          </div>
+          <form action="pencarian.html" class="d-flex search-produk py-md-0">
+            <div class="input-group mx-3">
+              <input
+                type="search"
+                id="search-produk"
+                class="form-control"
+                type="search"
+                placeholder="Cari produk umkm"
+                aria-label="Search"
+                autocomplete="off"
+                onfocus="showPopuler()"
+                oninput="hidePopuler()"
+                onblur="hidePopuler()"
+              />
+              <button class="btn bg-light border h-auto px-3 p-2" id="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div
+              class="pencarian-populer container position-absolute bg-body mt-5"
+            >
+              <div class="fw-bold m-md-3">Pencarian Populer</div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="dropdown d-none d-md-block p-2 py-md-0">
+            <button
+              class="btn"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="img/icon/navbar/cart.png" alt="" />
+            </button>
+            <ul class="dropdown-menu cart" aria-labelledby="dropdownMenuButton">
+              <div class="text-center px-1 py-3">
+                <img src="img/icon/navbar/Cart2.png" alt="" />
+                <p class="my-2"><b>Keranjang belanjaanmu kosong ☹️ </b></p>
+                <p>Yuk isi dengan beberapa produk menarik dari Kartara.</p>
+              </div>
+            </ul>
+          </div>
+          <div class="p-2 py-md-0">
+            <button
+              onclick="window.location.href='login.html';"
+              class="btn btn-masuk-home mb-2 mb-md-0"
+            >
+              Masuk
+            </button>
+            <button
+              onclick="window.location.href='daftar.html';"
+              class="btn btn-daftar"
+            >
+              Daftar
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- banner carousel -->
+    <div class="container-fluid px-md-5 banner my-3 my-md-5">
+      <div class="row py-2 text-center">
+        <div class="col-md-9">
+          <div class="banner-carousel owl-carousel owl-theme">
+            <div>
+              <img
+                class="img-fluid"
+                src="img/homepage/banner/SMARTwebbanner.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="img-fluid"
+                src="img/homepage/banner/SMARTwebbanner.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="img-fluid"
+                src="img/homepage/banner/SMARTwebbanner.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 banner-gabung-umkm">
+          <img
+            class="img-fluid"
+            src="img/homepage/banner/smartbannergoumkm.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Kategori -->
+    <div class="container-fluid home-kategori px-5">
+      <div class="row text-center">
+        <a href="#" class="col-4 col-md px-md-0 mx-md-3">
+          <img
+            class="img-fluid mb-3"
+            src="img/homepage/kategori/kategori-1.png"
+            alt=""
+          />
+          <h3 class="">
+            Perlengkapan Kantor
+          </h3>
+        </a>
+        <a href="#" class="col-4 col-md px-md-0 mx-md-3">
+          <img
+            class="img-fluid mb-3"
+            src="img/homepage/kategori/kategori-2.png"
+            alt=""
+          />
+          <h3 class="">
+            Olahan Kuliner
+          </h3>
+        </a>
+        <a href="#" class="col-4 col-md px-md-0 mx-md-3">
+          <img
+            class="img-fluid mb-3"
+            src="img/homepage/kategori/kategori-3.png"
+            alt=""
+          />
+          <h3 class="">
+            Produk Kreatif
+          </h3>
+        </a>
+        <a href="#" class="col-4 col-md px-md-0 mx-md-3">
+          <img
+            class="img-fluid mb-3"
+            src="img/homepage/kategori/kategori-4.png"
+            alt=""
+          />
+          <h3 class="">
+            Industri Fashion
+          </h3>
+        </a>
+        <a href="#" class="col-4 col-md px-md-0 mx-md-3">
+          <img
+            class="img-fluid mb-3"
+            src="img/homepage/kategori/kategori-5.png"
+            alt=""
+          />
+          <h3 class="">
+            Asli Indonesia
+          </h3>
+        </a>
+        <a href="#" class="col-4 col-md px-md-0 mx-md-3">
+          <img
+            class="img-fluid mb-3"
+            src="img/homepage/kategori/kategori-6.png"
+            alt=""
+          />
+          <h3 class="">
+            Kurir Bangsa
+          </h3>
+        </a>
+      </div>
+    </div>
+
+    <!-- BBI -->
+    <div class="container-fluid bbi my-2 my-md-5">
+      <div class="row px-5">
+        <img class="img-fluid" src="img/homepage/bbi.png" alt="" />
+      </div>
+    </div>
+
+    <!-- Produk Terlaris -->
+    <div class="container-fluid mb-md-5 px-5">
+      <div
+        class="head-produk d-flex justify-content-between align-items-end mb-3"
+      >
+        <h1 class="">Produk Terlaris</h1>
+        <a href="#">Lihat Semua</a>
+      </div>
+      <div class="produk-carousel owl-carousel owl-theme mb-4">
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p1.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p1.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p2.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p3.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p4.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p5.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p6.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <!-- Perlengkapan Kantor -->
+    <div class="container-fluid px-5 mb-md-5">
+      <div
+        class="head-produk d-flex justify-content-between align-items-end mb-3"
+      >
+        <h1>Perlengkapan Kantor</h1>
+        <a href="#">Lihat Semua</a>
+      </div>
+      <div class="produk-carousel owl-carousel owl-theme mb-4">
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p1.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p2.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p3.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p4.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p5.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p6.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <!-- Olahan Kuliner -->
+    <div class="container-fluid px-5 mb-md-5">
+      <div
+        class="head-produk d-flex justify-content-between align-items-end mb-3"
+      >
+        <h1>Olahan Kuliner</h1>
+        <a href="#">Lihat Semua</a>
+      </div>
+      <div class="produk-carousel owl-carousel owl-theme mb-4">
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p1.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p2.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p3.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p4.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p5.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p6.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <!-- Produk Kreatif -->
+    <div class="container-fluid px-5 mb-5">
+      <div
+        class="head-produk d-flex justify-content-between align-items-end mb-3"
+      >
+        <h1>Produk Kreatif</h1>
+        <a href="#">Lihat Semua</a>
+      </div>
+      <div class="produk-carousel owl-carousel owl-theme mb-4">
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p1.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p2.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p3.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p4.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p5.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img
+              class="thumbnail img-fluid"
+              src="img/produk-terlaris/p6.png"
+              alt=""
+            />
+            <div class="info-produk">
+              <span class="title">Blueprint Tinta 70ml Epson L800 K</span><br />
+              <span class="price"> Rp 49.500</span><br />
+              <div>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <span class="total"> (300)</span>
+              </div>
+              <span class="loc">Jakarta Barat</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="bold" />
+    <!-- main footer -->
+    <div class="main-foot container-fluid px-5">
+      <div class="row text-center text-md-start my-5 px-3">
+        <div class="col-md-2">
+          <img
+            class="img-fluid"
+            src="img/icon/homepage/main-footer/Ollshop.png"
+            alt=""
+          />
+        </div>
+        <div class="col">
+          <p class="ingin-jual">
+            Ingin menjual produk UMKM di Bela Pengadaan? Jadilah Mitra Kartara
+          </p>
+          <p class="my-2">Gratis, mudah, dan cepat</p>
+          <button class="btn btn-daftar-sekarang mt-3">Daftar Sekarang</button>
+        </div>
+      </div>
+      <hr />
+      <div class="row my-4 text-md-start text-center px-3">
+        <h2 class="belanja mb-3">Belanja di Kartara</h2>
+        <div class="col-md">
+          <img src="img/icon/homepage/main-footer/Aman.png" alt="" />
+          <p class="head-info my-3">Dijamin Aman</p>
+          <p>Sitem pembayaran di Kartara menjamin keamaan bertransaksi.</p>
+        </div>
+        <div class="col-md">
+          <img src="img/icon/homepage/main-footer/Mudah.png" alt="" />
+          <p class="head-info my-3">Kemudahan Berbelanja</p>
+          <p>
+            Kartara menyediakan berbagai macam pembayaran untuk mempermudah Anda
+            dalam bertransaksi.
+          </p>
+        </div>
+        <div class="col-md">
+          <img src="img/icon/homepage/main-footer/Pengiriman.png" alt="" />
+          <p class="head-info my-3">Jangkauan Lebih Luas</p>
+          <p>
+            Berbagai macam jasa pengiriman siap mengirimkan ke seluruh Indonesia
+          </p>
+        </div>
+        <div class="col-md">
+          <img src="img/icon/homepage/main-footer/cs.png" alt="" />
+          <p class="head-info my-3">24 Jam Customer Service</p>
+          <p>
+            Kartara menyediakan layanan 24 jam yang siap membantu Anda dalam
+            berbelanja. Call Center : (+62) 819 - 9191 - 9181
+          </p>
+        </div>
+      </div>
+      <!-- Pembayaran -->
+      <div class="row pembayaran my-4 text-center text-md-start px-3">
+        <h3 class="fw-bold">Pembayaran</h3>
+        <div
+          class="d-flex flex-wrap my-2 justify-content-center justify-content-md-start"
+        >
+          <img src="img/homepage/pembayaran/bni.png" alt="" />
+          <img src="img/homepage/pembayaran/permata.png" alt="" />
+          <img src="img/homepage/pembayaran/mandiri.png" alt="" />
+          <img src="img/homepage/pembayaran/bca.png" alt="" />
+          <img src="img/homepage/pembayaran/briva.png" alt="" />
+          <img src="img/homepage/pembayaran/cimb.png" alt="" />
+          <img src="img/homepage/pembayaran/gopay.png" alt="" />
+          <img src="img/homepage/pembayaran/ovo.png" alt="" />
+          <img src="img/homepage/pembayaran/linkaja.png" alt="" />
+          <img src="img/homepage/pembayaran/dana.png" alt="" />
+          <img src="img/homepage/pembayaran/shopeepay.png" alt="" />
+          <img src="img/homepage/pembayaran/akulaku.png" alt="" />
+          <img src="img/homepage/pembayaran/alfamart.png" alt="" />
+          <img src="img/homepage/pembayaran/indomaret.png" alt="" />
+          <img src="img/homepage/pembayaran/visa.png" alt="" />
+          <img src="img/homepage/pembayaran/mastercard.png" alt="" />
+          <img src="img/homepage/pembayaran/jcb.png" alt="" />
+          <img src="img/homepage/pembayaran/ae.png" alt="" />
+        </div>
+      </div>
+      <!-- Pengiriman -->
+      <div class="row my-4 text-center text-md-start px-3">
+        <h3 class="fw-bold">Pengiriman</h3>
+        <div>
+          <img src="img/homepage/pengiriman/jnt.png" alt="" />
+          <img src="img/homepage/pengiriman/jne.png" alt="" />
+          <img src="img/homepage/pengiriman/sicepat.png" alt="" />
+          <img src="img/homepage/pengiriman/ninja.png" alt="" />
+          <img src="img/homepage/pengiriman/gojek.png" alt="" />
+          <img src="img/homepage/pengiriman/grab.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container-fluid">
+      <div class="row mx-md-5 my-md-4 py-md-5 text-center text-md-start">
+        <div class="col-md my-3 my-md-0">
+          <h3>Kartara</h3>
+          <p>
+            <a href="#">Tentang Kartara</a>
+          </p>
+          <p>
+            <a href="#">Aturan Penggunaan</a>
+          </p>
+          <p>
+            <a href="#">Kebijakan Privasi</a>
+          </p>
+          <p>
+            <a href="#">Karir</a>
+          </p>
+          <p>
+            <a href="#">Blog</a>
+          </p>
+          <p>
+            <a href="#">FAQ</a>
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Bantuan</h3>
+          <p><a href="#">Pembayaran</a></p>
+          <p><a href="#">Pengiriman</a></p>
+          <p><a href="#">Status Pemesanan</a></p>
+          <p><a href="#">Pengembalian Produk</a></p>
+          <p><a href="#">Cara Berbelanja</a></p>
+          <p><a href="#">Hubungi Kami</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Mitra</h3>
+          <p><a href="#">Menjadi Mitra UMKM</a></p>
+          <p><a href="#">Cara Berjualan</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Customer Care</h3>
+          <p>
+            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> (+62) 819 -
+            9191 - 9181
+          </p>
+          <p>
+            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            cs@karyanoesantara.id
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Download Aplikasi</h3>
+          <p>
+            <a href="#"><img src="img/footer/Apple.png" alt="" /></a>
+          </p>
+          <p>
+            <a href="#"><img src="img/footer/Googleplay.png" alt="" /></a>
+          </p>
+        </div>
+      </div>
+      <div class="row mx-4 pb-3 d-flex text-md-start text-center">
+        <hr />
+        <div class="col-md">© Karya Noesantara 2021. Hak Cipta Dilindungi</div>
+        <div class="col-md text-md-end">
+          <span class="mx-3">Ikuti Kami</span>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Instagram.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Facebook.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_LinkedIn.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Twitter.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Youtube.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

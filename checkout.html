@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- mapbox -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-color: #f7f7f7;">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid mx-3 text-md-start text-center">
+        <a class="navbar-brand m-3" href="#"
+          ><img src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div class="container checkout">
+      <h1 class="h1-kecil my-5">Pengiriman</h1>
+      <div class="row">
+        <div class="col-md">
+          <!-- alamat pengiriman -->
+          <div class="alamat-pengiriman row border mx-2 mx-md-0">
+            <div class="col">
+              <div class="row p-3 align-items-center">
+                <div class="col-auto">
+                  <img src="img/icon/Home.png" alt="" />
+                </div>
+                <div class="col fw-6 ps-0">
+                  <p class="fs-5">Alamat Pengiriman</p>
+                </div>
+              </div>
+              <div
+                class="row border-top border-bottom p-3"
+                data-bs-toggle="modal"
+                data-bs-target="#pilihAlamat"
+                style="cursor: pointer;"
+              >
+                <div class="col-md-auto">
+                  <div class="row">
+                    <div class="col">
+                      <p class="fw-6 nama-penerima">Laksa Ersa</p>
+                    </div>
+                  </div>
+                  <div class="row my-1">
+                    <div class="col">
+                      <p>(+62) 829 - 9201 - 2910</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto d-md-block d-none">
+                      <p class="jenis-alamat fw-6 px-2 rounded-3">Rumah</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="row">
+                    <div class="col">
+                      <p>
+                        Jl. Mayor Suryotomo No.31, Ngupasan, Kec. Gondomanan,
+                        Kota Yogyakarta, Daerah Istimewa Yogyakarta 55122
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto align-self-center">
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="row px-3 mt-2">
+                <div class="col-auto">
+                  <button class="btn btn-tambah-catatan fw-6 p-0">
+                    Tambah Catatan Alamat
+                  </button>
+                </div>
+              </div>
+              <!-- Button tambah alamat -->
+              <button
+                type="button"
+                class="btn btn-tambah-alamat fw-6 my-3 w-100 border"
+                data-bs-toggle="modal"
+                data-bs-target="#tambahAlamat"
+              >
+                + Tambah Alamat
+              </button>
+            </div>
+          </div>
+          <!-- produk -->
+          <div class="produk row border item my-4 mx-2 mx-md-0">
+            <div class="col">
+              <!-- toko -->
+              <div class="row p-2 py-3 border-bottom">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto pe-0">
+                      <img class="" src="img/icon/Shop.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p class="fw-6">
+                        Sang Dewa
+                      </p>
+                      <p class="lokasi">Jakarta Barat</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- produk -->
+              <div class="row py-3">
+                <div class="col">
+                  <div class="row px-3">
+                    <div class="col-auto p-0">
+                      <img
+                        class="foto-produk img-fluid"
+                        src="img/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <div class="row mb-md-1 mb-0">
+                        <div class="col">
+                          <h4>Kripik Pisang Original</h4>
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col">
+                          <p class="price">Rp 10.000</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <small class="total">Total: 1 (0.16 kg)</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row text-end mb-4">
+                    <div class="col">
+                      <button class="btn">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto align-self-end">
+                      <div class="input-group kuantitas">
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-kurang"
+                        >
+                          -
+                        </button>
+                        <input
+                          class="form-control text-center"
+                          type="number"
+                          name="kuantitas"
+                          id="qty"
+                          value="1"
+                        />
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-tambah"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- catatan -->
+              <div class="row">
+                <div class="col">
+                  <div class="row my-2">
+                    <div class="col"><p>Catatan</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Catatan untuk mitra"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Jasa pengiriman -->
+              <div class="row my-2">
+                <div class="col">
+                  <div class="row my-2">
+                    <div class="col"><p>Jasa Pengiriman</p></div>
+                  </div>
+                  <div
+                    class="row align-items-center border mx-1 rounded-3 py-2"
+                  >
+                    <div class="col">
+                      <img src="img/checkout/jne.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col"><p>Reguler</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="fw-6">JNE Express</p></div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col"><p>Estimasi Tiba</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="fw-6">14 - 16 Jan</p></div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col"><p>Biaya</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="fw-6">Rp 22.000</p></div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <!-- Button trigger modal metode pengiriman -->
+                      <button
+                        type="button"
+                        class="btn btn-ubah"
+                        data-bs-toggle="modal"
+                        data-bs-target="#metodePengiriman"
+                      >
+                        Ubah
+                      </button>
+                    </div>
+                  </div>
+                  <div class="mt-2 text-center p-2 w-100 fw-6 alert-jasa-kirim">
+                    Tambahkan alamatnya dulu
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="produk row border item my-4 py-3 mx-2 mx-md-0">
+            <div class="col">
+              <!-- toko -->
+              <div class="row p-2 py-3 border-bottom">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto pe-0">
+                      <img class="" src="img/icon/Shop.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p class="fw-6">
+                        Sang Dewa
+                      </p>
+                      <p class="lokasi">Jakarta Barat</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- produk -->
+              <div class="row py-3">
+                <div class="col">
+                  <div class="row px-3">
+                    <div class="col-auto p-0">
+                      <img
+                        class="foto-produk img-fluid"
+                        src="img/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <div class="row mb-md-1 mb-0">
+                        <div class="col">
+                          <h4>Kripik Pisang Original</h4>
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col">
+                          <p class="price">Rp 10.000</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <small class="total">Total: 1 (0.16 kg)</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row text-end mb-4">
+                    <div class="col">
+                      <button class="btn">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto align-self-end">
+                      <div class="input-group kuantitas">
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-kurang"
+                        >
+                          -
+                        </button>
+                        <input
+                          class="form-control text-center"
+                          type="number"
+                          name="kuantitas"
+                          id="qty"
+                          value="1"
+                        />
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-tambah"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row py-3">
+                <div class="col">
+                  <div class="row px-3">
+                    <div class="col-auto p-0">
+                      <img
+                        class="foto-produk img-fluid"
+                        src="img/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <div class="row mb-md-1 mb-0">
+                        <div class="col">
+                          <h4>Kripik Pisang Original</h4>
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col">
+                          <p class="price">Rp 10.000</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <small class="total">Total: 1 (0.16 kg)</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row text-end mb-4">
+                    <div class="col">
+                      <button class="btn">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto align-self-end">
+                      <div class="input-group kuantitas">
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-kurang"
+                        >
+                          -
+                        </button>
+                        <input
+                          class="form-control text-center"
+                          type="number"
+                          name="kuantitas"
+                          id="qty"
+                          value="1"
+                        />
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-tambah"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row py-3">
+                <div class="col">
+                  <div class="row px-3">
+                    <div class="col-auto p-0">
+                      <img
+                        class="foto-produk img-fluid"
+                        src="img/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <div class="row mb-md-1 mb-0">
+                        <div class="col">
+                          <h4>Kripik Pisang Original</h4>
+                        </div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col">
+                          <p class="price">Rp 10.000</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <small class="total">Total: 1 (0.16 kg)</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row text-end mb-4">
+                    <div class="col">
+                      <button class="btn">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto align-self-end">
+                      <div class="input-group kuantitas">
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-kurang"
+                        >
+                          -
+                        </button>
+                        <input
+                          class="form-control text-center"
+                          type="number"
+                          name="kuantitas"
+                          id="qty"
+                          value="1"
+                        />
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-tambah"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- catatan -->
+              <div class="row">
+                <div class="col">
+                  <div class="row my-2">
+                    <div class="col"><p>Catatan</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Catatan untuk mitra"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Jasa pengiriman -->
+              <div class="row my-2">
+                <div class="col">
+                  <div class="row my-2">
+                    <div class="col"><p>Jasa Pengiriman</p></div>
+                  </div>
+                  <div
+                    class="row align-items-center border mx-1 rounded-3 py-2"
+                  >
+                    <div class="col">
+                      <img src="img/checkout/jne.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col"><p>Reguler</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="fw-6">JNE Express</p></div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col"><p>Estimasi Tiba</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="fw-6">14 - 16 Jan</p></div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col"><p>Biaya</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="fw-6">Rp 22.000</p></div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <!-- Button trigger modal metode pengiriman -->
+                      <button
+                        type="button"
+                        class="btn btn-ubah"
+                        data-bs-toggle="modal"
+                        data-bs-target="#metodePengiriman"
+                      >
+                        Ubah
+                      </button>
+                    </div>
+                  </div>
+                  <div class="mt-2 text-center p-2 w-100 fw-6 alert-jasa-kirim">
+                    Tambahkan alamatnya dulu
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-md-4 mx-md-3">
+          <div class="row sticky-top">
+            <div class="col">
+              <!-- voucher -->
+              <div class="row pakai-voucher p-3 mx-2 mx-md-0">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="fw-6">Voucher/Kode Promo</h4>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                      <button
+                        class="btn w-100 fw-bold btn-pakai"
+                        data-bs-toggle="modal"
+                        data-bs-target="#tambahVoucher"
+                      >
+                        Pakai
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                      <button
+                        class="btn btn-pakai terpakai w-100 fw-bold d-flex justify-content-between align-items-center"
+                        data-bs-toggle="modal"
+                        data-bs-target="#tambahVoucher"
+                      >
+                        1 voucher dipakai
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- detail pesanan -->
+              <div class="row detail-pesanan p-3 py-4 mt-4 mx-2 mx-md-0">
+                <div class="col">
+                  <div class="row my-2">
+                    <div class="col">
+                      <h4 class="fw-6">Detail Pesanan</h4>
+                    </div>
+                  </div>
+                  <div class="row my-2 total justify-content-between my-1">
+                    <div class="col"><p>Total Harga Barang</p></div>
+                    <div class="col-auto">Rp 100.000</div>
+                  </div>
+                  <div class="row my-2 total justify-content-between my-1">
+                    <div class="col"><p>Total Ongkos Kirim</p></div>
+                    <div class="col-auto">Rp 40.000</div>
+                  </div>
+                  <hr />
+                  <div class="row my-2 justify-content-between mb-2">
+                    <div class="col"><h4 class="fw-6">Total</h4></div>
+                    <div class="col-auto"><h4 class="fw-6">Rp 140.000</h4></div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                      <button
+                        class="btn w-100 fw-bold orange-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#metodePembayaran"
+                      >
+                        Pilih Metode Pembayaran
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal tambah voucher -->
+      <div
+        class="modal fade"
+        id="tambahVoucher"
+        tabindex="-1"
+        aria-labelledby="tambahVoucherLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="tambahVoucherLabel">
+                Tambah Voucher/Kode Promo
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form action="">
+                  <div class="input-kode-promo row my-3 py-3">
+                    <div class="col">
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Masukkan Kode Promo"
+                      />
+                    </div>
+                    <div class="col-auto ps-0">
+                      <button class="btn orange-btn fw-6">Pakai</button>
+                    </div>
+                  </div>
+                </form>
+                <div class="row my-3">
+                  <div class="col p-0">
+                    <h4 class="fw-6">Voucher Kamu</h4>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col fw-6 alert-pilih-voucher">
+                    1 voucher kamu pilih
+                  </div>
+                </div>
+                <!-- vouchers -->
+                <div class="voucher selected row my-3">
+                  <div class="col">
+                    <div class="row border rounded-3 py-2">
+                      <div class="col">
+                        <div class="row justify-content-between">
+                          <div class="col fw-6 mb-1 nama-voucher">
+                            Gratis Ongkir
+                          </div>
+                          <div class="col-auto">
+                            <img src="img/icon/checkout/Check.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col tempat-voucher">
+                            Promo ini berlaku di aplikasi Android dan aplikasi
+                            iOS
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="gray berakhir-voucher"
+                              >Berakhir 31 Maret 2021</small
+                            >
+                          </div>
+                        </div>
+                        <div class="row justify-content-end">
+                          <div class="col-auto">
+                            <button href="#" class="btn detail-voucher">
+                              Detail
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="voucher row my-3">
+                  <div class="col">
+                    <div class="row border rounded-3 py-2">
+                      <div class="col">
+                        <div class="row justify-content-between">
+                          <div class="col fw-6 mb-1 nama-voucher">
+                            Gratis Ongkir
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col tempat-voucher">
+                            Promo ini berlaku di aplikasi Android dan aplikasi
+                            iOS
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="gray berakhir-voucher"
+                              >Berakhir 31 Maret 2021</small
+                            >
+                          </div>
+                        </div>
+                        <div class="row justify-content-end">
+                          <div class="col-auto">
+                            <button href="#" class="btn detail-voucher">
+                              Detail
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="voucher disabled row my-3">
+                  <div class="col">
+                    <div class="row border rounded-3 py-2">
+                      <div class="col">
+                        <div class="row justify-content-between">
+                          <div class="col fw-6 mb-1 nama-voucher">
+                            Cashback 50%
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col tempat-voucher">
+                            Promo ini berlaku di aplikasi Android dan aplikasi
+                            iOS
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="gray berakhir-voucher"
+                              >Berakhir 31 Maret 2021</small
+                            >
+                          </div>
+                        </div>
+                        <div class="row justify-content-end">
+                          <div class="col-auto">
+                            <button
+                              href="#"
+                              class="btn disabled detail-voucher"
+                            >
+                              Detail
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row keterangan py-2">
+                      <div class="col">
+                        Voucher tidak dapat digunakan pada produk ini
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="container-fluid">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-auto">
+                    <div class="row">
+                      <div class="col">
+                        <small class="gray">Kamu dapat</small>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col fw-6">Gratis Ongkir</div>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn orange-btn fw-6 p-2">
+                      Pakai Promo (1)
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal tambah alamat-->
+      <div
+        class="modal fade"
+        id="tambahAlamat"
+        tabindex="-1"
+        aria-labelledby="tambahAlamatLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="tambahAlamatLabel">
+                <img src="img/icon/Home.png" alt="" /> Tambah Alamat Baru
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="row mb-3">
+                  <div class="col">
+                    <label for="labelAlamat" class="form-label"
+                      >Label Alamat</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="labelAlamat"
+                      placeholder="Contoh: Kantor, Rumah"
+                    />
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col">
+                    <label for="penerima" class="form-label"
+                      >Nama Penerima</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="penerima"
+                      placeholder="Nama Penerima"
+                    />
+                  </div>
+                  <div class="col">
+                    <label for="telepon" class="form-label"
+                      >Nomor Telepon</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="telepon"
+                      placeholder="Nomor Telepon"
+                    />
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col">
+                    <label for="alamat" class="form-label"
+                      >Alamat Lengkap</label
+                    >
+                    <textarea
+                      name="alamat"
+                      id="alamat"
+                      class="form-control"
+                      rows="5"
+                      placeholder="Tambahkan alamat lengkap"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col">Koordinat Lokasi</div>
+                    </div>
+                    <div class="row position-relative">
+                      <div class="col">
+                        <div id="map"></div>
+                        <div id="geocoder" class="geocoder"></div>
+                        <pre id="alamat-map" class="alamat-map"></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="aturAlamatUtama"
+                      />
+                      <label class="form-check-label" for="aturAlamatUtama">
+                        Atur sebagai alamat utama
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn orange-btn fw-6 w-100">
+                    Simpan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal metode pengiriman-->
+      <div
+        class="modal fade metode-pengiriman-modal"
+        id="metodePengiriman"
+        tabindex="-1"
+        aria-labelledby="metodePengirimanLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="metodePengirimanLabel">
+                <img src="img/icon/checkout/Delivery.png" alt="" /> Pilih Metode
+                Pengiriman
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      <div class="col-auto">
+                        <div class="row">
+                          <div class="col"><p class="fw-6">Reguler</p></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-auto">
+                            <small>2-7 hari</small>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body p-0">
+                      <div
+                        class="form-check py-2 d-flex align-items-center border-bottom"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="jneReg"
+                        />
+                        <label
+                          class="form-check-label d-flex w-100 justify-content-between"
+                          for="jneReg"
+                        >
+                          <div class="col-auto">
+                            <img src="img/checkout/jne.png" alt="" />
+                          </div>
+                          <div class="col-auto">
+                            <div class="row">
+                              <div class="col nama-metode">
+                                JNE Express REG
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-auto estimasi">
+                                <small>Estimasi Tiba 14 - 16 Jan</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-auto biaya">
+                            Rp 22.000
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="form-check py-2 d-flex align-items-center border-bottom"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="sicepatReg"
+                        />
+                        <label
+                          class="form-check-label d-flex w-100 justify-content-between"
+                          for="sicepatReg"
+                        >
+                          <div class="col-auto">
+                            <img src="img/checkout/sicepat.png" alt="" />
+                          </div>
+                          <div class="col-auto">
+                            <div class="row">
+                              <div class="col nama-metode">
+                                SiCepat REG
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-auto estimasi">
+                                <small>Estimasi Tiba 14 - 16 Jan</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-auto biaya">
+                            Rp 22.000
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="form-check py-2 d-flex align-items-center border-bottom"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="ninjaReg"
+                        />
+                        <label
+                          class="form-check-label d-flex w-100 justify-content-between"
+                          for="ninjaReg"
+                        >
+                          <div class="col-auto">
+                            <img src="img/checkout/ninja.png" alt="" />
+                          </div>
+                          <div class="col-auto">
+                            <div class="row">
+                              <div class="col nama-metode">
+                                Ninja REG
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-auto estimasi">
+                                <small>Estimasi Tiba 14 - 16 Jan</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-auto biaya">
+                            Rp 22.000
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      <div class="col-auto">
+                        <div class="row">
+                          <div class="col">
+                            <p class="fw-6">Kargo/Ekonomi</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-auto">
+                            <small>2-7 hari</small>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body p-0"></div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      <div class="col-auto">
+                        <div class="row">
+                          <div class="col"><p class="fw-6">Instant</p></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-auto">
+                            <small>3 jam</small>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body p-0">
+                      <div
+                        class="form-check py-2 d-flex align-items-center border-bottom"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="grabexpress"
+                        />
+                        <label
+                          class="form-check-label d-flex w-100 justify-content-between"
+                          for="grabexpress"
+                        >
+                          <div class="col-auto">
+                            <img src="img/checkout/grabexpress.png" alt="" />
+                          </div>
+                          <div class="col-auto">
+                            <div class="row">
+                              <div class="col nama-metode">
+                                Grab Instant
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-auto estimasi">
+                                <small>Estimasi Tiba 3 Jam</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-auto biaya">
+                            Rp 22.000
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="form-check py-2 d-flex align-items-center border-bottom"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="gosend"
+                        />
+                        <label
+                          class="form-check-label d-flex w-100 justify-content-between"
+                          for="gosend"
+                        >
+                          <div class="col-auto">
+                            <img src="img/checkout/gosend.png" alt="" />
+                          </div>
+                          <div class="col-auto">
+                            <div class="row">
+                              <div class="col nama-metode">
+                                GoSend Instant
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-auto estimasi">
+                                <small>Estimasi Tiba 3 Jam</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-auto biaya">
+                            Rp 22.000
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col">
+                  <button class="btn orange-btn fw-6 border w-100">
+                    Simpan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal pilih alamat-->
+      <div
+        class="modal fade"
+        id="pilihAlamat"
+        tabindex="-1"
+        aria-labelledby="pilihAlamatLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg alamat">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="pilihAlamatLabel">
+                <img src="img/icon/checkout/Home.png" alt="" /> Pilih Alamat
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <button
+                    class="btn w-100 border fw-6"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                    data-bs-target="#tambahAlamat"
+                  >
+                    Tambah Alamat Baru
+                  </button>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <div
+                    class="form-check py-2 d-flex align-items-center border rounded-3 justify-content-between p-5"
+                  >
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="alamat1"
+                    />
+                    <label
+                      class="form-check-label w-100 justify-content-between"
+                      for="alamat1"
+                    >
+                      <div class="row">
+                        <div class="col-md-auto">
+                          <div class="row">
+                            <div class="col">
+                              <p class="fw-6">Laksa Ersa</p>
+                            </div>
+                          </div>
+                          <div class="row my-md-1">
+                            <div class="col">
+                              <p>(+62) 829 - 9201 - 2910</p>
+                            </div>
+                          </div>
+                          <div class="row mb-md-1">
+                            <div class="col-auto">
+                              <p class="utama">Utama</p>
+                            </div>
+                          </div>
+                          <div class="row mb-md-1 mt-3">
+                            <div class="col-auto">
+                              <button class="btn border">Ubah</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md">
+                          <div class="row my-2 my-md-0">
+                            <div class="col-auto jenis-alamat">
+                              <p class="fw-6">Rumah</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <p>
+                                Jl. Mayor Suryotomo No.31, Ngupasan, Kec.
+                                Gondomanan, Kota Yogyakarta, Daerah Istimewa
+                                Yogyakarta 55122
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <div
+                    class="form-check py-2 d-flex align-items-center border rounded-3 justify-content-between p-5"
+                  >
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="alamat2"
+                    />
+                    <label
+                      class="form-check-label w-100 justify-content-between"
+                      for="alamat2"
+                    >
+                      <div class="row">
+                        <div class="col-md-auto">
+                          <div class="row">
+                            <div class="col">
+                              <p class="fw-6">Laksa Ersa</p>
+                            </div>
+                          </div>
+                          <div class="row my-md-1">
+                            <div class="col">
+                              <p>(+62) 829 - 9201 - 2910</p>
+                            </div>
+                          </div>
+
+                          <div class="row mb-md-1 mt-3">
+                            <div class="col-auto">
+                              <button class="btn border">Ubah</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md">
+                          <div class="row my-2 my-md-0">
+                            <div class="col-auto jenis-alamat">
+                              <p class="fw-6">Rumah</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <p>
+                                Jl. Mayor Suryotomo No.31, Ngupasan, Kec.
+                                Gondomanan, Kota Yogyakarta, Daerah Istimewa
+                                Yogyakarta 55122
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <button class="btn orange-btn fw-6 border w-100">
+                    Simpan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal metode pembayaran-->
+      <div
+        class="modal fade"
+        id="metodePembayaran"
+        tabindex="-1"
+        aria-labelledby="metodePembayaranLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="metodePembayaranLabel">
+                Pilih Metode Pembayaran
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <!-- Transfer Virtual Account -->
+                <div class="row">
+                  <div class="col fw-6">Transfer Virtual Account</div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="mandiriVA"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="mandiriVA"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/mandiri.png"
+                          alt=""
+                        />
+                        <p>Mandiri Virtual Account</p>
+                      </label>
+                    </div>
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="bcaVA"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="bcaVA"
+                      >
+                        <img class="mx-3" src="img/pembayaran/bca.png" alt="" />
+                        <p>BCA Virtual Account</p>
+                      </label>
+                    </div>
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="briVA"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="briVA"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/briva.png"
+                          alt=""
+                        />
+                        <p>BRI Virtual Account</p>
+                      </label>
+                    </div>
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="bniVA"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="bniVA"
+                      >
+                        <img class="mx-3" src="img/pembayaran/bni.png" alt="" />
+                        <p>BNI Virtual Account</p>
+                      </label>
+                    </div>
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="btnVA"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="btnVA"
+                      >
+                        <img class="mx-3" src="img/pembayaran/btn.png" alt="" />
+                        <p>BTN Virtual Account</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Pembayaran Instant -->
+                <div class="row mt-3">
+                  <div class="col fw-6">Pembayaran Instant</div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="gopay"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="gopay"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/gopay.png"
+                          alt=""
+                        />
+                        <p>GoPay</p>
+                      </label>
+                    </div>
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="ovo"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="ovo"
+                      >
+                        <img class="mx-3" src="img/pembayaran/ovo.png" alt="" />
+                        <p>OVO</p>
+                      </label>
+                    </div>
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="jenius"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="jenius"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/jenius.png"
+                          alt=""
+                        />
+                        <p>Jenius</p>
+                      </label>
+                    </div>
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="linkAja"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="linkAja"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/linkaja.png"
+                          alt=""
+                        />
+                        <p>LinkAja</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- PayLater & Cicilan -->
+                <div class="row mt-3">
+                  <div class="col fw-6">PayLater & Cicilan</div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="kredivo"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="kredivo"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/kredivo.png"
+                          alt=""
+                        />
+                        <p>Kredivo</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Credit/Debit Card -->
+                <div class="row mt-3">
+                  <div class="col fw-6">Credit/Debit Card</div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="card"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="card"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/card.png"
+                          alt=""
+                        />
+                        <p>Credit Card/Debit Card</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Gerai Retail -->
+                <div class="row mt-3">
+                  <div class="col fw-6">Gerai Retail</div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="alfamart"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="alfamart"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/alfamart.png"
+                          alt=""
+                        />
+                        <p>Alfamart</p>
+                      </label>
+                    </div>
+                    <div class="form-check border-bottom py-3">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="indomaret"
+                      />
+                      <label
+                        class="form-check-label d-flex align-items-center"
+                        for="indomaret"
+                      >
+                        <img
+                          class="mx-3"
+                          src="img/pembayaran/indomaret.png"
+                          alt=""
+                        />
+                        <p>Indomaret</p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="row my-3">
+                  <div class="col">
+                    <button
+                      class="btn fw-6 w-100 orange-btn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#ringkasanPembayaran"
+                      data-bs-dismiss="modal"
+                    >
+                      Lanjut
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal ringkasan pembayaran -->
+      <div
+        class="modal fade"
+        id="ringkasanPembayaran"
+        tabindex="-1"
+        aria-labelledby="ringkasanPembayaranLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="ringkasanPembayaranLabel">
+                Ringkasan Pembayaran
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <div class="row justify-content-between">
+                    <div class="col"><p class="fw-6">Metode Pembayaran</p></div>
+                    <div class="col-auto">
+                      <button class="btn btn-ubah fw-6">Ubah</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/pembayaran/bni.png" alt="" />
+                    </div>
+                    <div class="col"><p>BNI Virtual Account</p></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col">
+                  <div class="row mb-2">
+                    <div class="col fw-6"><p>Detail Pesanan</p></div>
+                  </div>
+                  <div class="row total justify-content-between">
+                    <div class="col"><p>Total Harga Barang</p></div>
+                    <div class="col-auto">Rp 100.000</div>
+                  </div>
+                  <div class="row total justify-content-between">
+                    <div class="col"><p>Total Ongkos Kirim</p></div>
+                    <div class="col-auto">Rp 40.000</div>
+                  </div>
+                  <hr />
+                  <div class="row justify-content-between mb-2">
+                    <div class="col fw-6"><p>Total</p></div>
+                    <div class="col-auto fw-6"><p>Rp 140.000</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <button
+                        class="btn w-100 fw-6 orange-btn"
+                        onclick="location.href='pembayaran-bni.html';"
+                      >
+                        Bayar
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <button
+                        class="btn"
+                        data-bs-dismiss="modal"
+                        data-bs-toggle="modal"
+                        data-bs-target="#pembayaranLinkAja"
+                      >
+                        LinkAja
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button
+                        class="btn"
+                        data-bs-dismiss="modal"
+                        data-bs-toggle="modal"
+                        data-bs-target="#pembayaranKredivo"
+                      >
+                        Kredivo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal LinkAja -->
+      <div
+        class="modal fade"
+        id="pembayaranLinkAja"
+        tabindex="-1"
+        aria-labelledby="pembayaranLinkAjaLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="pembayaranLinkAjaLabel">
+                Pembayaran LinkAja
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <p>Lanjutkan dengan pemnbayaran Link Aja</p>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <button class="btn border w-100 fw-6" data-bs-dismiss="modal">
+                    Tidak
+                  </button>
+                </div>
+                <div class="col">
+                  <button class="btn fw-6 orange-btn border w-100">
+                    Bayar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Kredivo -->
+      <div
+        class="modal fade"
+        id="pembayaranKredivo"
+        tabindex="-1"
+        aria-labelledby="pembayaranKredivoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fw-6" id="pembayaranKredivoLabel">
+                Apakah kamu punya akun Kredivo?
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <p>
+                    Layanan Kredivo sementara hanya berlaku untuk kamu pemilik
+                    akun Kredivo yang berdomisili di area JABODETABEK, Sukabumi,
+                    Cirebon, Yogyakarta, Malang, Solo, Makassar, Bandung,
+                    Surabaya, Medan, Bali, Palembang dan Semarang.
+                  </p>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <button class="btn border w-100 fw-6" data-bs-dismiss="modal">
+                    Tidak
+                  </button>
+                </div>
+                <div class="col">
+                  <button class="btn orange-btn fw-6 border w-100">
+                    Ya, Saya Punya Akun
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- mapbox js -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

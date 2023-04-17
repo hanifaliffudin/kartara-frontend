@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Select2 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="detailProduk()">
+    <!-- Top Header -->
+    <div class="container-fluid top-header">
+      <div class="row mx-3">
+        <div class="d-flex flex-row bd-highlight">
+          <div class="p-2 bd-highlight"><a href="#">Download App</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Cara Belanja</a></div>
+          <!-- <div class="p-2 bd-highlight"><a href="#">Tentang Kami</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Blog</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Karir</a></div> -->
+          <div class="p-2 bd-highlight"><a href="#">Menjadi Mitra UMKM</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3" href="#"
+          ><img class="img-fluid" src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-md-flex justify-content-around"
+          id="navbarSupportedContent"
+        >
+          <!-- Kategori dropdown -->
+          <div class="dropdown dropdown-kategori">
+            <button
+              class="btn btn-kategori"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Kategori
+            </button>
+            <ul
+              class="dropdown-menu dd-menu-kategori"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><a class="dropdown-item" href="#">Perlengkapan Kantor</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Peralatan Rumah Tangga</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Olahan Kuliner</a></li>
+              <li><a class="dropdown-item" href="#">Produk Kreatif</a></li>
+              <li><a class="dropdown-item" href="#">Industri Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Jasa</a></li>
+              <li><a class="dropdown-item" href="#">Asli Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Kurir Bangsa</a></li>
+            </ul>
+          </div>
+
+          <!-- search -->
+          <form action="pencarian.html" class="d-flex search-produk">
+            <input
+              id="search-produk"
+              class="form-control me-2"
+              type="search"
+              placeholder="Cari produk umkm"
+              aria-label="Search"
+              autocomplete="off"
+              onfocus="showPopuler()"
+              oninput="hidePopuler()"
+              onblur="hidePopuler()"
+            />
+            <button class="btn my-auto" type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="-2.5 -2.5 24 24"
+                width="24"
+                height="24"
+                preserveAspectRatio="xMinYMin"
+                class="icon__icon"
+              >
+                <path
+                  d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="pencarian-populer container position-absolute bg-body mt-5"
+            >
+              <div class="fw-6 m-md-3">Pencarian Populer</div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- cart dropdown -->
+          <div class="cart-and-notif d-flex">
+            <button
+              class="btn d-block d-md-none"
+              type="button"
+              onclick="window.location.href='keranjang.html';"
+            >
+              <img src="img/icon/navbar/cart.png" alt="" />
+            </button>
+            <div class="dropdown d-none d-md-block">
+              <button
+                class="btn"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img src="img/icon/navbar/cart.png" alt="" />
+              </button>
+              <ul
+                class="dropdown-menu cart-logged"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <div class="container px-2 overflow-auto cart-logged bg-body">
+                  <div class="sticky-top bg-body">
+                    <b class="fw-6">Keranjang</b>
+                  </div>
+                  <hr />
+                  <div class="row align-items-center w-100 mx-auto">
+                    <div class="col-2">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">Kripik Pisang Original</div>
+                    <div class="harga col-auto">Rp 16.000</div>
+                  </div>
+                  <hr />
+                  <div class="row align-items-center w-100 mx-auto">
+                    <div class="col-2">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">Kripik Pisang Original</div>
+                    <div class="harga col-auto">Rp 16.000</div>
+                  </div>
+                  <hr />
+                  <div class="row align-items-center w-100 mx-auto">
+                    <div class="col-2">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">Kripik Pisang Original</div>
+                    <div class="harga col-auto">Rp 16.000</div>
+                  </div>
+                  <hr />
+                  <div class="row align-items-center w-100 mx-auto">
+                    <div class="col-2">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">Kripik Pisang Original</div>
+                    <div class="harga col-auto">Rp 16.000</div>
+                  </div>
+                  <hr />
+                  <div
+                    class="foot-cart row align-items-center justify-content-between w-100 mx-auto"
+                  >
+                    <div class="col-auto">Total (5) : Rp 100.000</div>
+                    <div class="col-auto"><a href="#">Lihat Keranjang</a></div>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+
+          <!-- notifikasi -->
+          <div class="d-flex notifikasi-nav">
+            <button
+              class="btn d-block d-md-none"
+              type="button"
+              onclick="window.location.href='notifikasi.html';"
+            >
+              <img src="img/icon/navbar/Notif.png" alt="" />
+            </button>
+            <div class="dropdown d-none d-md-block">
+              <button
+                class="btn"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img src="img/icon/navbar/Notif.png" alt="" />
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="container px-2 overflow-auto notifikasi bg-body">
+                  <div class="sticky-top bg-body">
+                    <b class="fw-6">Notifikasi</b>
+                  </div>
+                  <hr />
+                  <div class="row w-100 mx-auto">
+                    <div class="col-auto p-0">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col">
+                          <b class="fw-6">Selesaikan Pembayaran</b>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <small class="content">
+                            Hai Laksa Ersa, pesanan kamu sebesar Rp 79.000 belum
+                            dibayar. Segera Lakukan pembayaran sebelum 19
+                            Januari 2021...
+                          </small>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <small class="time"
+                            >Senin, 18 Januari 2021 08:10</small
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+              </ul>
+            </div>
+          </div>
+
+          <!-- profile dropdown-->
+          <div class="profile-nav d-flex">
+            <button
+              class="btn p-0 d-block d-md-none"
+              type="button"
+              onclick="window.location.href='profile.html';"
+            >
+              <div class="btn-profile d-flex align-items-center">
+                <i
+                  class="fa fa-user-circle-o fa-2x mx-2"
+                  aria-hidden="true"
+                ></i>
+                <span>
+                  Laksa Ersa
+                </span>
+              </div>
+            </button>
+            <div class="dropdown d-none d-md-block">
+              <button
+                class="btn p-0"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="btn-profile d-flex align-items-center">
+                  <i
+                    class="fa fa-user-circle-o fa-2x mx-2"
+                    aria-hidden="true"
+                  ></i>
+                  <span>
+                    Laksa Ersa
+                  </span>
+                </div>
+              </button>
+              <ul
+                class="dropdown-menu profile-logged"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <div class="container profile-logged bg-body">
+                  <div
+                    class="d-flex align-items-center py-2 mb-2 border-bottom"
+                  >
+                    <div class="col-auto mx-2">
+                      <img src="img/icon/navbar/foto-profile.png" alt="" />
+                    </div>
+                    <div class="col fw-6">Laksa Ersa</div>
+                  </div>
+                  <a
+                    href="#"
+                    class="row d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Akun saya</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Pesanan saya</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Wishlist</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Ulasan</p>
+                    </div>
+                  </a>
+                  <a
+                    href="index.html"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Log out</p>
+                    </div>
+                  </a>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main detail -->
+    <div class="detail-produk container-fluid px-md-5">
+      <!-- kategori detail -->
+      <div
+        class="kategori-detail d-flex my-3 align-items-center d-md-block d-none"
+      >
+        <a href="#">Home</a>
+        <i class="fa fa-chevron-right mx-2" aria-hidden="true"></i>
+        <a href="#">Olahan Kuliner</a>
+        <i class="fa fa-chevron-right mx-2" aria-hidden="true"></i>
+        <a href="#">Camilan & Oleh - Oleh</a>
+        <i class="fa fa-chevron-right mx-2" aria-hidden="true"></i>
+        <a class="active" href="#">Kripik Pisang Sang Dewa Original</a>
+      </div>
+      <!-- end kategori detail -->
+
+      <!-- body detail -->
+      <div class="row my-3">
+        <!-- foto detail -->
+        <div class="col-md-4 mb-md-0 mb-3">
+          <div class="row">
+            <div class="col p-0">
+              <button
+                type="button"
+                class="btn w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#fotoProdukModal"
+              >
+                <img
+                  class="img-fluid foto-produk w-100 rounded-3"
+                  src="img/detail-produk/sangdewa.png"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            class="d-flex justify-content-between thumbnail-foto-produk my-2"
+          >
+            <img
+              class="img-fluid rounded-3"
+              src="img/detail-produk/sangdewa.png"
+              alt=""
+            />
+            <img
+              class="img-fluid rounded-3"
+              src="img/detail-produk/sangdewa.png"
+              alt=""
+            />
+            <img
+              class="img-fluid rounded-3"
+              src="img/detail-produk/sangdewa.png"
+              alt=""
+            />
+            <img
+              class="img-fluid rounded-3"
+              src="img/detail-produk/sangdewa.png"
+              alt=""
+            />
+            <img
+              class="img-fluid rounded-3"
+              src="img/detail-produk/sangdewa.png"
+              alt=""
+            />
+          </div>
+          <!-- end foto detail -->
+          <!-- Modal foto produk -->
+          <div
+            class="modal fade"
+            id="fotoProdukModal"
+            tabindex="-1"
+            aria-labelledby="modalFotoProduk"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title fw-6" id="modalFotoProduk">
+                    Kripik Pisang Sang Dewa
+                  </h3>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="foto-produk-slider owl-carousel owl-theme">
+                    <div class="item" data-hash="fp1">
+                      <img
+                        class="img-fluid rounded-3"
+                        src="img/detail-produk/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="item" data-hash="fp2">
+                      <img
+                        class="img-fluid rounded-3"
+                        src="img/detail-produk/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="item" data-hash="fp3">
+                      <img
+                        class="img-fluid rounded-3"
+                        src="img/detail-produk/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="item" data-hash="fp4">
+                      <img
+                        class="img-fluid rounded-3"
+                        src="img/detail-produk/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="item" data-hash="fp5">
+                      <img
+                        class="img-fluid rounded-3"
+                        src="img/detail-produk/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <a href="#fp1">
+                        <img
+                          class="img-fluid rounded-3"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="col-2">
+                      <a href="#fp2">
+                        <img
+                          class="img-fluid rounded-3"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="col-2">
+                      <a href="#fp3">
+                        <img
+                          class="img-fluid rounded-3"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="col-2">
+                      <a href="#fp4">
+                        <img
+                          class="img-fluid rounded-3"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="col-2">
+                      <a href="#fp5">
+                        <img
+                          class="img-fluid rounded-3"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- share -->
+          <div class="row d-md-flex d-none align-items-center">
+            <div class="col-auto"><p>Bagikan</p></div>
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <button class="btn p-0">
+                    <img
+                      src="img/icon/detail-produk/Logo_Facebook.png"
+                      alt=""
+                    />
+                  </button>
+                  <button class="btn p-0">
+                    <img src="img/icon/detail-produk/Logo_Twitter.png" alt="" />
+                  </button>
+                  <button class="btn p-0">
+                    <img
+                      src="img/icon/detail-produk/Logo_Whastapp.png"
+                      alt=""
+                    />
+                  </button>
+                  <button class="btn p-0">
+                    <img src="img/icon/detail-produk/Logo_Line.png" alt="" />
+                  </button>
+                  <button onclick="openShareLink()" class="btn p-0">
+                    <img src="img/icon/detail-produk/Link.png" alt="" />
+                  </button>
+                </div>
+              </div>
+              <div class="row bagikan-link p-2 mt-2">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto p-0">
+                      <input
+                        class="form-control w-auto"
+                        type="text"
+                        value="https://karyanoesantara.id/kartara"
+                        id="linkProduk"
+                        disabled
+                      />
+                    </div>
+                    <div class="col-auto">
+                      <button
+                        class="btn border"
+                        onclick="CopyToClipboard('linkProduk')"
+                      >
+                        Salin
+                      </button>
+                    </div>
+                    <div class="container modal-simpan modal-salin">
+                      <div class="row align-items-center py-2">
+                        <div class="col-auto">
+                          <i
+                            class="fa fa-exclamation-circle fa-lg"
+                            aria-hidden="true"
+                          ></i>
+                          Berhasil menyalin tautan produk berhasil disimpan
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end share -->
+        </div>
+
+        <!-- info detail produk -->
+        <div class="info-detail-produk col mx-3">
+          <!-- detail produk -->
+          <div class="row">
+            <div class="col-md">
+              <h1 class="title">Kripik Pisang Sang Dewa</h1>
+            </div>
+            <div class="row mb-3">
+              <div class="col-auto">
+                <span class="fw-6">4.6</span>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+                <i class="fa fa-star checked" aria-hidden="true"></i>
+              </div>
+              <div class="col-auto"><span class="fw-6">300</span> Ulasan</div>
+              <div class="col-auto"><span class="fw-6">350</span> Terjual</div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span class="price-before text-decoration-line-through"
+                  >Rp 30.000</span
+                >
+              </div>
+            </div>
+            <div class="row mb-md-4">
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <span class="price">Rp 15.000</span>
+                  </div>
+                  <div class="col-auto diskon fw-bold"><small>50</small>%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end detail produk -->
+          <hr />
+          <!-- detail order -->
+          <div class="row detail-order">
+            <form action="">
+              <!-- variasi -->
+              <div class="variasi row my-3 align-items-center">
+                <div class="col-md-3 col-auto"><b class="fw-6">Variasi</b></div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto px-1 px-md-3">
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input btn-check btn-variasi"
+                          type="radio"
+                          name="variasiOption"
+                          id="Coklat"
+                          value="Coklat"
+                        />
+                        <label
+                          class="form-check-label btn btn-primary"
+                          for="Coklat"
+                          >Coklat</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-auto px-1 px-md-3">
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input btn-check btn-variasi"
+                          type="radio"
+                          name="variasiOption"
+                          id="Original"
+                          value="Original"
+                        />
+                        <label
+                          class="form-check-label btn btn-primary"
+                          for="Original"
+                          >Original</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-auto px-1 px-md-3">
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input btn-check btn-variasi"
+                          type="radio"
+                          name="variasiOption"
+                          id="Keju"
+                          value="Keju"
+                        />
+                        <label
+                          class="form-check-label btn btn-primary"
+                          for="Keju"
+                          >Keju</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- pengiriman -->
+              <div class="row my-md-3">
+                <div class="col-md-3">
+                  <b class="fw-6">Pengiriman</b>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col"><p>Pengiriman Ke</p></div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <select
+                        id="select_page"
+                        name="lokasi"
+                        class="lokasi-pengiriman"
+                      >
+                        <option value="Jakbar" selected>Jakarta Barat</option>
+                        <option value="Bali">Bali</option>
+                        <option value="Bangka">Bangka Belitung</option>
+                        <option value="Banten">Banten</option>
+                        <option value="Yogyakarta">DI Yogyakarta</option>
+                        <option value="Jakarta">DKI Jakarta</option>
+                        <option value="Gorontalo">Gorontalo</option>
+                        <option value="Bali">Bali</option>
+                        <option value="Bangka">Bangka Belitung</option>
+                        <option value="Banten">Banten</option>
+                        <option value="Yogyakarta">DI Yogyakarta</option>
+                        <option value="Jakarta">DKI Jakarta</option>
+                        <option value="Gorontalo">Gorontalo</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <p>Ongkos Kirim</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto">
+                      <b class="fw-6">Mulai dari Rp 9.000</b>
+                      <button class="btn p-0">
+                        <i
+                          class="fa fa-info-circle"
+                          style="color: #b3b3b3;"
+                          aria-hidden="true"
+                        ></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- kuantitas -->
+              <div class="row my-3 align-items-center align-items-md-baseline">
+                <div class="col-md-3 col-auto">
+                  <b class="fw-6">Kuantitas</b>
+                </div>
+                <div class="col-auto">
+                  <div class="row">
+                    <div class="col">
+                      <p>Stok tersedia <span>999</span></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto">
+                      <div class="input-group kuantitas">
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-kurang"
+                        >
+                          -
+                        </button>
+                        <input
+                          class="form-control text-center"
+                          type="number"
+                          name="kuantitas"
+                          id="qty"
+                          value="1"
+                        />
+                        <button
+                          class="btn border"
+                          type="button"
+                          id="button-tambah"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row m-2">
+                <div class="col-auto variasi-alert p-2">
+                  <p>
+                    <i
+                      class="fa fa-exclamation-circle fa-lg"
+                      aria-hidden="true"
+                    ></i>
+                    Harap pilih variasi terlebih dahulu
+                  </p>
+                </div>
+              </div>
+              <!-- modal wishlist -->
+              <div class="container modal-wishlist">
+                <div class="row align-items-center py-2">
+                  <div class="col-auto">
+                    <i class="fa fa-heart checked" aria-hidden="true"></i>
+                  </div>
+                  <div class="col">
+                    <p>Berhasil menambahkan produk ke wihstlist Default</p>
+                  </div>
+                  <div class="col-auto">
+                    <button
+                      type="button"
+                      class="btn p-0 fw-6"
+                      data-bs-toggle="modal"
+                      data-bs-target="#ubahWishlist"
+                    >
+                      Ubah
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- modal unwishliat -->
+              <div class="container modal-unwishlist">
+                <div class="row align-items-center py-2">
+                  <div class="col">
+                    <p>Produk berhasil dihapus dari wishlist</p>
+                  </div>
+                </div>
+              </div>
+              <!-- button order -->
+              <div class="button-order row my-2">
+                <div class="col-auto">
+                  <button type="button" class="btn" id="liveToastBtn">
+                    <i
+                      class="fa fa-heart-o wishlist-icon with-modal"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                </div>
+                <div class="col-auto">
+                  <button
+                    class="btn beli-sekarang"
+                    onclick="checkVariasiBeli(this.form)"
+                  >
+                    Beli Sekarang
+                  </button>
+                </div>
+                <div class="col-auto">
+                  <!-- Button trigger modal -->
+                  <button
+                    type="button"
+                    class="btn tambah-keranjang"
+                    onclick="checkVariasiKeranjang(this.form)"
+                  >
+                    + Keranjang
+                  </button>
+
+                  <!-- Modal tambah keranjang-->
+                  <div
+                    class="modal fade"
+                    id="modalKeranjang"
+                    tabindex="-1"
+                    aria-labelledby="modalKeranjangLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-body text-center">
+                          <img
+                            src="img/icon/detail-produk/Check-Circle.png"
+                            alt=""
+                          />
+                          <p>Produk berhasil ditambahkan ke keranjang</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Modal ubah wishlist-->
+        <div
+          class="modal fade"
+          id="ubahWishlist"
+          tabindex="-1"
+          aria-labelledby="ubahWishlistLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title fw-6" id="ubahWishlistLabel">
+                  Album Wishlist
+                </h3>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row justify-content-between">
+                  <div class="col"><p>Default Wishlist</p></div>
+                  <div class="col-auto">
+                    <i class="fa fa-heart checked" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <hr />
+                <div class="row justify-content-between">
+                  <div class="col"><p>Wishlist buatan 1</p></div>
+                  <div class="col-auto">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col">
+                    <button
+                      class="btn btn-ubah fw-6 p-0"
+                      data-bs-dismiss="modal"
+                      data-bs-toggle="modal"
+                      data-bs-target="#buatWishlist"
+                    >
+                      + Buat album wishlist baru
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal buat wishlist -->
+        <div
+          class="modal fade"
+          id="buatWishlist"
+          tabindex="-1"
+          aria-labelledby="buatWishlistLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title fw-6" id="buatWishlistLabel">
+                  Buat Wishlist
+                </h3>
+              </div>
+              <div class="modal-body">
+                <form action="">
+                  <label for="namaWishlist" class="form-label"
+                    >Nama wishlist</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="namaWishlist"
+                    placeholder="Masukkan nama wishlist"
+                  />
+                  <div class="row my-2">
+                    <div class="col">
+                      <button
+                        class="btn w-100 fw-6 border"
+                        data-bs-dismiss="modal"
+                      >
+                        Batal
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn w-100 orange-btn fw-6">
+                        Simpan
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ringkasan toko -->
+      <div class="ringkasan-toko container-fluid mt-5">
+        <div class="row align-items-center py-3">
+          <div class="col-md">
+            <div class="row align-items-center my-2">
+              <div class="col-auto">
+                <img
+                  class="img-fluid foto-profil"
+                  src="img/detail-produk/logo-sangdewa.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-auto">
+                <div class="row">
+                  <div class="col"><b class="fw-6 nama-toko">Sang Dewa</b></div>
+                </div>
+                <div class="row">
+                  <div class="col"><p>Jakarta Barat</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row align-items-center my-2">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <p>Produk</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <b class="fw-6">200</b>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <p>Ulasan</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <b class="fw-6">4.7</b>
+                  </div>
+                </div>
+              </div>
+              <div class="col-7">
+                <div class="row">
+                  <div class="col">
+                    <p>Waktu Proses Pesanan</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <b class="fw-6"> ± 1-2 hari</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row text-center">
+              <div class="col-auto">
+                <button class="btn">
+                  <img src="img/icon/detail-produk/Chat.png" alt="" /> Chat
+                  Mitra
+                </button>
+              </div>
+              <div class="col">
+                <button class="btn">
+                  <img src="img/icon/detail-produk/Shop.png" alt="" /> Kunjungi
+                  Mitra
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- spesifikasi -->
+    <div
+      class="spesifikasi-produk container-fluid px-5 my-4 align-items-center"
+    >
+      <div class="row my-2">
+        <div class="col">
+          <h2 class="fw-6">Spesifikasi Produk</h2>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Kategori</div>
+        <div class="col">Olahan Makanan</div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Brand</div>
+        <div class="col">Sang Dewa</div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Kadaluarsa</div>
+        <div class="col">20 Desember 2021</div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Umur Simpan</div>
+        <div class="col">12 Bulan</div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Stok</div>
+        <div class="col">200</div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Berat Bersih</div>
+        <div class="col">0.1 gr</div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Bahan</div>
+        <div class="col">Pisang</div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Dikirim Dari</div>
+        <div class="col">Kota Bandung - Batununggal, Jawa Barat, ID</div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2 col-5 gray">Lain-lain</div>
+        <div class="col">-</div>
+      </div>
+      <hr />
+    </div>
+    <!-- Deskripsi Produk -->
+    <div class="container-fluid px-5">
+      <div class="row">
+        <div class="col">
+          <h2 class="fw-6">Deskripsi Produk</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>
+            Keripik pisang SANG DEWA DEWANYA PISANG , official product by Dewa
+            Eka Prayoga <br />
+            <br />
+            Kripik pisang sang dewa adalah krpipik pisang guys ( yaiayah masa
+            kripik singkong min 😑 ) haha ,, jadi SANG DEWA adalah kripik pisang
+            kekinian berkualiitas PREMIUM guys , dibuat dari bahan bahan terbaik
+            tanpa pemanis buatan dan pengawet & di kemas dengan kemasan yang
+            kekinian yang kece banget guys <br />
+            <br />
+            Detail rincian produk Sang Dewa. <br />
+            • Netto : 85 gram <br />
+            • Bruto : 95 gram<br />
+            • Kemasan rotogravour (Anti Air dan AC) <br />
+            • Ijin P-IRT dan Halal MUI <br />
+            • Expired date : 8 bulan <br />
+            • Stand pouch <br />
+            • Laminasi doff (eye catching saat difoto upload sosmed)<br />
+            • Kemasan standart retail modern (aman kena AC swalayan)<br />
+            <br />
+            Untuk standart pengiriman kita menggunakan kerdus dan bubble wrap ya
+            guys jadi di JAMIN AMAN ,, ayo buruan di BORONG GUYS <br />
+            <br />
+            Oh iya SANG DEWA tersedia dalam 4 varian rasa :<br />
+            1. SANG DEWA COKLAT ( BEST SELLER NO.1 ) <br />
+            2. SANG DEWA SUSU ( BEST SELLER NO.2 ) <br />
+            3. SANG DEWA GREEN TEA <br />
+            4. SANG DEWA ORIGINAL<br />
+            <br />
+            PENTING!!!<br />
+            - Khusus pembelian 5 Pcs Gratis Packing Dus <br />
+            - Pembelian dibawah 5 Pcs bisa membeli Dus di menu variasi / kami
+            packing seadanya (Disarankan Pakai Dus Agar Isi Terjaga)<br />
+            <br />
+            Segera ORDER SEBELUM KEHABISAN STOK<br />
+            <br />
+            #keripik #keripikpisang #sangdewa #keripikpisangsangdewa
+          </p>
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <!-- ulasan -->
+    <div class="ulasan-produk container-fluid px-5">
+      <div class="row">
+        <div class="col">
+          <h2 class="fw-6">Ulasan Produk</h2>
+        </div>
+      </div>
+      <!-- review summary -->
+      <div class="row">
+        <div class="col-md-2">
+          <!-- review summary info -->
+          <div class="row text-center">
+            <div class="col">
+              <p><span class="num-rate fw-6">4.6</span>/5</p>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col">
+              <i class="fa fa-star fa-lg checked" aria-hidden="true"></i>
+              <i class="fa fa-star fa-lg checked" aria-hidden="true"></i>
+              <i class="fa fa-star fa-lg checked" aria-hidden="true"></i>
+              <i class="fa fa-star fa-lg checked" aria-hidden="true"></i>
+              <i class="fa fa-star fa-lg checked" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="row text-center my-2">
+            <div class="col">
+              <p><span>300</span> ulasan</p>
+            </div>
+          </div>
+        </div>
+        <!-- review summary detail -->
+        <div class="col">
+          <div class="row text-center">
+            <div class="col-md-5">
+              <div class="row align-items-center my-2">
+                <div class="col-auto px-md-0">
+                  <p>
+                    <span>5 </span
+                    ><i class="fa fa-star checked" aria-hidden="true"></i>
+                  </p>
+                </div>
+                <div class="col-7">
+                  <div class="progress" style="height: 4px;">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 80%; background-color: #ffbf4d;"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="col-auto"><span>200</span></div>
+              </div>
+              <div class="row align-items-center my-2">
+                <div class="col-auto px-md-0">
+                  <p>
+                    <span>4 </span
+                    ><i class="fa fa-star checked" aria-hidden="true"></i>
+                  </p>
+                </div>
+                <div class="col-7">
+                  <div class="progress" style="height: 4px;">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 25%; background-color: #ffbf4d;"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="col-auto"><span>40</span></div>
+              </div>
+              <div class="row align-items-center my-2">
+                <div class="col-auto px-md-0">
+                  <p>
+                    <span>3 </span
+                    ><i class="fa fa-star checked" aria-hidden="true"></i>
+                  </p>
+                </div>
+                <div class="col-7">
+                  <div class="progress" style="height: 4px;">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 15%; background-color: #ffbf4d;"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="col-auto"><span>30</span></div>
+              </div>
+              <div class="row align-items-center my-2">
+                <div class="col-auto px-md-0">
+                  <p>
+                    <span>2 </span
+                    ><i class="fa fa-star checked" aria-hidden="true"></i>
+                  </p>
+                </div>
+                <div class="col-7">
+                  <div class="progress" style="height: 4px;">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 10%; background-color: #ffbf4d;"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="col-auto"><span>20</span></div>
+              </div>
+              <div class="row align-items-center my-2">
+                <div class="col-auto px-md-0">
+                  <p>
+                    <span>1 </span
+                    ><i class="fa fa-star checked ps-1" aria-hidden="true"></i>
+                  </p>
+                </div>
+                <div class="col-7">
+                  <div class="progress" style="height: 4px;">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 5%; background-color: #ffbf4d;"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="col-auto"><span>10</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ulasan -->
+      <div class="filter-ulasan container-fluid px-5 my-4">
+        <div class="row border-bottom">
+          <div class="col">
+            <ul class="nav" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link active"
+                  id="home-tab"
+                  data-bs-toggle="tab"
+                  href="#bintang5"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true"
+                  >5 <i class="fa fa-star checked" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="profile-tab"
+                  data-bs-toggle="tab"
+                  href="#bintang4"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                  >4 <i class="fa fa-star checked" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="contact-tab"
+                  data-bs-toggle="tab"
+                  href="#bintang3"
+                  role="tab"
+                  aria-controls="contact"
+                  aria-selected="false"
+                  >3 <i class="fa fa-star checked" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="contact-tab"
+                  data-bs-toggle="tab"
+                  href="#bintang2"
+                  role="tab"
+                  aria-controls="contact"
+                  aria-selected="false"
+                  >2 <i class="fa fa-star checked" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="contact-tab"
+                  data-bs-toggle="tab"
+                  href="#bintang1"
+                  role="tab"
+                  aria-controls="contact"
+                  aria-selected="false"
+                  >1 <i class="fa fa-star checked" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li class="nav-item align-self-center" role="presentation">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="denganMedia"
+                  />
+                  <label class="form-check-label" for="denganMedia">
+                    Dengan Media
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-auto m-md-auto my-2">
+            <div class="row align-items-center">
+              <div class="col">
+                <p>Sort by:</p>
+              </div>
+              <div class="col-auto">
+                <select
+                  class="form-select select-sort-by"
+                  aria-label="Default select example"
+                >
+                  <option selected value="1">Ulasan Terbaik</option>
+                  <option value="2">Ulasan Terburuk</option>
+                  <option value="3">Terbaru</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- tabs ulasan -->
+        <div class="tab-content py-2" id="tabsUlasan">
+          <div
+            class="tab-pane fade show active"
+            id="bintang5"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          >
+            <div class="container">
+              <div class="row my-2">
+                <div class="col-4">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <img
+                        class="img-fluid"
+                        src="img/detail-produk/johndoe.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col">
+                          <h4 class="fw-6">John Doe</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <p class="date">2021-01-11 10:54</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      <i class="fa fa-star checked" aria-hidden="true"></i>
+                      <i class="fa fa-star checked" aria-hidden="true"></i>
+                      <i class="fa fa-star checked" aria-hidden="true"></i>
+                      <i class="fa fa-star checked" aria-hidden="true"></i>
+                      <i class="fa fa-star checked" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                      <p>
+                        pengemasan dan pengiriman cepet banget cuma sehari,
+                        rasanya gaperlu ditanya udah pasti enak bangetttt!!
+                        thank you✨
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col-auto pe-1">
+                      <img
+                        class="foto-ulasan rounded-3"
+                        src="img/detail-produk/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-auto pe-1">
+                      <img
+                        class="foto-ulasan rounded-3"
+                        src="img/detail-produk/sangdewa.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                      <button class="btn p-0">
+                        <i
+                          class="fa fa-thumbs-o-up like"
+                          aria-hidden="true"
+                        ></i>
+                      </button>
+                      <span>10</span>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="bintang4"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+          >
+            bintang 4
+          </div>
+          <div
+            class="tab-pane fade"
+            id="bintang3"
+            role="tabpanel"
+            aria-labelledby="contact-tab"
+          >
+            bintang 3
+          </div>
+          <div
+            class="tab-pane fade"
+            id="bintang2"
+            role="tabpanel"
+            aria-labelledby="contact-tab"
+          >
+            bintang 2
+          </div>
+          <div
+            class="tab-pane fade"
+            id="bintang1"
+            role="tabpanel"
+            aria-labelledby="contact-tab"
+          >
+            bintang 1
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- saran produk -->
+    <div class="container-fluid px-5 table-produk">
+      <div class="head-produk d-flex justify-content-between">
+        <h2 class="fw-6">Produk lain dari Toko Ini</h2>
+        <a href="#">Lihat Semua</a>
+      </div>
+      <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+        <div class="col item">
+          <a href="#" class="card">
+            <img src="img/pencarian/foto-produk.png" class="card-img-top" />
+            <div class="card-body">
+              <p class="card-title">Keripik Pisang</p>
+              <p class="price">Rp 49.500</p>
+              <div class="card-text">
+                <p>
+                  <i class="fa fa-star checked" aria-hidden="true"></i>
+                  <span>4.6</span> | Terjual <span>100</span>
+                </p>
+                <div class="d-flex justify-content-between">
+                  <p class="loc">Jakarta Barat</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <button class="btn p-0 m-0" id="btn-wish">
+            <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- chat -->
+    <div class="container chat-box bg-body">
+      <div
+        class="chat-head d-flex align-items-center justify-content-between border-bottom p-2"
+      >
+        <p>Chat</p>
+        <button class="btn hide-chat" onclick="hideChat()">
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="d-flex">
+        <div class="col border-end">
+          <!-- search chat -->
+          <div class="d-flex p-2">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Cari pesan"
+            />
+            <div class="dropdown">
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                semua
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- inbox chat -->
+          <div class="inbox-chat border-top">
+            <!-- chat -->
+            <a href="#">
+              <div class="d-flex justify-content-between mx-2 my-3">
+                <div class="my-auto">
+                  <img
+                    class="foto-profile"
+                    src="img/icon/sangdewa.png"
+                    alt=""
+                  />
+                </div>
+                <div class="mx-2">
+                  <p class="nama-toko">Sang Dewa</p>
+                  <p class="pesan">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur libero fugiat eius tenetur ea autem illo error,
+                    vero magni vel harum veritatis itaque, eos vitae rem soluta,
+                    est voluptates ut.
+                  </p>
+                </div>
+                <div class="date gray">
+                  14/01/20
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- ini bagian room chat yang disebelah kanan -->
+        <!-- messages -->
+        <div class="messages position-relative">
+          <div class="d-flex chat-room">
+            <div class="col">
+              <div class="d-flex justify-content-center">
+                <div class="col-auto time"><p>Hari ini 08:10</p></div>
+              </div>
+
+              <div class="d-flex px-1">
+                <div class="col">
+                  <div class="message outgoing">
+                    <div class="col-auto">
+                      <img
+                        class="foto-produk"
+                        src="img/detail-produk/keripik-chat.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col mx-2">
+                      <div class="row">
+                        <div class="col">
+                          <p class="nama-produk">
+                            Keripik Pisang Original Sang Dewa
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="harga">Rp 29.000</p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="message outgoing">
+                    <p>Apakah stok barang masih?</p>
+                  </div>
+                  <div class="d-flex time outgoing align-items-center">
+                    <div class="">08:10</div>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  </div>
+                  <div class="message incoming">
+                    <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                  <div class="d-flex time incoming align-items-center">
+                    <div class="">08:10</div>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  </div>
+                  <!--  -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row position-absolute bottom-0">
+            <div class="col">
+              <!-- produk yang dichat -->
+              <div class="produk m-2 d-flex align-items-center">
+                <div class="col-auto p-0">
+                  <img
+                    class="foto-produk"
+                    src="img/detail-produk/keripik-chat.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col mx-2">
+                  <div class="row">
+                    <div class="col">
+                      <p class="nama-produk">
+                        Keripik Pisang Original Sang Dewa
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col"><p class="harga">Rp 29.000</p></div>
+                  </div>
+                </div>
+              </div>
+              <!-- template chat -->
+              <div class="template-chat mx-3 my-2">
+                <div class="item">Apakah stok barang masih?</div>
+                <div class="item">Bisa dikirim hari ini?</div>
+              </div>
+              <!-- input chat -->
+              <div class="row">
+                <div class="col-auto">
+                  <button class="btn btn-add-attachment rounded-circle">
+                    <img src="img/icon/detail-produk/Add.png" alt="" />
+                  </button>
+                  <div
+                    class="container-fluid p-0 position-absolute inputAttachmentMenu"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center p-2"
+                    >
+                      <button
+                        class="btn attach-produk p-0 mx-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#attachProduk"
+                      >
+                        <div class="row text-center">
+                          <div class="col">
+                            <img
+                              src="img/icon/detail-produk/Chat_Tag.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="row"><div class="col">Produk</div></div>
+                      </button>
+                      <label class="mx-2 attach-gambar" for="inputFoto">
+                        <div class="row text-center">
+                          <div class="col">
+                            <img
+                              src="img/icon/detail-produk/Chat_Image.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="row"><div class="col">Gambar</div></div>
+                      </label>
+                      <input
+                        type="file"
+                        id="inputFoto"
+                        accept="image/*"
+                        hidden
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col p-0">
+                  <textarea
+                    class="form-control"
+                    name="pesan"
+                    id=""
+                    rows="1"
+                  ></textarea>
+                </div>
+                <div class="col-auto">
+                  <button class="btn">
+                    <img src="img/icon/detail-produk/Send.png" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="open-chat" onclick="openChat()">
+      <img src="img/icon/chat-mini.png" alt="" />
+      <b>Chat <span class="notif">3</span></b>
+    </button>
+    <!-- Modal attach produk-->
+    <div
+      class="modal fade"
+      id="attachProduk"
+      tabindex="-1"
+      aria-labelledby="attachProdukLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title fw-6" id="attachProdukLabel">
+              Tambahkan Link Produk
+            </h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row align-items-center">
+                <div class="col p-0">
+                  <div class="input-group">
+                    <input
+                      type="search"
+                      id="search-produk"
+                      class="form-control"
+                      type="search"
+                      placeholder="Cari produk "
+                      aria-label="Search"
+                      autocomplete="off"
+                    />
+                    <button class="btn bg-light border h-auto px-3 p-2" id="">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-auto pe-0">
+                  <div class="row align-items-center">
+                    <div class="col-auto pe-0">
+                      Etalase
+                    </div>
+                    <div class="col-auto">
+                      <select
+                        class="form-select select-sort-by"
+                        aria-label="Default select example "
+                        style="font-size: 16px;"
+                      >
+                        <option selected value="1">Semua Produk</option>
+                        <!-- <option value="2">Harga Tertinggi</option>
+                        <option value="3">Harga Terendah</option>
+                        <option value="4">Paling Banyak Terjual</option>
+                        <option value="5">Ulasan Paling Banyak</option> -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-3 list-produk">
+                <div class="col p-0">
+                  <div class="produk align-items-center d-flex">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="produk1"
+                    />
+                    <label class="form-check-label d-flex mx-2" for="produk1">
+                      <div class="align-self-center">
+                        <img
+                          class="foto-produk"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="mx-2">
+                        <div class="row">
+                          <div class="col nama-produk">
+                            Keripik Pisang Sang Dewa Original
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col harga">Rp 20.000</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="produk align-items-center d-flex">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="produk2"
+                    />
+                    <label class="form-check-label d-flex mx-2" for="produk2">
+                      <div class="align-self-center">
+                        <img
+                          class="foto-produk"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="mx-2">
+                        <div class="row">
+                          <div class="col nama-produk">
+                            Keripik Pisang Sang Dewa Original
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col harga">Rp 20.000</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="produk align-items-center d-flex">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="produk"
+                    />
+                    <label class="form-check-label d-flex mx-2" for="produk">
+                      <div class="align-self-center">
+                        <img
+                          class="foto-produk"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="mx-2">
+                        <div class="row">
+                          <div class="col nama-produk">
+                            Keripik Pisang Sang Dewa Original
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col harga">Rp 20.000</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="produk align-items-center d-flex">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="produk"
+                    />
+                    <label class="form-check-label d-flex mx-2" for="produk">
+                      <div class="align-self-center">
+                        <img
+                          class="foto-produk"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="mx-2">
+                        <div class="row">
+                          <div class="col nama-produk">
+                            Keripik Pisang Sang Dewa Original
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col harga">Rp 20.000</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="produk align-items-center d-flex">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="produk"
+                    />
+                    <label class="form-check-label d-flex mx-2" for="produk">
+                      <div class="align-self-center">
+                        <img
+                          class="foto-produk"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="mx-2">
+                        <div class="row">
+                          <div class="col nama-produk">
+                            Keripik Pisang Sang Dewa Original
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col harga">Rp 20.000</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="produk align-items-center d-flex">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="produk"
+                    />
+                    <label class="form-check-label d-flex mx-2" for="produk">
+                      <div class="align-self-center">
+                        <img
+                          class="foto-produk"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="mx-2">
+                        <div class="row">
+                          <div class="col nama-produk">
+                            Keripik Pisang Sang Dewa Original
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col harga">Rp 20.000</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="produk align-items-center d-flex">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="produk"
+                    />
+                    <label class="form-check-label d-flex mx-2" for="produk">
+                      <div class="align-self-center">
+                        <img
+                          class="foto-produk"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="mx-2">
+                        <div class="row">
+                          <div class="col nama-produk">
+                            Keripik Pisang Sang Dewa Original
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col harga">Rp 20.000</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="produk align-items-center d-flex">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="produk"
+                    />
+                    <label class="form-check-label d-flex mx-2" for="produk">
+                      <div class="align-self-center">
+                        <img
+                          class="foto-produk"
+                          src="img/detail-produk/sangdewa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="mx-2">
+                        <div class="row">
+                          <div class="col nama-produk">
+                            Keripik Pisang Sang Dewa Original
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col harga">Rp 20.000</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2 justify-content-end">
+                <div class="col-auto p-0 jumlah-dipilih">
+                  0 dari 3 produk dipilih
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col p-0">
+                  <button class="btn orange-btn w-100">Kirim</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container-fluid">
+      <div class="row mx-md-5 my-md-4 py-md-5 text-center text-md-start">
+        <div class="col-md my-3 my-md-0">
+          <h3>Kartara</h3>
+          <p>
+            <a href="#">Tentang Kartara</a>
+          </p>
+          <p>
+            <a href="#">Aturan Penggunaan</a>
+          </p>
+          <p>
+            <a href="#">Kebijakan Privasi</a>
+          </p>
+          <p>
+            <a href="#">Karir</a>
+          </p>
+          <p>
+            <a href="#">Blog</a>
+          </p>
+          <p>
+            <a href="#">FAQ</a>
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Bantuan</h3>
+          <p><a href="#">Pembayaran</a></p>
+          <p><a href="#">Pengiriman</a></p>
+          <p><a href="#">Status Pemesanan</a></p>
+          <p><a href="#">Pengembalian Produk</a></p>
+          <p><a href="#">Cara Berbelanja</a></p>
+          <p><a href="#">Hubungi Kami</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Mitra</h3>
+          <p><a href="#">Menjadi Mitra UMKM</a></p>
+          <p><a href="#">Cara Berjualan</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Customer Care</h3>
+          <p>
+            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> (+62) 819 -
+            9191 - 9181
+          </p>
+          <p>
+            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            cs@karyanoesantara.id
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Download Aplikasi</h3>
+          <p>
+            <a href="#"><img src="img/footer/Apple.png" alt="" /></a>
+          </p>
+          <p>
+            <a href="#"><img src="img/footer/Googleplay.png" alt="" /></a>
+          </p>
+        </div>
+      </div>
+      <div class="row mx-4 pb-3 d-flex text-md-start text-center">
+        <hr />
+        <div class="col-md">© Karya Noesantara 2021. Hak Cipta Dilindungi</div>
+        <div class="col-md text-md-end">
+          <span class="mx-3">Ikuti Kami</span>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Instagram.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Facebook.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_LinkedIn.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Twitter.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Youtube.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>

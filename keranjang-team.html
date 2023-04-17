@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartara</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="checkbox()">
+    <!-- Top Header -->
+    <div class="container-fluid top-header">
+      <div class="row mx-3">
+        <div class="d-flex flex-row bd-highlight">
+          <div class="p-2 bd-highlight"><a href="#">Download App</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Cara Belanja</a></div>
+          <!-- <div class="p-2 bd-highlight"><a href="#">Tentang Kami</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Blog</a></div>
+          <div class="p-2 bd-highlight"><a href="#">Karir</a></div> -->
+          <div class="p-2 bd-highlight"><a href="#">Menjadi Mitra UMKM</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3" href="#"
+          ><img class="img-fluid" src="img/icon/navbar/logo-home.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-md-flex justify-content-around"
+          id="navbarSupportedContent"
+        >
+          <!-- Kategori dropdown -->
+          <div class="dropdown dropdown-kategori">
+            <button
+              class="btn btn-kategori"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Kategori
+            </button>
+            <ul
+              class="dropdown-menu dd-menu-kategori"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><a class="dropdown-item" href="#">Perlengkapan Kantor</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Peralatan Rumah Tangga</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Olahan Kuliner</a></li>
+              <li><a class="dropdown-item" href="#">Produk Kreatif</a></li>
+              <li><a class="dropdown-item" href="#">Industri Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Jasa</a></li>
+              <li><a class="dropdown-item" href="#">Asli Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Kurir Bangsa</a></li>
+            </ul>
+          </div>
+
+          <!-- search -->
+          <form action="pencarian.html" class="d-flex search-produk">
+            <div class="input-group mx-3">
+              <input
+                type="search"
+                id="search-produk"
+                class="form-control"
+                type="search"
+                placeholder="Cari produk umkm"
+                aria-label="Search"
+                autocomplete="off"
+                onfocus="showPopuler()"
+                oninput="hidePopuler()"
+                onblur="hidePopuler()"
+              />
+              <button class="btn bg-light border h-auto px-3 p-2" id="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div
+              class="pencarian-populer container position-absolute bg-body mt-5"
+            >
+              <div class="fw-bold m-md-3">Pencarian Populer</div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row px-md-3 py-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col-auto">
+                      <img src="img/navbar/kripikpisang.png" alt="" />
+                    </div>
+                    <div class="col">
+                      <p>Keripik pisang</p>
+                      <small>1000 pencarian</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="d-flex">
+            <!-- cart dropdown -->
+            <div class="cart-and-notif d-flex">
+              <button
+                class="btn d-block d-md-none"
+                type="button"
+                onclick="window.location.href='keranjang.html';"
+              >
+                <img src="img/icon/navbar/cart.png" alt="" />
+              </button>
+              <div class="dropdown d-none d-md-block">
+                <button
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="img/icon/navbar/cart.png" alt="" />
+                </button>
+                <ul
+                  class="dropdown-menu cart-logged"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <div class="container px-2 overflow-auto cart-logged bg-body">
+                    <div class="sticky-top bg-body">
+                      <b class="">Keranjang</b>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div class="row align-items-center w-100 mx-auto">
+                      <div class="col-2">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">Kripik Pisang Original</div>
+                      <div class="harga col-auto">Rp 16.000</div>
+                    </div>
+                    <hr />
+                    <div
+                      class="foot-cart row align-items-center justify-content-between w-100 mx-auto"
+                    >
+                      <div class="col-auto">Total (5) : Rp 100.000</div>
+                      <div class="col-auto">
+                        <a href="#">Lihat Keranjang</a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+
+            <!-- notifikasi -->
+            <div class="d-flex notifikasi-nav">
+              <button
+                class="btn d-block d-md-none"
+                type="button"
+                onclick="window.location.href='notifikasi.html';"
+              >
+                <img src="img/icon/navbar/Notif.png" alt="" />
+              </button>
+              <div class="dropdown d-none d-md-block">
+                <button
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="img/icon/navbar/Notif.png" alt="" />
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="container px-2 overflow-auto notifikasi bg-body">
+                    <div class="sticky-top bg-body">
+                      <b class="">Notifikasi</b>
+                    </div>
+                    <hr />
+                    <div class="row w-100 mx-auto">
+                      <div class="col-auto p-0">
+                        <img src="img/navbar/kripikpisang.png" alt="" />
+                      </div>
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <b class="fw-6">Selesaikan Pembayaran</b>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="content">
+                              Hai Laksa Ersa, pesanan kamu sebesar Rp 79.000
+                              belum dibayar. Segera Lakukan pembayaran sebelum
+                              19 Januari 2021...
+                            </small>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <small class="time"
+                              >Senin, 18 Januari 2021 08:10</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- profile dropdown-->
+          <div class="profile-nav d-flex">
+            <button
+              class="btn p-0 d-block d-md-none"
+              type="button"
+              onclick="window.location.href='profile.html';"
+            >
+              <div class="btn-profile d-flex align-items-center">
+                <i
+                  class="fa fa-user-circle-o fa-2x mx-2"
+                  aria-hidden="true"
+                ></i>
+                <span>
+                  Laksa Ersa
+                </span>
+              </div>
+            </button>
+            <div class="dropdown d-none d-md-block">
+              <button
+                class="btn p-0"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="btn-profile d-flex align-items-center">
+                  <i
+                    class="fa fa-user-circle-o fa-2x mx-2"
+                    aria-hidden="true"
+                  ></i>
+                  <span>
+                    Laksa Ersa
+                  </span>
+                </div>
+              </button>
+              <ul
+                class="dropdown-menu profile-logged"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <div class="container profile-logged bg-body">
+                  <div
+                    class="d-flex align-items-center py-2 mb-2 border-bottom"
+                  >
+                    <div class="col-auto mx-2">
+                      <img src="img/icon/navbar/foto-profile.png" alt="" />
+                    </div>
+                    <div class="col fw-bold">Laksa Ersa</div>
+                  </div>
+                  <a
+                    href="#"
+                    class="row d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Akun saya</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Pesanan saya</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Wishlist</p>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Ulasan</p>
+                    </div>
+                  </a>
+                  <a
+                    href="index.html"
+                    class="row py-1 d-flex align-items-center w-100 mx-auto"
+                  >
+                    <div class="col-auto">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                      <p>Log out</p>
+                    </div>
+                  </a>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container keranjang keranjang-team">
+      <h1 class="my-4 h1-kecil">Keranjang</h1>
+
+      <div class="row">
+        <div class="col-md">
+          <div class="accordion accordion-flush" id="jenisPembelianAccordion">
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed px-3"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-mandiri"
+                  aria-expanded="false"
+                  aria-controls="flush-mandiri"
+                >
+                  <div class="form-check align-items-center d-flex p-3">
+                    <input
+                      class="form-check-input m-0"
+                      type="radio"
+                      name="radioPembelian"
+                      id="pembelianMandiri"
+                    />
+                    <label
+                      class="form-check-label mx-2 fw-bold"
+                      for="pembelianMandiri"
+                    >
+                      Pembelian Mandiri
+                    </label>
+                  </div>
+                </button>
+              </h4>
+              <div
+                id="flush-mandiri"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#jenisPembelianAccordion"
+              >
+                <div class="accordion-body px-2">
+                  <div
+                    class="row rounded-3 bg-body justify-content-between align-items-center m-4 p-3"
+                  >
+                    <div class="col mt-md-0">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="pilihSemua"
+                        />
+                        <label class="form-check-label" for="pilihSemua">
+                          Pilih semua
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn p-0">Hapus</button>
+                    </div>
+                  </div>
+                  <!-- keranjang items -->
+                  <div class="row border item m-4 bg-body">
+                    <div class="col expandable-checkbox">
+                      <!-- toko -->
+                      <div class="row">
+                        <div class="col border-bottom">
+                          <div class="row p-3">
+                            <div class="col">
+                              <input
+                                class="form-check-input expandable-checkbox-main-option"
+                                type="checkbox"
+                                value=""
+                                id="toko1"
+                              />
+                              <label class="form-check-label mx-2" for="toko1">
+                                <div class="row">
+                                  <div class="col-auto pe-0">
+                                    <img
+                                      class=""
+                                      src="img/icon/Shop.png"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <p class="fw-bold">
+                                      Sang Dewa
+                                    </p>
+                                    <p class="lokasi">Jakarta Barat</p>
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- produk -->
+                      <div class="row p-3">
+                        <div class="col-md text-md-start">
+                          <div class="d-flex align-items-center">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              value=""
+                              id="produk1"
+                            />
+                            <label class="form-check-label mx-3" for="produk1">
+                              <div class="row">
+                                <div class="col-md-4 col-auto">
+                                  <img
+                                    class="foto-produk img-fluid"
+                                    src="img/sangdewa.png"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="col">
+                                  <p>Kripik Pisang Original</p>
+                                  <p class="price">Rp 16.000</p>
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-auto">
+                          <div class="row text-end mb-2">
+                            <div class="col">
+                              <button class="btn">
+                                <i
+                                  class="fa fa-heart-o wishlist-icon"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                              <button class="btn">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="row justify-content-center">
+                            <div class="col-auto">
+                              <div class="input-group kuantitas">
+                                <button
+                                  class="btn border"
+                                  type="button"
+                                  id="button-kurang"
+                                >
+                                  -
+                                </button>
+                                <input
+                                  class="form-control text-center"
+                                  type="number"
+                                  name="kuantitas"
+                                  id="qty"
+                                  value="1"
+                                />
+                                <button
+                                  class="btn border"
+                                  type="button"
+                                  id="button-tambah"
+                                >
+                                  +
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="flush-headingTwo">
+                <button
+                  class="accordion-button collapsed px-3"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-kelompok"
+                  aria-expanded="false"
+                  aria-controls="flush-kelompok"
+                >
+                  <div class="form-check align-items-center d-flex p-3">
+                    <input
+                      class="form-check-input m-0"
+                      type="radio"
+                      name="radioPembelian"
+                      id="pembelianKelompok"
+                    />
+                    <label
+                      class="form-check-label mx-2 fw-bold"
+                      for="pembelianKelompok"
+                    >
+                      Pembelian Kelompok
+                    </label>
+                  </div>
+                </button>
+              </h4>
+              <div
+                id="flush-kelompok"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwo"
+                data-bs-parent="#jenisPembelianAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- keranjang items -->
+                  <div class="row border item m-4 bg-body">
+                    <div class="col expandable-checkbox">
+                      <!-- toko -->
+                      <div class="row">
+                        <div class="col border-bottom">
+                          <div class="row p-3">
+                            <div class="col">
+                              <input
+                                class="form-check-input expandable-checkbox-main-option"
+                                type="checkbox"
+                                value=""
+                                id="toko2"
+                              />
+                              <label class="form-check-label mx-2" for="toko2">
+                                <div class="row">
+                                  <div class="col-auto pe-0">
+                                    <img
+                                      class=""
+                                      src="img/icon/Shop.png"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <p class="fw-bold">
+                                      Keripik Maju Jaya
+                                    </p>
+                                    <p class="lokasi">Jakarta Barat</p>
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- produk -->
+                      <div class="row p-3">
+                        <div class="col-md text-md-start">
+                          <div class="d-flex align-items-center">
+                            <input
+                              class="form-check-input expandable-checkbox-sub-option"
+                              type="checkbox"
+                              value=""
+                              id="produk2"
+                            />
+                            <label class="form-check-label mx-3" for="produk2">
+                              <div class="row">
+                                <div class="col-auto">
+                                  <img
+                                    class="foto-produk img-fluid"
+                                    src="img/sangdewa.png"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="col">
+                                  <div class="row">
+                                    <div class="col">
+                                      <p>Kripik Pisang Original</p>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col">
+                                      <small>Harga Pembelian Mandiri</small>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col">
+                                      <p class="price">Rp 16.000</p>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col">
+                                      <small class="potensi-point"
+                                        >Potensi Point didapat : 20.000</small
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row mt-2">
+                                <div class="col-auto pe-0">
+                                  <small class="nama-kelompok"
+                                    >Kelompok Laksa Ersa</small
+                                  >
+                                </div>
+                                <div class="col-auto pe-0">
+                                  <small class="sisa-waktu">18 : 10 :01</small>
+                                </div>
+                                <div class="col-auto pe-0">
+                                  <small class="sisa-target"
+                                    >Sisa Target Pembelian : 16</small
+                                  >
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-auto">
+                          <div class="row text-end mb-2">
+                            <div class="col">
+                              <button class="btn">
+                                <i
+                                  class="fa fa-heart-o wishlist-icon"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                              <button class="btn">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="row justify-content-center">
+                            <div class="col-auto">
+                              <div class="input-group kuantitas">
+                                <button
+                                  class="btn border"
+                                  type="button"
+                                  id="button-kurang"
+                                >
+                                  -
+                                </button>
+                                <input
+                                  class="form-control text-center"
+                                  type="number"
+                                  name="kuantitas"
+                                  id="qty"
+                                  value="1"
+                                />
+                                <button
+                                  class="btn border"
+                                  type="button"
+                                  id="button-tambah"
+                                >
+                                  +
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Total -->
+        <div class="col-md-4">
+          <div class="container total sticky-top border rounded-3 py-3">
+            <div class="row">
+              <div class="col"><h4 class="fw-bold">Pembelian Kelompok</h4></div>
+            </div>
+            <div class="row justify-content-between">
+              <div class="col">
+                Total Harga
+              </div>
+              <div class="col-auto">Rp <span>100.000</span></div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <button class="btn">Checkout (<span>4</span>)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container-fluid">
+      <div class="row mx-md-5 my-md-4 py-md-5 text-center text-md-start">
+        <div class="col-md my-3 my-md-0">
+          <h3>Kartara</h3>
+          <p>
+            <a href="#">Tentang Kartara</a>
+          </p>
+          <p>
+            <a href="#">Aturan Penggunaan</a>
+          </p>
+          <p>
+            <a href="#">Kebijakan Privasi</a>
+          </p>
+          <p>
+            <a href="#">Karir</a>
+          </p>
+          <p>
+            <a href="#">Blog</a>
+          </p>
+          <p>
+            <a href="#">FAQ</a>
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Bantuan</h3>
+          <p><a href="#">Pembayaran</a></p>
+          <p><a href="#">Pengiriman</a></p>
+          <p><a href="#">Status Pemesanan</a></p>
+          <p><a href="#">Pengembalian Produk</a></p>
+          <p><a href="#">Cara Berbelanja</a></p>
+          <p><a href="#">Hubungi Kami</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Mitra</h3>
+          <p><a href="#">Menjadi Mitra UMKM</a></p>
+          <p><a href="#">Cara Berjualan</a></p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Customer Care</h3>
+          <p>
+            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> (+62) 819 -
+            9191 - 9181
+          </p>
+          <p>
+            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            cs@karyanoesantara.id
+          </p>
+        </div>
+        <div class="col-md my-3 my-md-0">
+          <h3>Download Aplikasi</h3>
+          <p>
+            <a href="#"><img src="img/footer/Apple.png" alt="" /></a>
+          </p>
+          <p>
+            <a href="#"><img src="img/footer/Googleplay.png" alt="" /></a>
+          </p>
+        </div>
+      </div>
+      <div class="row mx-4 pb-3 d-flex text-md-start text-center">
+        <hr />
+        <div class="col-md">© Karya Noesantara 2021. Hak Cipta Dilindungi</div>
+        <div class="col-md text-md-end">
+          <span class="mx-3">Ikuti Kami</span>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Instagram.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Facebook.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_LinkedIn.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Twitter.png" alt=""
+          /></a>
+          <a class="mx-1" href="#"
+            ><img src="img/icon/footer/Logo_Youtube.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- OwlCarousel2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script src="index.js"></script>
+  </body>
+</html>
